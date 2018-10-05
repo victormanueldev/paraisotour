@@ -1,0 +1,531 @@
+/*HEADER*/
+.content-header{
+	width: 100%;
+	height: 25em;
+	background-image: url("http://localhost/paraisotour/wp-content/uploads/2018/09/rawpixel-472356-unsplash.jpg");
+	background-size: cover;
+	position: relative;
+	background-position-y: 50%;
+	margin-bottom: 5%;	
+}
+
+#logotype{
+	position: relative;
+	width: 12%;
+    margin: 3% 4%;
+}
+/*END HEADER*/
+
+/*CONTENT*/
+#content{
+	width: 70%;
+}
+
+.caja1{
+	height: 100%;
+}
+
+.caja2{
+	height: 100%;
+}
+
+/*FORM*/
+
+.check{
+	margin: 4% 0;
+}
+
+.check label{
+	margin-right: 5%;
+}
+
+.form input, .form select {
+	padding: 10px;
+	margin: 1% 0;
+	background-color: #EDEEF0;
+	border: 1px solid #EDEEF0;
+	border-radius: 10px;
+	display: inline-block;
+	width: 100%;
+}
+
+.form input:focus, .form select:focus{
+	outline: 0;
+}
+
+#cant1, #cant2{
+	width: 30%;
+	display: inline-block;
+}
+/*END FORM*/
+
+/*BUS*/
+#stock{
+	width: 20px;
+    margin-right: 0;
+}
+/*END BUS*/
+
+/*INFO*/
+
+/*TOTAL*/
+.header-total{
+	background-color: #316698;
+	color: white;
+	text-align: center;
+	padding: 10% 0;
+}
+
+.body-total{
+	background-color: #EDEEF0;
+	padding: 10% 2%;
+}
+
+.fare p{
+	text-align: center;
+}
+
+.fare .price1{
+	font-size: 15px;
+}
+
+.price1, .price2{
+	font-family: 'Roboto-Bold', Arial;
+	color: #316698;
+	display: inline-block;
+	margin-bottom: 0;
+	text-align: center;
+}
+
+.info1 p, .info2 p, .info3 p{
+	float: left;
+	display: inline-block;
+	font-size: 10px;
+}
+
+.info1 h3, .info2 h3, .info3 h3{
+	float: right;
+	display: inline-block;
+	color: #316698;
+}
+
+.info1, .info2, .info3 {
+	margin-top: 30px;
+}
+
+.info-total{
+	margin-top: 10px;
+	width: 100%;
+    height: 2em;
+}
+
+.info-total h3{
+	float: left;
+	margin-top: 0.5em;
+	color: black;
+}
+
+.info-total h2{
+	float: right;
+	color: #316698;
+	font-family: 'Roboto-Bold', Arial;
+}
+
+/*BANNER*/
+.banner-info-header{
+	background-image: url(http://localhost/paraisotour/wp-content/uploads/2018/09/rawpixel-676878-unsplash.jpg);
+	background-size: cover;
+	padding: 20% 0 25% 5%;
+}
+
+.banner-info-header h2{
+	color: white;
+	font-size: 25px;
+}
+
+.banner-info-header p{
+	color: white;
+	margin-top: 3%;
+	font-size: 15px;
+}
+
+.banner-info-body{
+	background-color: #316698;
+	color: white;
+	padding: 10% 0%;
+}
+
+.banner-info-body p{
+	margin-top: 6px;
+	margin-bottom: 6px;
+	font-size: 10px;
+}
+
+.banner-info-body .fa-phone {
+	transform: rotate(90deg);
+}
+
+.banner-info-body b{
+	font-family: 'Roboto-Bold', Arial;
+}
+
+.info-addres{
+	text-align: center;
+}
+/*END BANNER*/
+/*END INFO*/
+
+@media screen and (max-width: 1250px) {
+	
+	#content{
+		width: 80%;
+	}
+
+	.destiny{
+		text-align: center;
+	}
+
+	.destiny h3{
+		font-size: 15px;
+	}
+
+	.header-total{
+		font-size: 10px;
+	}
+
+	.fare{
+		width: 100%;
+		text-align: center;
+	}
+
+	.title-fare{
+		font-size: 15px;
+	}
+
+	.fare .price1{
+		font-size: 15px;
+		margin: 15% 0 4% 0;
+		display: block;
+	}
+
+	.fare .price2{
+		margin-top: 0;
+		font-size: 18px;
+	}
+
+	.fare p{
+		text-align: center;
+		font-size: 12px;
+	}
+
+	.info1 p, .info2 p, .info3 p{
+		float: none;
+		display: block;
+		text-align: center;
+	}
+
+	.info1 h3, .info2 h3, .info3 h3{
+		float: none;
+		display: block;
+		text-align: center;
+	}
+
+	.info1, .info2, .info3 {
+		margin-top: 15px;
+	}
+
+	.info-total h3{
+		float: none;
+		display: block;
+		text-align: center;
+	}
+
+	.info-total h2{
+		float: none;
+		display: block;
+		text-align: center;
+	}
+
+	.banner-info-body{
+		padding: 10% 2%;
+		text-align: center;
+	}
+
+	.banner-info-body b{
+		display: block;
+	}
+	
+}
+
+@media screen and (max-width: 1120px){
+
+	#content{
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 1020px){
+
+	#content{
+		width: 100%;
+	}
+
+	.caja1{
+		width: 100%;
+	}
+
+	.caja2{
+		width: 100%;
+	}
+}
+
+/*BUS*/
+.select-chair{
+	float: left;
+	display: inline-block;
+	margin-right: 15%;
+    margin-left: 2%;
+}
+
+.chair{
+	width: 100%;
+	/*width: 3%;*/
+}
+
+.graychair img{
+    /*width: 3%;*/
+    width: 15%;
+    display: inline-block;
+    /*float: right;*/
+    justify-content: space-around;
+}
+
+.graychair span{
+	float: right;
+}
+
+.bluechair img{
+    /*width: 3%;*/
+    width: 15%;
+    display: inline-block;
+    /*float: right;*/
+    justify-content: space-around;
+}
+
+.bluechair span{
+	float: right;
+}
+
+.stock{
+	display: block;
+}
+
+
+/* tamaño del padre */
+.big-bus{
+    width: 100%;
+    height: 282px;
+
+    /* -webkit-transform: rotate(-90deg); */
+}
+
+/*scroll para pantallas pequeñas*/
+.scroll{
+    overflow-x: auto;
+    overflow-y: hidden
+}
+
+
+
+.bus-container{
+    width: 100%;
+    height: 100%;
+}
+
+.bus-enabled{
+    
+    background-image: url("http://localhost/paraisotour/wp-content/uploads/2018/09/bus-enabled-hor.png");
+    background-repeat: no-repeat;
+    background-size: 100% 96%;
+    height: 100%;
+    width: 100%;
+}
+
+.bus-disabled{
+    background-image: url("http://localhost/paraisotour/wp-content/uploads/2018/09/bus-disabled-hor.png");
+    background-repeat: no-repeat;
+    background-size: 100% ;
+    height: 100%;
+    width: 100%;
+}
+
+
+.bus-back{
+    display: inline-block;
+    height: 59%;
+    width: 9%;
+    /* background-color: rgba(0, 0, 0, 0.63); */
+}
+
+.bus-content{
+    display: inline-block;
+    position: relative;
+    height: 59%;
+    width: 53%;
+    /* background-color: rgba(0, 0, 0, 0.418); */
+}
+
+.bus-front{
+    display: inline-block;
+    height: 59%;
+    width: 37%;
+    /* background-color: rgba(0, 0, 0, 0.192); */
+}
+
+.bus-lat{
+    display: inline-block;
+    height: 18.5%;
+    width: 100%;
+    /* background-color: rgba(0, 0, 0, 0.808); */
+}
+
+.bus-content-child{
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* background-color: #ffffff00; */
+
+}
+
+.bus-chair-container{
+  
+    display: inline-block;
+    position: relative;
+    width: 9%;
+    height: 18%;
+    /* background-color: rgba(0, 0, 0, 0.452); */
+    background-repeat: no-repeat;
+    background-size: 80% 100% ;
+
+
+    opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 1s;
+}
+
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.chair-label{
+    position: absolute;
+    color: white;
+    -webkit-transform: rotate(-90deg);
+    text-align: center;
+    top: 6px;
+    left: 8px;
+    font-family: 'Quicksand';
+    font-weight: 700;
+}
+
+.blue-chair{
+background-image: url("http://localhost/paraisotour/wp-content/uploads/2018/09/blue-chair.png");
+}
+
+.gray-chair{
+    background-image: url("http://localhost/paraisotour/wp-content/uploads/2018/09/gray-chair.png");
+}
+
+
+
+.click-chair {
+    position: relative;
+    display: inline-block;
+}
+
+
+.click-chair .tooltiptext {
+   
+    visibility: hidden;
+    width: 80px;
+    height: 20px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(31, 31, 31);
+    text-align: center;
+    padding: 5px 0;
+    top: -35px;
+    left: -20px;
+    border-radius: 15px;
+    font-family: 'Quicksand';
+    font-weight: 700;
+
+    position: absolute;
+    z-index: 1;
+    -webkit-box-shadow: 0px 4px 27px -2px rgba(0,0,0,0.66);
+-moz-box-shadow: 0px 4px 27px -2px rgba(0,0,0,0.66);
+box-shadow: 0px 4px 27px -2px rgba(0,0,0,0.66);
+
+}
+
+.click-chair:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+    animation-duration: 0.3s;
+}
+
+.flecha-down {
+    width:0px;
+    height:0px;
+    border-left:25px solid transparent; 
+    border-right:25px solid transparent;
+    border-top:25px solid rgb(255, 255, 255);
+    font-size:0px;
+    line-height:0px;
+    position: absolute;
+    bottom: -5px;
+    z-index: -2;
+    left: 15px;
+}
+
+
+/* vietnamese */
+@font-face {
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Quicksand Medium'), local('Quicksand-Medium'), url(https://fonts.gstatic.com/s/quicksand/v7/6xKodSZaM9iE8KbpRA_p2HcYQML_B48.woff2) format('woff2');
+    unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+  }
+  /* latin-ext */
+  @font-face {
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Quicksand Medium'), local('Quicksand-Medium'), url(https://fonts.gstatic.com/s/quicksand/v7/6xKodSZaM9iE8KbpRA_p2HcYQcL_B48.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Quicksand Medium'), local('Quicksand-Medium'), url(https://fonts.gstatic.com/s/quicksand/v7/6xKodSZaM9iE8KbpRA_p2HcYT8L_.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+
+
+
+
+/*END BUS

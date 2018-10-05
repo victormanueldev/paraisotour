@@ -1,0 +1,302 @@
+[
+    {
+        "id": "0",
+        "label": "23",
+        "cssClass": "gray-chair",
+        "state": "available"
+    },
+    {
+        "id": "1",
+        "label": "25",
+        "cssClass": "gray-chair",
+        "state": "available"
+    },
+    {
+        "id": "2",
+        "label": "27",
+        "cssClass": "gray-chair",
+        "state": "available"
+    },
+    {
+        "id": "3",
+        "label": "29",
+        "cssClass": "gray-chair",
+        "state": "available"
+    },
+    {
+        "id": "4",
+        "label": "31",
+        "cssClass": "gray-chair",
+        "state": "available"
+    },
+    {
+        "id": "5",
+        "label": "33",
+        "cssClass": "gray-chair",
+        "state": "available"
+    },
+    {
+        "id": "6",
+        "label": "35",
+        "cssClass": "gray-chair",
+        "state": "available"
+    },
+    {
+        "id": "7",
+        "label": "37",
+        "cssClass": "gray-chair",
+        "state": "available"
+    },
+    {
+        "id": "8",
+        "label": "39",
+        "cssClass": "gray-chair",
+        "state": "available"
+    },
+    {
+        "id": "9",
+        "label": "41",
+        "cssClass": "gray-chair",
+        "state": "available"
+    },
+    {
+        "id": "10",
+        "label": "22",
+        "cssClass": "gray-chair",
+        "state": "available"
+    },
+    {
+        "id": "11",
+        "label": "24",
+        "cssClass": "gray-chair",
+        "state": "available"
+    },
+    {
+        "id": "12",
+        "label": "26",
+        "cssClass": "gray-chair",
+        "state": "available"
+    },
+    {
+        "id": "13",
+        "label": "28",
+        "cssClass": "gray-chair",
+        "state": "available"
+    },
+    {
+        "id": "14",
+        "label": "30",
+        "cssClass": "gray-chair",
+        "state": "available"
+    },
+    {
+        "id": "15",
+        "label": "32",
+        "cssClass": "gray-chair",
+        "state": "available"
+    },
+    {
+        "id": "16",
+        "label": "34",
+        "cssClass": "gray-chair",
+        "state": "available"
+    },
+    {
+        "id": "17",
+        "label": "36",
+        "cssClass": "gray-chair",
+        "state": "available"
+    },
+    {
+        "id": "18",
+        "label": "38",
+        "cssClass": "gray-chair",
+        "state": "available"
+    },
+    {
+        "id": "19",
+        "label": "40",
+        "cssClass": "gray-chair",
+        "state": "available"
+    },
+    {
+        "id": "20",
+        "label": "21",
+        "cssClass": "gray-chair",
+        "state": "available"
+    },
+    {
+        "id": "21",
+        "label": "",
+        "cssClass": "",
+        "state": ""
+    },
+    {
+        "id": "22",
+        "label": "",
+        "cssClass": "",
+        "state": ""
+    },
+    {
+        "id": "23",
+        "label": "",
+        "cssClass": "",
+        "state": ""
+    },
+    {
+        "id": "24",
+        "label": "",
+        "cssClass": "",
+        "state": ""
+    },
+    {
+        "id": "25",
+        "label": "",
+        "cssClass": "",
+        "state": ""
+    },
+    {
+        "id": "26",
+        "label": "",
+        "cssClass": "",
+        "state": ""
+    },
+    {
+        "id": "27",
+        "label": "",
+        "cssClass": "",
+        "state": ""
+    },
+    {
+        "id": "28",
+        "label": "",
+        "cssClass": "",
+        "state": ""
+    },
+    {
+        "id": "29",
+        "label": "",
+        "cssClass": "",
+        "state": ""
+    },
+    {
+        "id": "30",
+        "label": "20",
+        "cssClass": "gray-chair",
+        "state": "available"
+    },
+    {
+        "id": "31",
+        "label": "18",
+        "cssClass": "gray-chair",
+        "state": "available"
+    },
+    {
+        "id": "32",
+        "label": "16",
+        "cssClass": "gray-chair",
+        "state": "available"
+    },
+    {
+        "id": "33",
+        "label": "14",
+        "cssClass": "gray-chair",
+        "state": "available"
+    },
+    {
+        "id": "34",
+        "label": "12",
+        "cssClass": "gray-chair",
+        "state": "available"
+    },
+    {
+        "id": "35",
+        "label": "10",
+        "cssClass": "gray-chair",
+        "state": "available"
+    },
+    {
+        "id": "36",
+        "label": "8",
+        "cssClass": "gray-chair",
+        "state": "available"
+    },
+    {
+        "id": "37",
+        "label": "6",
+        "cssClass": "gray-chair",
+        "state": "available"
+    },
+    {
+        "id": "38",
+        "label": "4",
+        "cssClass": "gray-chair",
+        "state": "available"
+    },
+    {
+        "id": "40",
+        "label": "2",
+        "cssClass": "gray-chair",
+        "state": "available"
+    },
+    {
+        "id": "41",
+        "label": "19",
+        "cssClass": "gray-chair",
+        "state": "available"
+    },
+    {
+        "id": "42",
+        "label": "17",
+        "cssClass": "gray-chair",
+        "state": "available"
+    },
+    {
+        "id": "43",
+        "label": "15",
+        "cssClass": "gray-chair",
+        "state": "available"
+    },
+    {
+        "id": "44",
+        "label": "13",
+        "cssClass": "gray-chair",
+        "state": "available"
+    },
+    {
+        "id": "45",
+        "label": "11",
+        "cssClass": "gray-chair",
+        "state": "available"
+    },
+    {
+        "id": "46",
+        "label": "9",
+        "cssClass": "gray-chair",
+        "state": "available"
+    },
+    {
+        "id": "47",
+        "label": "7",
+        "cssClass": "gray-chair",
+        "state": "available"
+    },
+    {
+        "id": "48",
+        "label": "5",
+        "cssClass": "gray-chair",
+        "state": "available"
+    },
+    {
+        "id": "49",
+        "label": "3",
+        "cssClass": "gray-chair",
+        "state": "available"
+    },
+    {
+        "id": "50",
+        "label": "1",
+        "cssClass": "gray-chair",
+        "state": "available"
+    }
+]
