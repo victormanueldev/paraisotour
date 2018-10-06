@@ -5,6 +5,25 @@
 ?>
 <?php get_header(); ?>
 
+<?php 
+	//Obtiene el valor del Parametro del URL (id)
+	$idPost = $_GET['id'];
+
+	//Parametros de Consulta por ID
+	$args = array( 'p' => $idPost );
+	//Consulta de  POSTS
+	$query = new WP_Query( $args );
+	//Muestra los POST de la BD
+	$query->the_post();
+	//Obtiene el campo personalizado 
+	$normalPrice = get_post_meta(get_the_ID(), 'precio-normal', true);
+	//Obtiene el campo personalizado 
+	$descMayor = get_post_meta(get_the_ID(), 'descuento-adultos', true);
+	//Nombre del POST
+	$name = get_the_title();
+
+?>
+
 <!-- CONTENT -->
 <section id="content" class="container" id="app">
 	<div class="row justify-content-md-center" id="app">
@@ -267,273 +286,6 @@
 						</label>
 					</div>
 				</div>
-
-				<!--Start Bus-->
-
-				<!-- <div class="scroll">
-			        	<div class="big-bus"> 
-			            <div class="bus-container">
-			                <div class="bus-enabled">
-			                    <div class="bus-lat"></div>
-			                    <div class="bus-back"></div>
-			                    <div class="bus-content">
-			                        <div class="bus-content-child"> 
-
-			                            <div id="23" class="click-chair bus-chair-container  gray-chair">
-			                                <div class="flecha-down"></div>
-			                                <label for="bus-chair-container" class="chair-label">23</label>
-			                            </div>
-			    
-			                            <div id="25" class="click-chair bus-chair-container  gray-chair">
-			                                <div class="flecha-down"></div>
-			                                <label for="bus-chair-container" class="chair-label">25</label>
-			                            </div>
-			    
-			                            <div id="27" class="click-chair bus-chair-container  gray-chair">
-			                                <div class="flecha-down"></div>
-			                                <label for="bus-chair-container" class="chair-label">27</label>
-			                            </div>
-			    
-			                            <div id="29" class="click-chair bus-chair-container  gray-chair">
-			                                <div class="flecha-down"></div>
-			                                <label for="bus-chair-container" class="chair-label">29</label>
-			                            </div>
-			    
-			                            <div id="31" class="click-chair bus-chair-container  gray-chair">
-			                                <div class="flecha-down"></div>
-			                                <label for="bus-chair-container" class="chair-label">31</label>
-			                            </div>
-			    
-			                            <div id="33" class="click-chair bus-chair-container  gray-chair">
-			                                <div class="flecha-down"></div>
-			                                <label for="bus-chair-container" class="chair-label">33</label>
-			                            </div>
-			    
-			                            <div id="35" class="click-chair bus-chair-container  gray-chair">
-			                                <div class="flecha-down"></div>
-			                                <label for="bus-chair-container" class="chair-label">35</label>
-			                            </div>
-			    
-			                            <div id="37" class="click-chair bus-chair-container  gray-chair">
-			                                <div class="flecha-down"></div>
-			                                <label for="bus-chair-container" class="chair-label">37</label>
-			                            </div>
-			    
-			                            <div id="39" class="click-chair bus-chair-container  gray-chair">
-			                                <div class="flecha-down"></div>
-			                                <label for="bus-chair-container" class="chair-label">39</label>
-			                            </div>
-			    
-			                            <div id="41" class="click-chair bus-chair-container  gray-chair">
-			                                <div class="flecha-down"></div>
-			                                <label for="bus-chair-container" class="chair-label">41</label>
-			                            </div>
-			    
-			                            <div id="22" class="click-chair bus-chair-container  gray-chair">
-			                                <div class="flecha-down"></div>
-			                                <label for="bus-chair-container" class="chair-label">22</label>
-			                            </div>
-			    
-			                            <div id="24" class="click-chair bus-chair-container  gray-chair">
-			                                <div class="flecha-down"></div>
-			                                <label for="bus-chair-container" class="chair-label">24</label>
-			                            </div>
-			    
-			                            <div id="26" class="click-chair bus-chair-container  gray-chair">
-			                                <div class="flecha-down"></div>
-			                                <label for="bus-chair-container" class="chair-label">26</label>
-			                            </div>
-			    
-			                            <div id="28" class="click-chair bus-chair-container  gray-chair">
-			                                <div class="flecha-down"></div>
-			                                <label for="bus-chair-container" class="chair-label">28</label>
-			                            </div>
-			    
-			                            <div id="30" class="click-chair bus-chair-container  gray-chair">
-			                                <div class="flecha-down"></div>
-			                                <label for="bus-chair-container" class="chair-label">30</label>
-			                            </div>
-			    
-			                            <div id="32" class="click-chair bus-chair-container  gray-chair">
-			                                <div class="flecha-down"></div>
-			                                <label for="bus-chair-container" class="chair-label">32</label>
-			                            </div>
-			    
-			                            <div id="34" class="click-chair bus-chair-container  gray-chair">
-			                                <div class="flecha-down"></div>
-			                                <label for="bus-chair-container" class="chair-label">34</label>
-			                            </div>
-			    
-			                            <div id="36" class="click-chair bus-chair-container  gray-chair">
-			                                <div class="flecha-down"></div>
-			                                <label for="bus-chair-container" class="chair-label">36</label>
-			                            </div>
-			    
-			                            <div id="38" class="click-chair bus-chair-container  gray-chair">
-			                                <div class="flecha-down"></div>
-			                                <label for="bus-chair-container" class="chair-label">38</label>
-			                            </div>
-			    
-			                            <div id="40" class="click-chair bus-chair-container  gray-chair">
-			                                <div class="flecha-down"></div>
-			                                <label for="bus-chair-container" class="chair-label">40</label>
-			                            </div>
-			    
-			    
-			    
-			                            <div id="21" class="click-chair bus-chair-container  gray-chair">
-			                                <div class="flecha-down"></div>
-			                                <label for="bus-chair-container" class="chair-label">21</label>
-			                            </div>
-			    
-			                            <div class="bus-chair-container">
-			    
-			                            </div>
-			    
-			                            <div class="bus-chair-container">
-			    
-			                            </div>
-			    
-			                            <div class="bus-chair-container">
-			    
-			                            </div>
-			    
-			                            <div class="bus-chair-container">
-			    
-			                            </div>
-			    
-			                            <div class="bus-chair-container">
-			    
-			                            </div>
-			    
-			                            <div class="bus-chair-container">
-			    
-			                            </div>
-			    
-			                            <div class="bus-chair-container">
-			    
-			                            </div>
-			    
-			                            <div class="bus-chair-container">
-			    
-			                            </div>
-			    
-			                            <div class="bus-chair-container">
-			    
-			                            </div>
-			    
-			    
-			                            <div id="20" class="click-chair bus-chair-container  gray-chair">
-			                                <div class="flecha-down"></div>
-			                                <label for="bus-chair-container" class="chair-label">20</label>
-			                            </div>
-			    
-			                            <div id="18" class="click-chair bus-chair-container  gray-chair">
-			                                <div class="flecha-down"></div>
-			                                <label for="bus-chair-container" class="chair-label">18</label>
-			                            </div>
-			    
-			                            <div id="16" class="click-chair bus-chair-container  gray-chair">
-			                                <div class="flecha-down"></div>
-			                                <label for="bus-chair-container" class="chair-label">16</label>
-			                            </div>
-			    
-			                            <div id="14" class="click-chair bus-chair-container  gray-chair">
-			                                <div class="flecha-down"></div>
-			                                <label for="bus-chair-container" class="chair-label">14</label>
-			                            </div>
-			    
-			                            <div id="12" class="click-chair bus-chair-container  gray-chair">
-			                                <div class="flecha-down"></div>
-			                                <label for="bus-chair-container" class="chair-label">12</label>
-			                            </div>
-			    
-			                            <div id="10" class="click-chair bus-chair-container  gray-chair">
-			                                <div class="flecha-down"></div>
-			                                <label for="bus-chair-container" class="chair-label">10</label>
-			                            </div>
-			    
-			                            <div id="8" class="click-chair bus-chair-container  gray-chair">
-			                                <div class="flecha-down"></div>
-			                                <label for="bus-chair-container" class="chair-label">&nbsp8</label>
-			                            </div>
-			    
-			                            <div id="6" class="click-chair bus-chair-container  gray-chair">
-			                                <div class="flecha-down"></div>
-			                                <label for="bus-chair-container" class="chair-label">&nbsp6</label>
-			                            </div>
-			    
-			                            <div id="4" class="click-chair bus-chair-container  gray-chair">
-			                                <div class="flecha-down"></div>
-			                                <label for="bus-chair-container" class="chair-label">&nbsp4</label>
-			                            </div>
-			    
-			                            <div id="2" class="click-chair bus-chair-container  gray-chair">
-			                                <div class="flecha-down"></div>
-			                                <label for="bus-chair-container" class="chair-label">&nbsp2</label>
-			                            </div>
-			    
-			
-			    
-			                            <div id="19" class="click-chair bus-chair-container  gray-chair">
-			                                <div class="flecha-down"></div>
-			                                <label for="bus-chair-container" class="chair-label">19</label>
-			                            </div>
-			    
-			                            <div id="17" class="click-chair bus-chair-container  gray-chair">
-			                                <div class="flecha-down"></div>
-			                                <label for="bus-chair-container" class="chair-label">17</label>
-			                            </div>
-			    
-			                            <div id="15" class="click-chair bus-chair-container  gray-chair">
-			                                <div class="flecha-down"></div>
-			                                <label for="bus-chair-container" class="chair-label">15</label>
-			                            </div>
-			    
-			                            <div id="13" class="click-chair bus-chair-container  gray-chair">
-			                                <div class="flecha-down"></div>
-			                                <label for="bus-chair-container" class="chair-label">13</label>
-			                            </div>
-			    
-			                            <div id="11" class="click-chair bus-chair-container  gray-chair">
-			                                <div class="flecha-down"></div>
-			                                <label for="bus-chair-container" class="chair-label">11</label>
-			                            </div>
-			    
-			                            <div id="9" class="click-chair bus-chair-container  gray-chair">
-			                                <div class="flecha-down"></div>
-			                                <label for="bus-chair-container" class="chair-label">&nbsp9</label>
-			                            </div>
-			    
-			                            <div id="7" class="click-chair bus-chair-container  gray-chair">
-			                                <div class="flecha-down"></div>
-			                                <label for="bus-chair-container" class="chair-label">&nbsp7</label>
-			                            </div>
-			    
-			                            <div id="5" class="click-chair bus-chair-container  gray-chair">
-			                                <div class="flecha-down"></div>
-			                                <label for="bus-chair-container" class="chair-label">&nbsp5</label>
-			                            </div>
-			    
-			                            <div id="3" class="click-chair bus-chair-container  gray-chair">
-			                                <div class="flecha-down"></div>
-			                                <label for="bus-chair-container" class="chair-label">&nbsp3</label>
-			                            </div>
-			    
-			                            <div id="1" class="click-chair bus-chair-container  gray-chair">
-			                                <div class="flecha-down"></div>
-			                                <label for="bus-chair-container" class="chair-label">&nbsp1</label>
-			                            </div>
-
-			                        </div>
-			                    </div>
-			                    <div class="bus-front"></div>
-			                    <div class="bus-lat"></div>
-			                </div>
-			            </div>
-		        	</div>
-		    	</div> -->
-				<!-- END BUS -->
 				<div  class="scroll">
 					<div class="big-bus">
 						<div class="bus-container">
@@ -603,7 +355,7 @@
 						<div class="col-md-12 destiny">
 							<h3>DESTINO</h3>
 							<br>
-							<p>Quindío a paso fino y chapuzón</p>
+							<p><?php echo $name; ?></p>
 						</div>
 						<br>
 						<br>
@@ -612,37 +364,37 @@
 							<h3 class="title-fare">TARIFA</h3>
 							<!-- <br> -->
 							<h3 class="price1">COP</h3>&nbsp;&nbsp;
-							<h1 class="price2">$<?php $total = 145000; echo "{{tarifa =".$total."}}"?></h1>
+							<h1 class="price2">$<?php echo "{{rate =".$normalPrice."}}"?></h1>
 							<p>POR PERSONA</p>
 						</div>
 
 						<div class="col-md-12 info1">
 							<p>Cant. Pasajeros</p>
-							<h3>COP $300.000</h3>
+							<h3>3	</h3>
 						</div>
 
 						<div class="col-md-12 info2">
 							<p>Sillas reservadas</p>
-							<h3>COP ${{total}}</h3>
+							<h3>{{reservedChairs}}</h3>
 						</div>
 
 						<div class="col-md-12 info3">
 							<p>Descuento (Grupo Adultos)</p>
-							<h3>20%</h3>
+							<h3><?php echo $descMayor != '' ? $descMayor: 0; ?>%</h3>
 						</div>
 						<br>
 
 						<div class="col-md-12 info-total">
-							<h3>TOTAL</h3>
+							<h3>TOTAL A PAGAR</h3>
 							<br>
 							<br>
-							<h2>COP ${{total}}</h2>
+							<h2>COP ${{totalPayment}}</h2>
 							<br>
 						</div>
 						<br>
 
 						<div class="col-md-12">
-							<button @click="viewTotal()"id="button" class="button">
+							<button id="button" class="button">
 								<span>COMPRAR</span>
 							</button>
 						</div>

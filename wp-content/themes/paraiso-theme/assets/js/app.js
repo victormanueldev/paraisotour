@@ -1,12 +1,13 @@
 var app = new Vue({
     el: "#app",
     data: {
-        message: 'Hola VueJS',
-        busChairs: [],
-        bus2Chairs: [],
-        cont: 0,
-        total: 0,
-        tarifa: 0
+        busChairs: [],      //Bus #1
+        bus2Chairs: [],     //BUS #2
+        cont: 0,            //Contador de sillas ocupadas
+        totalPayment: 0,    //Total a pagar
+        rate: 0,            //Tarifa
+        cantPassengers: 0,  //Cantidad de pasajeros
+        reservedChairs: 0   //Cantidad de sillas reservadass
     },
     mounted(){
         this.getChairs();
@@ -25,10 +26,17 @@ var app = new Vue({
         clickChair(idChair, labelChair){
             this.busChairs.forEach((value, index) => {                
                 if(idChair === value.id && value.cssClass === 'gray-chair'){
+                    //Multiplica el precio por la cantidad de sillas
+                    this.totalPayment += this.rate;
+                    //Suma las sillas reservadas
+                    this.reservedChairs++; 
                     value.cssClass = 'blue-chair';
                     value.state = 'purchased';
                     this.cont++;
                 }else if(idChair === value.id && value.cssClass === 'blue-chair'){
+                    //Resta el precio por la cantidad de sillas
+                    this.totalPayment -= this.rate; 
+                    this.reservedChairs--; 
                     value.cssClass = 'gray-chair';
                     value.state = 'available';
                     this.cont--;
@@ -75,10 +83,6 @@ var app = new Vue({
                     console.log(value)
                 }
             });
-        },
-        viewTotal(){
-            this.total = this.tarifa * 2;
-            // console.log(this.total * 3);
         }
     }
 })
