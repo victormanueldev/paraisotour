@@ -3,9 +3,9 @@
     <?php get_header("home")?>
 
         <!-- RECOMMENDED -->
-        <div class="row">
+        <div class="row recomended">
             <div class="col-md-12">
-                <section id="recomended">
+                <!-- <section id="recomended"> -->
                 <div class="destiny">
                     <img src="http://localhost/paraisotour/wp-content/uploads/2018/09/Mejores-destinos.png" alt="">
                     <br><br>
@@ -26,10 +26,11 @@
                     <br><br>
                     <p>La mejor ateción<br> personalizada</p>
                 </div>
-                </section>  
+                <!-- </section>   -->
             </div>
         </div>
         <!-- END RECOMMENDED -->
+
         <!-- ABOUT US -->
         <div class="row" id="about-us">
             <div class="col-md-6 info">
