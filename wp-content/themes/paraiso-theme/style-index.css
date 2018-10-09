@@ -1,0 +1,397 @@
+/*GENERAL*/
+div.row{
+   margin-right: 0px;
+}
+
+div.container-fluid{
+   padding-right: 0px;
+   padding-left: 0px;
+}
+
+div .col-md-12{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+/*HEADER*/
+#header{
+    position: relative;
+    background: url("../Img/san-andres-colombia-min.jpg");
+    background-size: cover;
+    background-position-y: 30%;
+    /*background-attachment: fixed;*/
+    height: 45em;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.sign {
+    width: 10%;
+    text-align: center;
+    padding: 10px 0;
+    float: right;
+    background-color: orange;
+}
+
+.sign .fa-user{
+    color: white;
+}
+
+.sign span {
+    margin-left: 10px;
+    font-size: 15px;
+    line-height: normal;
+}
+
+/*RECOMENDED*/
+#recomended{
+    width: 100%;
+    padding: 2.5em 25%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.destiny, .price, 
+.quality, .attetion{
+    text-align: center;
+}
+
+.destiny img{
+    text-align: center;
+    width: 30px;
+    height: 30px;
+}
+
+.destiny p{
+    text-align: center;
+    font-size: 11px;
+}
+
+.price img{
+    text-align: center;
+    width: 30px;
+    height: 30px;
+}
+
+.price p{
+    text-align: center;
+    font-size: 11px;
+}
+
+.quality img{
+    text-align: center;
+    width: 30px;
+    height: 30px;
+}
+
+.quality p{
+    text-align: center;
+    font-size: 11px;
+}
+
+.attetion img{
+    text-align: center;
+    width: 40px;
+    height: 40px;
+}
+
+.attetion p{
+    text-align: center;
+    font-size: 11px;
+}
+
+/*ABOUT US*/
+#about-us{
+    width: 100%;
+    height: 30em;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.info{
+    background-color: #316698;
+    color: white;
+    padding: 2% 4% 0% 23%;
+    text-align: justify;
+}
+
+.info .title{
+    font-size: 15px;
+}
+
+.info p{
+    font-size: 12px;
+    line-height: 2.1em;
+}
+
+.picture{
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/jonalyn-san-diego-717136-unsplash-min.jpg");
+    background-attachment: fixed;
+    /*background-size: cover;*/
+    background-size: 50% 80%;
+    /*background-position-y: 30%;*/
+}
+
+/*PROMOTIONS*/
+#promotions{
+    width: 100%;
+    height: 55em;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.promotions-title h3{
+    text-align: center;
+    font-size: 23px;
+    margin: 3% 0;
+}
+
+.specials{
+    height: 35em;
+    display: flex;
+    justify-content: center;
+}
+
+.specials .box1, .specials .box2, .specials .box3,
+.specials .box4, .specials .box5{
+    width: 23em;
+    display: inline-block;
+    margin: 0 1%;
+}
+
+.box1 h4, .box2 h4, .box3 h4, 
+.box4 h4, .box5 h4{
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 3%;
+}
+
+.header-box {
+    width: 100%;
+    height: 23em;
+    overflow: hidden;
+}
+
+.header-box .img-box{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/rawpixel-676878-unsplash-min.jpg");
+    background-size: 100% 100%;
+}
+
+.header-box .img-box:hover{
+    opacity: 0.5 black;
+    -webkit-transform:scale(1.3);
+    -moz-transform:scale(1.3);
+    -ms-transform:scale(1.3);
+    -o-transform:scale(1.3);
+    transform: scale(1.3);
+    cursor: pointer;
+}
+
+.body-box{
+    width: 100%;
+    height: 9em;
+    background-color: #EDEEF0;
+    padding: 5% 1%;
+    text-align: center;
+}
+
+.body-box h1{
+    margin: 0;
+    color: #316698;
+    font-size:  25px;
+}
+
+.box-desc{
+    width: 60px;
+    height: 60px;
+    background-color: #316698;
+    color: white;
+    float: right;
+    font-size:  21px;
+    padding-top: 6%;
+    text-align: center;
+    position: relative;
+    z-index: 999;
+}
+
+.through{
+    position: relative;
+}
+
+.through:before{
+    position: absolute;
+    content: "";
+    width: 20%;
+    top: 33%;
+    border-top: 1px solid;
+
+    -webkit-transform:rotate(-7deg);
+    -moz-transform:rotate(-7deg);
+    -ms-transform:rotate(-7deg);
+    -o-transform:rotate(-7deg);
+    transform:rotate(-7deg);
+}
+
+.details{
+    /*color: #316698;*/
+}
+
+.view-more{
+    text-align: center;
+    margin: 1% 0 2.5% 0;
+}
+
+.view-more a{
+    text-decoration: none;
+    font-size: 15px;
+    color: black;
+    /*text-decoration-line: none;*/
+}
+
+/*NEWSLETTER*/
+#newsletter{
+    width: 100%;
+    height: 30em;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.magazine-sign-up{
+    width: 100%;
+    height: 100%;
+    background-color: #316698;
+    padding: 2.3% 5% 0% 23%;
+    text-align: center;
+}
+
+.magazine-sign-up p{
+    font-size: 18px;
+    text-align: right;
+    color: white;
+}
+
+.magazine-sign-up .input-customer{
+    font-size: 12px;
+    width: 80%;
+    height: 10%;
+    float: right;
+    border: 1px solid white;
+    border-radius: 7px;
+    margin: 3% 0;
+    padding: 0 2%;
+}
+
+.magazine-sign-up button{
+    background-color: #FF7583;
+    color: white;
+    padding: 2.5%;
+    margin: 5% 0;
+    display: inline-block;
+}
+
+.magazine-sign-up .terms-condition{
+    font-size: 11px;
+    color: white;
+}
+
+.magazine-info{
+    padding: 0;    
+}
+
+.img-magazine{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/annie-spratt-256172-unsplash-min.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    /*background-attachment: fixed;*/
+    background-position-y: 30%;
+    filter:brightness(0.5);
+
+}
+
+.text-top{
+    position: absolute;
+    font-size: 35px;
+    color: white;
+    top: 0;
+    margin: 7% 5%;
+}
+
+.text-bottom{
+    position: absolute;
+    color: white;
+    bottom: 0px;
+    margin: 7% 5%;
+    font-size: 20px;
+}
+
+/*FORM*/
+#form-customer{
+    width: 100%;
+    font-size: 14px;
+    text-align: center;
+    margin: 0 0;
+    padding: 0 10%;
+}
+
+.title-form{
+    text-align: center;
+    font-size: 23px;
+    margin: 3% 0;
+}
+
+.form-info .title{
+    font-size: 25px;
+}
+
+.form-info .title-body{
+    font-size: 18px;
+    line-height: 2em;
+}
+
+.form-info{
+    line-height: 2em;
+    margin-bottom: 2.5%;
+}
+
+.form-info > i{
+    font-size:  25px;
+}
+
+.form-info h3{
+    font-size: 25px;
+}
+
+.form-info button{
+    background-color: #EDEEF0;
+    padding: 2%;
+    font-size: 18px;
+    border: 1px;
+    border-radius: 5px;
+}
+
+.form-info input{
+    width: 80%;
+    height: 10%;
+    background-color: #EDEEF0;
+    border: 1px solid #EDEEF0;
+    border-radius: 7px;
+    margin: 3% 0;
+    padding: 0 2%;
+}
+
+.form-info textarea{
+    width: 80%;
+    background-color: #EDEEF0;
+    border: 1px solid #EDEEF0;
+    border-radius: 7px;
+    margin: 3% 0;
+    padding: 2% 2%;
+}
