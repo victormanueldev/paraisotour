@@ -3,9 +3,9 @@
     <?php get_header("home")?>
 
         <!-- RECOMMENDED -->
-        <div class="row recomended">
+        <div class="row">
             <div class="col-md-12">
-                <!-- <section id="recomended"> -->
+                <section id="recomended">
                 <div class="destiny">
                     <img src="http://localhost/paraisotour/wp-content/uploads/2018/09/Mejores-destinos.png" alt="">
                     <br><br>
@@ -26,7 +26,7 @@
                     <br><br>
                     <p>La mejor ateción<br> personalizada</p>
                 </div>
-                <!-- </section>   -->
+                </section>  
             </div>
         </div>
         <!-- END RECOMMENDED -->
@@ -47,6 +47,7 @@
             </div>
         </div>
         <!-- END ABOUT US -->
+
         <!-- PROMOTIONS -->
         <div class="row" id="promotions">
             <div class="col-md-12 promotions-title">
@@ -82,9 +83,10 @@
                                     ?>
                                 </b>
                             </div>
+                            <div class="img-box"></div> 
                         </div>
                         <div class="body-box">
-                            <p> 
+                            <p class="through"> 
                                 $<?php 
                                             //Campo personalizado
                                             echo $price 
@@ -116,8 +118,9 @@
             </div>
         </div>
         <!-- END PROMOTIONS -->
-                <!-- NEWSLETTER -->
-                <div class="row" id="newsletter">
+
+        <!-- NEWSLETTER -->
+        <div class="row" id="newsletter">
             <div class="col-md-6 magazine-sign-up">
                 <p> DESCARGA NUESTRO CATÁLOGO Y 
                     <br>
@@ -137,13 +140,15 @@
                 </div>
             </div>
             <div class="col-md-6 magazine-info">
-                <p class="text-top"><b>TÚ DECIDES <br> donde te sientas.</b></p>
+                <div class="img-magazine"></div>
+                <p class="text-top">TÚ DECIDES <br> donde te sientas.</p>
                 <p class="text-bottom">Reserva tus asientos al momento <br> de comprar tu viaje.</p>
             </div>
         </div>
         <!-- END NEWSLETTER -->
-                <!-- FORM -->
-                <div class="row" id="form-customer">
+
+       <!-- FORM -->
+       <div class="row" id="form-customer">
             <div class="col-md-12">
                 <h3 class="title-form">CONTÁCTENOS</h3>
             </div>
@@ -211,6 +216,7 @@
             </div>
         </div>
         <!-- END FORM -->
+    </div>
 
 <!--FOOTER-->
 <?php get_footer();?>

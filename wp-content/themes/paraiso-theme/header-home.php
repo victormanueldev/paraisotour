@@ -6,23 +6,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title><?php echo bloginfo(name) ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link rel="stylesheet" href="<?php echo bloginfo(template_url).'/assets/css/bootstrap-grid.min.css' ?>"> -->
-    <link rel="stylesheet" href="<?php echo bloginfo(stylesheet_url) ?>">
-    <link rel="stylesheet" href="<?php echo bloginfo(template_url).'/assets/css/normalize.css' ?>">
-    <!-- <link rel="stylesheet" href="<?php echo bloginfo(template_url).'/assets/css/style-facturacion.css' ?>"> -->
-	<link rel="stylesheet" href="<?php echo bloginfo(template_url).'/assets/css/style-class-general.css' ?>">
+   
     <link rel="stylesheet" type="text/css" media="screen" href="<?php echo bloginfo(template_url).'/assets/css/menu.css' ?>" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
+    <!-- STYLE -->
+    <link rel="stylesheet" href="<?php echo bloginfo(template_url).'/assets/css/normalize.css' ?>">
+    <link rel="stylesheet" href="<?php echo bloginfo(template_url).'/assets/css/bootstrap-grid.min.css' ?>">
+    <!-- <link rel="stylesheet" href="<?php echo bloginfo(template_url).'/assets/css/animations.css' ?>"> -->
+    <link rel="stylesheet" href="<?php echo bloginfo(template_url).'/assets/css/style-index.css' ?>">
+    <link rel="stylesheet" href="<?php echo bloginfo(template_url).'/assets/css/style-general.css' ?>">
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="<?php echo bloginfo(template_url).'/assets/js/main.js' ?>"></script>
 
 </head>
 
 <body>
-
+<div class="container-fluid">
     <div class="slider fullscreen">
         <div class="menu-container">
             <div class="menu-container-children">
@@ -119,7 +121,7 @@
                 </a>
                 <a class="user-info">
                     <span class="white-text name">Usuario</span>
-                    <span class="white-text email">usuario@gmail.com</a>
+                    <span class="white-text email">usuario@gmail.com</span>
                 </a>
             </div>
             <a class="menu-mobile-item">Nosotros</a>
