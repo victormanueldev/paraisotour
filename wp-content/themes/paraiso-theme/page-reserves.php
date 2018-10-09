@@ -394,7 +394,7 @@
 						<br>
 
 						<div class="col-md-12">
-							<button id="button" class="button">
+							<button @click="submitForm()" id="button" class="button">
 								<span>COMPRAR</span>
 							</button>
 						</div>

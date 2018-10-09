@@ -26,5 +26,6 @@
 	<!-- Scripts-->
 	<script src="<?php echo bloginfo(url).'/wp-content/themes/paraiso-theme/assets/js/app.js'; ?>"></script>
 	<script src="<?php echo bloginfo(url).'/wp-content/themes/paraiso-theme/assets/js/footer.js'; ?>"></script>
+	<script src="<?php echo bloginfo(url).'/wp-content/themes/paraiso-theme/assets/js/md5.min.js'; ?>"></script>
 </body>
 </html>
