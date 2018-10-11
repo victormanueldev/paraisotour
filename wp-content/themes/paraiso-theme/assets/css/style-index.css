@@ -1,26 +1,29 @@
 /*GENERAL*/
-div.row{
-   margin-right: 0px;
+
+div.row {
+    margin-right: 0px;
 }
 
-div.container-fluid{
-   padding-right: 0px;
-   padding-left: 0px;
+div.container-fluid {
+    padding-right: 0px;
+    padding-left: 0px;
 }
 
-div .col-md-12{
+div .col-md-12 {
     padding-left: 0px;
     padding-right: 0px;
 }
 
+
 /*HEADER*/
-#header{
+
+#header {
     position: relative;
     background: url("../Img/san-andres-colombia-min.jpg");
     background-size: cover;
     background-position-y: 30%;
     /*background-attachment: fixed;*/
-    height: 45em;
+    height: fit-content;
     padding-left: 0px;
     padding-right: 0px;
 }
@@ -33,7 +36,7 @@ div .col-md-12{
     background-color: orange;
 }
 
-.sign .fa-user{
+.sign .fa-user {
     color: white;
 }
 
@@ -43,242 +46,274 @@ div .col-md-12{
     line-height: normal;
 }
 
+
 /*RECOMENDED*/
-#recomended{
+
+#recomended {
     width: 100%;
-    padding: 2.5em 25%;
-    display: flex;
+    text-align: center;
+    border: solid 25px white;
+    display: block;
     justify-content: space-around;
+    padding-left: 15px;
 }
 
-.destiny, .price, 
-.quality, .attetion{
+.destiny,
+.price,
+.quality,
+.attetion {
     text-align: center;
 }
 
-.destiny img{
-    text-align: center;
-    width: 30px;
-    height: 30px;
-}
-
-.destiny p{
-    text-align: center;
-    font-size: 11px;
-}
-
-.price img{
+.destiny img,
+.price img,
+.quality img,
+.attetion img {
     text-align: center;
     width: 30px;
     height: 30px;
 }
 
-.price p{
+.destiny p,
+.price p,
+.quality p,
+.attetion p {
     text-align: center;
     font-size: 11px;
 }
 
-.quality img{
-    text-align: center;
-    width: 30px;
-    height: 30px;
-}
-
-.quality p{
-    text-align: center;
-    font-size: 11px;
-}
-
-.attetion img{
-    text-align: center;
-    width: 40px;
-    height: 40px;
-}
-
-.attetion p{
-    text-align: center;
-    font-size: 11px;
-}
 
 /*ABOUT US*/
-#about-us{
+
+#about-us {
     width: 100%;
-    height: 30em;
+    height: fit-content;
     margin-left: 0px;
     margin-right: 0px;
 }
 
-.info{
+
+.info {
     background-color: #316698;
     color: white;
-    padding: 2% 4% 0% 23%;
+    border: solid 25px #316698;
+}
+
+.info .title {
+    font-size: 15px;
+    text-align: left;
+}
+
+.info p {
+    font-size: 11px;
+    line-height: 1.8em;
     text-align: justify;
 }
 
-.info .title{
-    font-size: 15px;
+.picture {
+    overflow: hidden;
+    padding: 0;
 }
 
-.info p{
-    font-size: 12px;
-    line-height: 2.1em;
-}
-
-.picture{
+.picture-img {
     width: 100%;
-    height: 100%;
-    background-image: url("../img/jonalyn-san-diego-717136-unsplash-min.jpg");
-    background-attachment: fixed;
-    /*background-size: cover;*/
-    background-size: 50% 80%;
-    /*background-position-y: 30%;*/
+    display: inline-block;
+    height: 357px;
+    background-image: url("http://localhost/paraisotour/wp-content/uploads/2018/09/VIAJERO-min.jpg");
+    background-size: cover;
 }
+
 
 /*PROMOTIONS*/
-#promotions{
+
+#promotions {
     width: 100%;
-    height: 55em;
+    height: fit-content;
     margin-left: 0px;
     margin-right: 0px;
 }
 
-.promotions-title h3{
+.promotions-title {
+    padding: 4%;
+}
+
+.promotions-title h3 {
     text-align: center;
-    font-size: 23px;
-    margin: 3% 0;
+    font-size: 18px;
 }
 
-.specials{
-    height: 35em;
-    display: flex;
+.specials {
+    height: fit-content;
+    display: block;
+    position: relative;
     justify-content: center;
+    padding: 20px;
+    text-align: center;
 }
 
-.specials .box1, .specials .box2, .specials .box3,
-.specials .box4, .specials .box5{
-    width: 23em;
+
+.specials .box1, 
+.specials .box2,
+.specials .box3,
+.specials .box4,
+.specials .box5 {
+    width: 16em;
     display: inline-block;
-    margin: 0 1%;
+    position: relative;
+    height: 280px;
+    text-align: center;
+    width: 200px;
+    margin-left: 5px;
+	margin-right: 5px;
+	margin-top: 30px;
 }
 
-.box1 h4, .box2 h4, .box3 h4, 
-.box4 h4, .box5 h4{
-    font-size: 16px;
+.box1 h4,
+.box2 h4,
+.box3 h4,
+.box4 h4,
+.box5 h4 {
+    font-size: 14px;
     text-align: center;
     margin-bottom: 3%;
 }
 
 .header-box {
     width: 100%;
-    height: 23em;
+    height: 18em;
     overflow: hidden;
 }
 
-.header-box .img-box{
+.header-box .img-box {
     position: relative;
     width: 100%;
     height: 100%;
-    background-image: url("../img/rawpixel-676878-unsplash-min.jpg");
+    background-image: url("http://localhost/paraisotour/wp-content/uploads/2018/09/VIAJERO-min.jpg");
     background-size: 100% 100%;
 }
 
-.header-box .img-box:hover{
+.header-box .img-box:hover {
     opacity: 0.5 black;
-    -webkit-transform:scale(1.3);
-    -moz-transform:scale(1.3);
-    -ms-transform:scale(1.3);
-    -o-transform:scale(1.3);
+    transition: all .5s ease-in-out;
+    filter: brightness(0.5);
+    -webkit-transform: scale(1.3);
+    -moz-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    -o-transform: scale(1.3);
     transform: scale(1.3);
     cursor: pointer;
 }
 
-.body-box{
+.body-box {
     width: 100%;
-    height: 9em;
+    height: fit-content;
     background-color: #EDEEF0;
     padding: 5% 1%;
     text-align: center;
 }
 
-.body-box h1{
+.body-box h1 {
     margin: 0;
     color: #316698;
-    font-size:  25px;
+    font-size: 20px;
 }
 
-.box-desc{
-    width: 60px;
-    height: 60px;
+.box-desc {
+    width: 40px;
+    height: 40px;
     background-color: #316698;
     color: white;
     float: right;
-    font-size:  21px;
+    font-size: 16px;
     padding-top: 6%;
     text-align: center;
     position: relative;
-    z-index: 999;
+    z-index: 11;
+    top: 18px;
 }
 
-.through{
+.through {
     position: relative;
 }
 
-.through:before{
+.through:before {
     position: absolute;
     content: "";
     width: 20%;
     top: 33%;
     border-top: 1px solid;
-
-    -webkit-transform:rotate(-7deg);
-    -moz-transform:rotate(-7deg);
-    -ms-transform:rotate(-7deg);
-    -o-transform:rotate(-7deg);
-    transform:rotate(-7deg);
+    -webkit-transform: rotate(-7deg);
+    -moz-transform: rotate(-7deg);
+    -ms-transform: rotate(-7deg);
+    -o-transform: rotate(-7deg);
+    transform: rotate(-7deg);
 }
 
-.details{
-    /*color: #316698;*/
+.details {
+    color: black !important;
+    font-size: 10px;
+    text-decoration: none;
+    text-decoration-line: none;
 }
 
-.view-more{
+.details:hover {
+    color: #316698;
+    text-decoration-line: none;
+}
+
+.view-more {
     text-align: center;
     margin: 1% 0 2.5% 0;
 }
 
-.view-more a{
+.view-more a {
     text-decoration: none;
     font-size: 15px;
     color: black;
     /*text-decoration-line: none;*/
 }
 
+
 /*NEWSLETTER*/
-#newsletter{
+
+#newsletter {
     width: 100%;
-    height: 30em;
+    height: fit-content;
     margin-left: 0px;
     margin-right: 0px;
+    position: relative;
 }
 
-.magazine-sign-up{
+.newsletter-img {
+    width: 20%;
+    height: 80%;
+    position: absolute;
+    z-index: 2;
+    background-repeat: no-repeat;
+    background-image: url(http://localhost/paraisotour/wp-content/uploads/2018/09/REVISTA.png);
+    background-size: 100%;
+    top: 10%;
+}
+
+.magazine-sign-up {
     width: 100%;
-    height: 100%;
     background-color: #316698;
-    padding: 2.3% 5% 0% 23%;
+    padding: 2% 1% 5% 23%;
     text-align: center;
+    display: inline-block;
+    height: 300px;
 }
 
-.magazine-sign-up p{
-    font-size: 18px;
+.magazine-sign-up p {
+    font-size: 15px;
     text-align: right;
     color: white;
 }
 
-.magazine-sign-up .input-customer{
-    font-size: 12px;
+.magazine-sign-up .input-customer {
+    font-size: 10px;
     width: 80%;
-    height: 10%;
+    height: 30px;
     float: right;
     border: 1px solid white;
     border-radius: 7px;
@@ -286,37 +321,45 @@ div .col-md-12{
     padding: 0 2%;
 }
 
-.magazine-sign-up button{
+.magazine-sign-up button {
     background-color: #FF7583;
     color: white;
     padding: 2.5%;
     margin: 5% 0;
     display: inline-block;
+    font-size: 11px;
 }
 
-.magazine-sign-up .terms-condition{
-    font-size: 11px;
+.magazine-sign-up .terms-condition {
+    font-size: 10px;
     color: white;
 }
 
-.magazine-info{
-    padding: 0;    
+.magazine-sign-up input {
+    width: 11px;
+    height: 11px;
 }
 
-.img-magazine{
+.magazine-info {
+    padding: 0;
+    position: relative;
+    display: inline-block;
+    height: 300px;
+}
+
+.img-magazine {
     position: relative;
     width: 100%;
     height: 100%;
-    background-image: url("../img/annie-spratt-256172-unsplash-min.jpg");
+    background-image: url("http://localhost/paraisotour/wp-content/uploads/2018/09/annie-spratt-256172-unsplash-min.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     /*background-attachment: fixed;*/
     background-position-y: 30%;
-    filter:brightness(0.5);
-
+    filter: brightness(0.5);
 }
 
-.text-top{
+.text-top {
     position: absolute;
     font-size: 35px;
     color: white;
@@ -324,7 +367,7 @@ div .col-md-12{
     margin: 7% 5%;
 }
 
-.text-bottom{
+.text-bottom {
     position: absolute;
     color: white;
     bottom: 0px;
@@ -332,44 +375,46 @@ div .col-md-12{
     font-size: 20px;
 }
 
+
 /*FORM*/
-#form-customer{
+
+#form-customer {
     width: 100%;
-    font-size: 14px;
+    font-size: 11px;
     text-align: center;
     margin: 0 0;
     padding: 0 10%;
 }
 
-.title-form{
+.title-form {
     text-align: center;
-    font-size: 23px;
+    font-size: 18px;
     margin: 3% 0;
 }
 
-.form-info .title{
-    font-size: 25px;
+.form-info .title {
+    font-size: 20px;
 }
 
-.form-info .title-body{
-    font-size: 18px;
+.form-info .title-body {
+    font-size: 16px;
     line-height: 2em;
 }
 
-.form-info{
+.form-info {
     line-height: 2em;
     margin-bottom: 2.5%;
 }
 
-.form-info > i{
-    font-size:  25px;
-}
-
-.form-info h3{
+.form-info>i {
     font-size: 25px;
 }
 
-.form-info button{
+.form-info h3 {
+    font-size: 18px;
+}
+
+.form-info button {
     background-color: #EDEEF0;
     padding: 2%;
     font-size: 18px;
@@ -377,17 +422,17 @@ div .col-md-12{
     border-radius: 5px;
 }
 
-.form-info input{
+.form-info input {
     width: 80%;
-    height: 10%;
+    height: 30px;
     background-color: #EDEEF0;
     border: 1px solid #EDEEF0;
     border-radius: 7px;
-    margin: 3% 0;
+    margin: 1.8% 0;
     padding: 0 2%;
 }
 
-.form-info textarea{
+.form-info textarea {
     width: 80%;
     background-color: #EDEEF0;
     border: 1px solid #EDEEF0;
@@ -395,3 +440,33 @@ div .col-md-12{
     margin: 3% 0;
     padding: 2% 2%;
 }
+
+#button-customer {
+    margin: 0;
+    background-color: #316698;
+    border: 1px solid #316698;
+    width: 30%;
+}
+
+.mc-title {
+    position: absolute;
+    width: 102%;
+    height: 20px;
+    top: -2px;
+    left: -2px;
+    background-color: #ffffff;
+    z-index: 11;
+}
+
+.square {
+    width: 100px;
+    height: 60px;
+    display: inline-block;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+/* 
+.button-customer:hover {
+    opacity: 0.5;
+} */
