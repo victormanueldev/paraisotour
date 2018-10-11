@@ -8,16 +8,19 @@ var app = new Vue({
         bus2Chairs: [], //BUS #2
         cont: 0,    //Contador de sillas ocupadas
         rate: 0,    //Tarifa
-        cantPassengers: 0,  //Cantidad de pasajeros
+        cantPassengersMajor: 0,  //Cantidad de pasajeros
+        cantPassengersMinor: 0,
+        totalPassengers: 0,
         reservedChairs: 0,   //Cantidad de sillas reservadas
         descMayor: 0,
+        chairsSelected: [],
 
         /* Variables del Formulario */
 
         paymentForm: {
             merchantId: 751801, //ID de Mercader
             apiKey: 'S8Y0r36s1TdBNOvaSGaUVOo54w',
-            referenceCode: '00001',   //Codigo de referencia de la compra (Numero de Factura)
+            referenceCode: '165650',   //Codigo de referencia de la compra (Numero de Factura)
             description: '',     //Desctipcion de la Compra (Nombre del destino)
             totalPayment: 0,    //Total a pagar
             tax: 0,   //IVA
@@ -25,17 +28,20 @@ var app = new Vue({
             signature: '',   //Firma digital creada para cada transaccion
             accountId: 757624,   //Numero de la cuenta del Mercader
             currency: 'COP',        //Moneda local
-            test: 1,     //Variable para tests
+            test: 0,     //Variable para tests
+            payerDocument: '', //Documento del comprador
+            buyerFullName: '',  //Nombre completo del comprador
             buyerEmail: '',  //Email del comprador
-            responseUrl: 'http://localhost/paraisotour/',    //URL de la pagían de respuesta
-            confirmationUrl: 'http://localhost/paraisotour/',    //URL de confirmación de la compra
+            mobilePhone: '',    //Telefono del 
+            responseUrl: 'http://localhost/paraisotour/wp-content/themes/paraiso-theme/src/InsertarReservas.php',    //URL de la pagían de respuesta
+            confirmationUrl: 'http://localhost/paraisotour/wp-content/themes/paraiso-theme/src/InsertarReservas.php',    //URL de confirmación de la compra
             shippingAddress: '', //Direccion de entrega de la mercancia
             algorithmSignature: 'MD5',  //Algoritmo de cifrado de la firma
             shippingCity: '',   //Ciudad de entrega de la mercancia
             shippingCountry: 'COL',
-            buyerFullName: '',  //Nombre completo del compradro
-            extra1: '', //Info adicional de la compra (Numero de las  sillas separados por comas)
-            extra2: ''  //
+            extra1: '', //Info adicional de la compra (ID de las  sillas separados por comas)
+            extra2: '',  //Info adicional de la compra (Numero de las  sillas separados por comas)
+            extra3: ''
 
 
         }
@@ -60,8 +66,13 @@ var app = new Vue({
         clickChair(idChair, labelChair) {
             this.busChairs.forEach((value, index) => {
                 if (idChair === value.id && value.cssClass === 'gray-chair') {
+                    this.paymentForm.extra2 = '';
                     //Multiplica el precio por la cantidad de sillas
-                    this.paymentForm.totalPayment += this.rate;
+                    this.paymentForm.totalPayment += this.rate - ((this.rate * this.descMayor)/100);
+                    this.chairsSelected.push(idChair);
+                    this.chairsSelected.forEach(value => {
+                        this.paymentForm.extra2 += value+", ";
+                    })
                     this.md5Encryption();
                     //Suma las sillas reservadas
                     this.reservedChairs++;
@@ -69,8 +80,13 @@ var app = new Vue({
                     value.state = 'purchased';
                     this.cont++;
                 } else if (idChair === value.id && value.cssClass === 'blue-chair') {
+                    this.paymentForm.extra2 = '';
                     //Resta el precio por la cantidad de sillas
-                    this.paymentForm.totalPayment -= this.rate;
+                    this.paymentForm.totalPayment -= this.rate - ((this.rate * this.descMayor)/100);
+                    this.chairsSelected.splice(this.chairsSelected.indexOf(idChair),1);
+                    this.chairsSelected.forEach(value => {
+                        this.paymentForm.extra2 += value+", ";
+                    })
                     this.md5Encryption();
                     this.reservedChairs--;
                     value.cssClass = 'gray-chair';
@@ -98,7 +114,7 @@ var app = new Vue({
                 if (idChair2 == value.id && value.cssClass === 'gray-chair') {
                     if (e.target.tagName == 'LABEL') {
                         //Multiplica el precio por la cantidad de sillas
-                        this.paymentForm.totalPayment += this.rate;
+                        this.paymentForm.totalPayment +=this.rate - ((this.rate * this.descMayor)/100);
                         this.md5Encryption();
                         //Suma las sillas reservadas
                         this.reservedChairs++;
@@ -106,7 +122,7 @@ var app = new Vue({
                         e.target.parentNode.className = "click-chair bus-chair-container blue-chair"
                     } else {
                         //Multiplica el precio por la cantidad de sillas
-                        this.paymentForm.totalPayment += this.rate;
+                        this.paymentForm.totalPayment +=this.rate - ((this.rate * this.descMayor)/100);
                         //Suma las sillas reservadas
                         this.reservedChairs++;
                         e.target.className = "click-chair bus-chair-container blue-chair"
@@ -143,7 +159,13 @@ var app = new Vue({
             
         },
         submitForm(){
-
+            console.log(this.paymentForm.extra2);
+        }
+    },
+    computed: {
+        cantPassengers() {
+            this.totalPassengers =  parseInt(this.cantPassengersMajor) + parseInt(this.cantPassengersMinor);
+            return this.totalPassengers;
         }
     }
 })

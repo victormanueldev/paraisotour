@@ -19,6 +19,8 @@
 	$normalPrice = get_post_meta(get_the_ID(), 'precio-normal', true);
 	//Obtiene el campo personalizado 
 	$descMayor = get_post_meta(get_the_ID(), 'descuento-adultos', true);
+	//Obtiene el campo personalizado 
+	$dateTravel = get_post_meta(get_the_ID(), 'fecha-salida', true);
 	//Nombre del POST
 	 $name = get_the_title();
 
@@ -26,7 +28,7 @@
 
 <!-- CONTENT -->
 <section id="content" class="container">
-<br>
+	<br>
 	<br>
 	<div class="row justify-content-md-center" id="app">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-9 caja1">
@@ -49,20 +51,17 @@
 							<option value="sra">Sra.</option>
 						</select>
 					</div>
-					<div class="col-md-5">
-						<input type="text" placeholder="Nombres">
-					</div>
-					<div class="col-md-5">
-						<input type="text" placeholder="Apellidos">
+					<div class="col-md-10">
+						<input type="text" placeholder="Nombre Completo" v-model="paymentForm.buyerFullName">
 					</div>
 				</div>
 
 				<div class="row">
 					<div class="col-md-6">
-						<input type="number" min="0" placeholder="Cel/Tel:">
+						<input type="number" min="0" placeholder="Cel/Tel:" v-model="paymentForm.mobilePhone">
 					</div>
 					<div class="col-md-6">
-						<input type="text" placeholder="Correo">
+						<input type="email" placeholder="Correo" v-model="paymentForm.buyerEmail">
 					</div>
 				</div>
 
@@ -75,7 +74,7 @@
 						</select>
 					</div>
 					<div class="col-md-5">
-						<input type="number" min="0" placeholder="C.C o Nit">
+						<input type="number" min="0" placeholder="C.C o Nit" v-model="paymentForm.payerDocument">
 					</div>
 					<div class="col-md-5">
 						<input type="text" placeholder="Nacionalidad">
@@ -116,11 +115,11 @@
 				<div class="row justify-content-md-center">
 					<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
 						<span>Mayores de 4 años</span>
-						<input type="number" id="cant1" min="0" max="99" value="0">
+						<input type="number" id="cant1" min="0" max="99" value="0" v-model="cantPassengersMajor">
 					</div>
 					<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
 						<span>De 0 a 3 años</span>
-						<input type="number" id="cant2" min="0" max="99" value="0">
+						<input type="number" id="cant2" min="0" max="99" value="0" v-model="cantPassengersMinor">
 					</div>
 				</div>
 				<br>
@@ -129,34 +128,15 @@
 				<h3>INFORMACIÓN PASAJEROS</h3>
 
 				<div class="row">
-					<div class="col-md-6">
-						<input type="text" placeholder="Nombres">
-					</div>
-					<div class="col-md-6">
-						<input type="text" placeholder="Apellidos">
+					<div class="col-md-12">
+						<p>A continuación, escribe el nombre, número de documento y fecha de nacimiento de cada pasajero que vayan a participar
+							en esta actividad:</p>
 					</div>
 				</div>
 
 				<div class="row">
-					<div class="col-md-2">
-						<select name="Identification">
-							<option value="cc">C.C.</option>
-							<option value="pst">Pasaporte</option>
-							<option value="cce">C.E.</option>
-						</select>
-					</div>
-					<div class="col-md-5">
-						<input type="text" placeholder="Número de Identificación">
-					</div>
-					<div class="col-md-5">
-						<input type="number" min="-1" placeholder="Cel/Tel:">
-					</div>
-				</div>
-				<br>
-				<div class="row">
 					<div class="col-md-12">
-						<h4>Fecha de Nacimiento</h4>
-						<input type="date" id="date">
+						<textarea rows="10" placeholder="Pepito Perez - 1000000 - 16/08/1998" v-model="paymentForm.extra3"></textarea>
 					</div>
 				</div>
 				<br>
@@ -282,7 +262,7 @@
 					</div>
 				</div>
 				<!-- BUS 1-->
-				<div  class="scroll">
+				<div class="scroll">
 					<div class="big-bus">
 						<div class="bus-container">
 							<div class="bus-enabled">
@@ -354,22 +334,34 @@
 						<div class="col-md-12 destiny">
 							<h3>DESTINO</h3>
 							<br>
-							<p><?php echo "{{paymentForm.description='".$name."'}}"; ?></p>
+							<p>
+								<?php echo "{{paymentForm.description='".$name."'}}"; ?>
+							</p>
 						</div>
+						<p style="display: none"><?php echo "{{paymentForm.extra1='".$idPost."'}}"; ?></p>
 						<br>
-						<br>
+						<div class="col-md-12 destiny">
+								<h3>FECHA DE SALIDA</h3>
+								<br>
+								<p>
+									<?php echo "{{paymentForm.extra3='".$dateTravel."'}}"; ?>
+								</p>
+							</div>
+							<br>
 
 						<div class="col-md-12 fare">
 							<h3 class="title-fare">TARIFA</h3>
 							<!-- <br> -->
 							<h3 class="price1">COP</h3>&nbsp;&nbsp;
-							<h1 class="price2">$<?php echo "{{rate =".$normalPrice."}}"?></h1>
+							<h1 class="price2">$
+								<?php echo "{{rate =".$normalPrice."}}"?>
+							</h1>
 							<p>POR PERSONA</p>
 						</div>
 
 						<div class="col-md-12 info1">
 							<p>Cant. Pasajeros</p>
-							<h3>3	</h3>
+							<h3>{{cantPassengers}} </h3>
 						</div>
 
 						<div class="col-md-12 info2">
@@ -379,7 +371,8 @@
 
 						<div class="col-md-12 info3">
 							<p>Descuento (Grupo Adultos)</p>
-							<h3><?php echo $descMayor != '' ? "{{descMayor=".$descMayor."}}" : 0; ?>%</h3>
+							<h3>
+								<?php echo $descMayor != '' ? "{{descMayor=".$descMayor."}}" : 0; ?>%</h3>
 						</div>
 						<br>
 
@@ -391,56 +384,76 @@
 							<br>
 						</div>
 						<br>
-						<form method="POST" action="https://checkout.payulatam.com/ppp-web-gateway-payu" >
+						<form method="POST" action="https://checkout.payulatam.com/ppp-web-gateway-payu">
 							<div style="display: none">
-								<input type="number" name="merchantId" v-model="paymentForm.merchantId"/>
+								<input type="number" name="merchantId" v-model="paymentForm.merchantId" />
 							</div>
 							<div style="display: none">
-								<input type="text" name="apiKey" v-model="paymentForm.apiKey"/>
+								<input type="text" name="apiKey" v-model="paymentForm.apiKey" />
 							</div>
 							<div style="display: none">
-								<input type="text" name="referenceCode" v-model="paymentForm.referenceCode"/>
+								<input type="text" name="referenceCode" v-model="paymentForm.referenceCode" />
 							</div>
 							<div style="display: none">
-								<input type="number" name="accountId" v-model="paymentForm.accountId"/>
+								<input type="number" name="accountId" v-model="paymentForm.accountId" />
 							</div>
 							<div style="display: none">
-								<input type="text" name="description" v-model="paymentForm.description"/>
+								<input type="text" name="description" v-model="paymentForm.description" />
 							</div>
 							<div style="display: none">
-								<input type="text" name="amount" v-model="paymentForm.totalPayment"/>
+								<input type="text" name="amount" v-model="paymentForm.totalPayment" />
 							</div>
 							<div style="display: none">
-								<input type="number" name="tax" v-model="paymentForm.tax"/>
+								<input type="number" name="tax" v-model="paymentForm.tax" />
 							</div>
 							<div style="display: none">
-								<input type="number" name="taxReturnBase" v-model="paymentForm.taxReturnBase"/>
-							</div>
-							<div style="display: none">	
-								<input type="text" name="currency" v-model="paymentForm.currency"/>
+								<input type="number" name="taxReturnBase" v-model="paymentForm.taxReturnBase" />
 							</div>
 							<div style="display: none">
-								<input type="text" name="signature" v-model="paymentForm.signature"/>
+								<input type="text" name="currency" v-model="paymentForm.currency" />
 							</div>
 							<div style="display: none">
-								<input type="text" name="test" v-model="paymentForm.test"/>
+								<input type="text" name="signature" v-model="paymentForm.signature" />
 							</div>
 							<div style="display: none">
-								<input type="text" name="buyerEmail" v-model="paymentForm.buyerEmail"/>
+								<input type="text" name="test" v-model="paymentForm.test" />
 							</div>
 							<div style="display: none">
-								<input type="text" name="responseUrl" v-model="paymentForm.responseUrl"/>
+								<input type="text" name="buyerEmail" v-bind:value="paymentForm.buyerEmail" />
 							</div>
 							<div style="display: none">
-								<input type="text" name="confirmationUrl" v-model="paymentForm.confirmationUrl"/>
+								<input type="text" name="buyerFullName" v-bind:value="paymentForm.buyerFullName" />
+							</div>
+							<div style="display: none">
+								<input type="text" name="mobilePhone" v-bind:value="paymentForm.mobilePhone" />
+							</div>
+							<div style="display: none">
+								<input type="text" name="payerDocument" v-bind:value="paymentForm.payerDocument" />
+							</div>
+							<div style="display: none">
+								<input type="text" name="extra1" v-model="paymentForm.extra1" />
+							</div>
+							<div style="display: none">
+								<input type="text" name="extra2" v-model="paymentForm.extra2" />
+							</div>
+							<div style="display: none">
+								<input type="text" name="extra3" v-bind:value="paymentForm.extra3" />
+							</div>
+							<div style="display: none">
+								<input type="text" name="responseUrl" v-model="paymentForm.responseUrl" />
+							</div>
+							<div style="display: none">
+								<input type="text" name="confirmationUrl" v-model="paymentForm.confirmationUrl" />
 							</div>
 							<div style="width: 100%; text-align: center;">
 								<br>
 
-								<button id="button" type="submit" class="button"><span>PAGAR</span></button>
+								<button :disabled="paymentForm.totalPayment == 0" id="button" type="submit" class="button">
+									<span>PAGAR</span>
+								</button>
 
 							</div>
-					</form>
+						</form>
 					</div>
 				</div>
 			</div>
@@ -448,67 +461,85 @@
 			<br>
 			<!-- END TOTAL -->
 
-				<!-- BANNER -->
-				<div class="row">
-					<div class="col-md-12">
-						<div class="banner-info-header">
-							<div class="col-md-12">
-								<h2 style="text-shadow: 0px 2px 30px rgba(0, 0, 0, 1);">DUDA O <br> INQUIETUD</h2>
-								<p style="text-shadow: 0px 2px 30px rgba(0, 0, 0, 1);">¡Llámanos!</p>
-							</div>
+			<!-- BANNER -->
+			<div class="row">
+				<div class="col-md-12">
+					<div class="banner-info-header">
+						<div class="col-md-12">
+							<h2 style="text-shadow: 0px 2px 30px rgba(0, 0, 0, 1);">DUDA O
+								<br> INQUIETUD</h2>
+							<p style="text-shadow: 0px 2px 30px rgba(0, 0, 0, 1);">¡Llámanos!</p>
 						</div>
 					</div>
 				</div>
+			</div>
 
-				<div class="row">
-					<div class="col-md-12">
-						<div class="banner-info-body">
-							<div class="col-md-12">
-								<h3>CALI</h3>
-								<br>
-							</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="banner-info-body">
+						<div class="col-md-12">
+							<h3>CALI</h3>
+							<br>
+						</div>
 
-							<div class="col-md-12">
-								<p><i class="fas fa-phone"></i>&nbsp;&nbsp;(032) 3654685</p>
-							</div>
+						<div class="col-md-12">
+							<p>
+								<i class="fas fa-phone"></i>&nbsp;&nbsp;(032) 3654685</p>
+						</div>
 
-							<div class="col-md-12">
-								<p><i class="fas fa-mobile-alt"></i>&nbsp;&nbsp;3183731426 - <b>Andrés Moreno</b></p>
-							</div>
+						<div class="col-md-12">
+							<p>
+								<i class="fas fa-mobile-alt"></i>&nbsp;&nbsp;3183731426 -
+								<b>Andrés Moreno</b>
+							</p>
+						</div>
 
-							<div class="col-md-12">
-								<p><i class="fas fa-mobile-alt"></i>&nbsp;&nbsp;3186527162 - <b>Marcela Moreno</b></p>
-							</div>
+						<div class="col-md-12">
+							<p>
+								<i class="fas fa-mobile-alt"></i>&nbsp;&nbsp;3186527162 -
+								<b>Marcela Moreno</b>
+							</p>
+						</div>
 
-							<div class="col-md-12">
-								<p><i class="fas fa-mobile-alt"></i>&nbsp;&nbsp;3163551972 - <b>Carolina Sánchez</b></p>
-								<br><br>
-							</div>
+						<div class="col-md-12">
+							<p>
+								<i class="fas fa-mobile-alt"></i>&nbsp;&nbsp;3163551972 -
+								<b>Carolina Sánchez</b>
+							</p>
+							<br>
+							<br>
+						</div>
 
-							<div class="col-md-12">
-								<h3>PALMIRA</h3>
-								<br>
-							</div>
+						<div class="col-md-12">
+							<h3>PALMIRA</h3>
+							<br>
+						</div>
 
-							<div class="col-md-12">
-								<b class="darlen">Darlen Restrepo</b>
-								<br>
-								<p><i class="fas fa-phone"></i>&nbsp;&nbsp;(032) 3654685</p>
-								<p><i class="fas fa-mobile-alt"></i>&nbsp;&nbsp;3183731426</p>
-								<p><i class="fas fa-mobile-alt"></i>&nbsp;&nbsp;3186527162</p>
-								<p><i class="fas fa-mobile-alt"></i>&nbsp;&nbsp;3163551972</p>
-								<br><br>
-							</div>
+						<div class="col-md-12">
+							<b class="darlen">Darlen Restrepo</b>
+							<br>
+							<p>
+								<i class="fas fa-phone"></i>&nbsp;&nbsp;(032) 3654685</p>
+							<p>
+								<i class="fas fa-mobile-alt"></i>&nbsp;&nbsp;3183731426</p>
+							<p>
+								<i class="fas fa-mobile-alt"></i>&nbsp;&nbsp;3186527162</p>
+							<p>
+								<i class="fas fa-mobile-alt"></i>&nbsp;&nbsp;3163551972</p>
+							<br>
+							<br>
+						</div>
 
-							<div class="col-md-12 info-addres">
-								<b>Ó dirigirse a nuestra Sucursal</b>
-								<br>
-								<p>Calle 4b #27-20 Ofi. 201 <br> Barrio San fernando, Cali Valle.</p>
-							</div>
+						<div class="col-md-12 info-addres">
+							<b>Ó dirigirse a nuestra Sucursal</b>
+							<br>
+							<p>Calle 4b #27-20 Ofi. 201
+								<br> Barrio San fernando, Cali Valle.</p>
 						</div>
 					</div>
 				</div>
-				<!-- END BANNER -->
+			</div>
+			<!-- END BANNER -->
 		</div>
 		<!-- END INFO -->
 	</div>

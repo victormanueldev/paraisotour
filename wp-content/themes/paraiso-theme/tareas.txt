@@ -1,4 +1,3 @@
-- Arreglar toda la parte de reservas, sumas de totales con descuentos 
 - Formulario de compra PayU con Vue y PHP
 - Pruebas de pagos con el formulario completo como va a quedar
 - CRUD para la confirmacion de la compra (guardar la reserva)

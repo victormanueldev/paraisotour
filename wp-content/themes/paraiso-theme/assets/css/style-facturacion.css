@@ -39,7 +39,7 @@
 	margin-right: 5%;
 }
 
-.form input, .form select {
+.form input, .form select, .form textarea {
 	padding: 10px;
 	margin: 1% 0;
 	background-color: #EDEEF0;
