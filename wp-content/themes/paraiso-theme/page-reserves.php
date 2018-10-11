@@ -25,7 +25,7 @@
 ?>
 
 <!-- CONTENT -->
-<section id="content" class="container" id="app">
+<section id="content" class="container">
 	<div class="row justify-content-md-center" id="app">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-9 caja1">
 			<p>Por favor complete los datos solicitados a continuación, para facturación de compra e información de todas las personas
@@ -255,17 +255,6 @@
 					</div>
 					<br><br> -->
 
-				<!-- BUS -->
-				<!-- <div class="chair">
-						<h3 class="select-chair">SELECCIÓN DE SILLAS</h3>
-						<div class="graychair">
-							<span>Sillas Vacías</span><img src="img/gray-chair.png" alt="">
-						</div>
-						<div class="bluechair">
-							<span>Sillas Ocupadas</span><img src="img/blue-chair.png" alt="">
-						</div>
-					</div> -->
-
 				<div class="row chair">
 					<h3 class="select-chair">SELECCIÓN DE SILLAS</h3>
 					<div class="col-md-3 graychair">
@@ -286,6 +275,7 @@
 						</label>
 					</div>
 				</div>
+				<!-- BUS 1-->
 				<div  class="scroll">
 					<div class="big-bus">
 						<div class="bus-container">
@@ -310,6 +300,8 @@
 						</div>
 					</div>
 				</div>
+				<!-- END BUS 2-->
+				<!-- BUS 2-->
 				<div v-if="cont === 41" class="scroll">
 					<div class="big-bus">
 						<div class="bus-container">
@@ -334,6 +326,7 @@
 						</div>
 					</div>
 				</div>
+				<!-- END BUS 2-->
 			</form>
 		</div>
 
@@ -388,16 +381,74 @@
 							<h3>TOTAL A PAGAR</h3>
 							<br>
 							<br>
-							<h2>COP ${{totalPayment}}</h2>
+							<h2>COP ${{paymentForm.totalPayment}}</h2>
 							<br>
 						</div>
 						<br>
+						<form action="https://sandbox.checkout.payulatam.com/ppp-web-gateway-payu" method="POST">
+							<div style="display: none">
+								<label>Merchat</label>
+								<input type="number" name="merchantId" value="508029"/>
+							</div>
+							<div style="display: none">
+								<label>API</label>
+								<input type="text" name="apiKey" value="4Vj8eK4rloUd272L48hsrarnUA"/>
+							</div>
+							<div style="display: none">
+								<label>ref</label>
+								<input type="text" name="referenceCode" value="parqueDelCafe1"/>
+							</div>
+							<div style="display: none">
+								<label>cuenta</label>
+								<input type="number" name="accountId" value="512321"/>
+							</div>
+							<div style="display: none">
+								<labelDesc></label>
+								<input type="text" name="description" value="Test PAYU"/>
+							</div>
+							<div style="display: none">
+								<label>monto total</label>
+								<input type="text" name="amount" value="30000"/>
+							</div>
+							<div style="display: none">
+								<label>IVA</label>
+								<input type="number" name="tax" value="0"/>
+							</div>
+							<div style="display: none">
+								<label>taxReturnBase</label>
+								<input type="number" name="taxReturnBase" value="0"/>
+							</div>
+							<div style="display: none">	
+								<label>currency</label>
+								<input type="text" name="currency" value="COP"/>
+							</div>
+							<div style="display: none">
+								<label>signature</label>
+								<input type="text" name="signature" value="1a42d60ba7123675f5e5c3d922918000"/>
+							</div>
+							<div style="display: none">
+								<label>test</label>
+								<input type="text" name="test" value="0"/>
+							</div>
+							<div style="display: none">
+								<label>buyerEmail</label>
+								<input type="text" name="buyerEmail" value="victormalsx@gmail.com"/>
+							</div>
+							<div style="display: none">
+								<label>buyerEmail</label>
+								<input type="text" name="responseUrl" value="http://www.facebook.com"/>
+							</div>
+							<div style="display: none">
+								<label>buyerEmail</label>
+								<input type="text" name="confirmationUrl" value="http://www.google.com.co"/>
+							</div>
+							<div style="width: 100%; text-align: center;">
+								<br>
 
-						<div class="col-md-12">
-							<button @click="submitForm()" id="button" class="button">
-								<span>COMPRAR</span>
-							</button>
-						</div>
+								<button id="button" type="submit" class="button"><span>COMPRAR</span></button>
+
+							</div>
+					</form>
 					</div>
 				</div>
 			</div>
@@ -405,85 +456,67 @@
 			<br>
 			<!-- END TOTAL -->
 
-			<!-- BANNER -->
-			<div class="row">
-				<div class="col-md-12">
-					<div class="banner-info-header">
-						<div class="col-md-12">
-							<h2>DUDA O
-								<br> INQUIETUD</h2>
-							<p>¡Llámanos!</p>
+				<!-- BANNER -->
+				<div class="row">
+					<div class="col-md-12">
+						<div class="banner-info-header">
+							<div class="col-md-12">
+								<h2 style="text-shadow: 0px 2px 30px rgba(0, 0, 0, 1);">DUDA O <br> INQUIETUD</h2>
+								<p style="text-shadow: 0px 2px 30px rgba(0, 0, 0, 1);">¡Llámanos!</p>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
 
-			<div class="row">
-				<div class="col-md-12">
-					<div class="banner-info-body">
-						<div class="col-md-12">
-							<h3>CALI</h3>
-							<br>
-						</div>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="banner-info-body">
+							<div class="col-md-12">
+								<h3>CALI</h3>
+								<br>
+							</div>
 
-						<div class="col-md-12">
-							<p>
-								<i class="fas fa-phone"></i>&nbsp;&nbsp;(032) 3654685</p>
-						</div>
+							<div class="col-md-12">
+								<p><i class="fas fa-phone"></i>&nbsp;&nbsp;(032) 3654685</p>
+							</div>
 
-						<div class="col-md-12">
-							<p>
-								<i class="fas fa-mobile-alt"></i>&nbsp;&nbsp;3183731426 -
-								<b>Andrés Moreno</b>
-							</p>
-						</div>
+							<div class="col-md-12">
+								<p><i class="fas fa-mobile-alt"></i>&nbsp;&nbsp;3183731426 - <b>Andrés Moreno</b></p>
+							</div>
 
-						<div class="col-md-12">
-							<p>
-								<i class="fas fa-mobile-alt"></i>&nbsp;&nbsp;3186527162 -
-								<b>Marcela Moreno</b>
-							</p>
-						</div>
+							<div class="col-md-12">
+								<p><i class="fas fa-mobile-alt"></i>&nbsp;&nbsp;3186527162 - <b>Marcela Moreno</b></p>
+							</div>
 
-						<div class="col-md-12">
-							<p>
-								<i class="fas fa-mobile-alt"></i>&nbsp;&nbsp;3163551972 -
-								<b>Carolina Sánchez</b>
-							</p>
-							<br>
-							<br>
-						</div>
+							<div class="col-md-12">
+								<p><i class="fas fa-mobile-alt"></i>&nbsp;&nbsp;3163551972 - <b>Carolina Sánchez</b></p>
+								<br><br>
+							</div>
 
-						<div class="col-md-12">
-							<h3>PALMIRA</h3>
-							<br>
-						</div>
+							<div class="col-md-12">
+								<h3>PALMIRA</h3>
+								<br>
+							</div>
 
-						<div class="col-md-12">
-							<b class="darlen">Darlen Restrepo</b>
-							<br>
-							<p>
-								<i class="fas fa-phone"></i>&nbsp;&nbsp;(032) 3654685</p>
-							<p>
-								<i class="fas fa-mobile-alt"></i>&nbsp;&nbsp;3183731426</p>
-							<p>
-								<i class="fas fa-mobile-alt"></i>&nbsp;&nbsp;3186527162</p>
-							<p>
-								<i class="fas fa-mobile-alt"></i>&nbsp;&nbsp;3163551972</p>
-							<br>
-							<br>
-						</div>
+							<div class="col-md-12">
+								<b class="darlen">Darlen Restrepo</b>
+								<br>
+								<p><i class="fas fa-phone"></i>&nbsp;&nbsp;(032) 3654685</p>
+								<p><i class="fas fa-mobile-alt"></i>&nbsp;&nbsp;3183731426</p>
+								<p><i class="fas fa-mobile-alt"></i>&nbsp;&nbsp;3186527162</p>
+								<p><i class="fas fa-mobile-alt"></i>&nbsp;&nbsp;3163551972</p>
+								<br><br>
+							</div>
 
-						<div class="col-md-12 info-addres">
-							<b>Ó dirigirse a nuestra Sucursal</b>
-							<br>
-							<p>Calle 4b #27-20 Ofi. 201
-								<br> Barrio San fernando, Cali Valle.</p>
+							<div class="col-md-12 info-addres">
+								<b>Ó dirigirse a nuestra Sucursal</b>
+								<br>
+								<p>Calle 4b #27-20 Ofi. 201 <br> Barrio San fernando, Cali Valle.</p>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-			<!-- END BANNER -->
+				<!-- END BANNER -->
 		</div>
 		<!-- END INFO -->
 	</div>

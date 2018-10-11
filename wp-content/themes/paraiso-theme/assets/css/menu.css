@@ -2,8 +2,6 @@ html{
   font-family: 'Roboto';
 }
 
-*{transition:all 0.5s;-webkit-transition:all 0.5s;}
-
 
 a:link    {
   text-decoration:  none;
@@ -37,7 +35,7 @@ a:link    {
 .slider.fullscreen {
   height: 500px;
   width: 100%;
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   right: 0;
@@ -59,11 +57,6 @@ a:link    {
 
 .slider.fullscreen ul.slides {
   height: 100%;
-}
-
-.slider.fullscreen ul.indicators {
-  z-index: 10;
-  bottom: 30px;
 }
 
 .slider .slides {
@@ -232,11 +225,6 @@ a:link    {
   height: 100%;
   z-index: 9;
   background-color: #0000002f;
-
-  background: -moz-linear-gradient(top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 36%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 36%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 36%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */;
 }
 
 .menu-container-children{
@@ -265,32 +253,67 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', e
 
 }
 
-.top-menu-left{
+.top-menu-left {
 
   display: inline-block;
-  height:15%;
+  height: 15%;
   width: 35%;
-  /* background-color: #00000075; */
+  background-color: #00000000;
   position: relative;
-  text-align: -webkit-right;
 
+
+}
+
+@media only screen and (min-width: 801px) {
+
+  .menu-container{
+    background: -moz-linear-gradient(top, rgba(0,0,0,0.74) 0%, rgba(0,0,0,0.33) 52%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(0,0,0,0.74) 0%,rgba(0,0,0,0.33) 52%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(0,0,0,0.74) 0%,rgba(0,0,0,0.33) 52%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bd000000', endColorstr='#00000000',GradientType=0 ); 
+  }
+
+  .cap-image{
+    width: 550px  !important;
+    z-index: 10;
+  }
+
+  .image-caption{
+    top: -10% !important; 
+    left: 30% !important;
+  }  
+
+  .slider.fullscreen ul.indicators {
+    z-index: 10;
+    bottom: 30px;
+  }
+  
+
+  .top-menu-left {
+
+    text-align: right;
+  
+  }
 }
 
 
 
 .top-menu-item{
-  width: 15px;
-  height: 15px;
+  
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
-  background-color: #00B4CC;
+  background-color: rgba(0, 180, 204, 0);
   display: inline-block;
+  
+
 }
 
 
 .top-menu-text {
   width: fit-content;
   display: inline-block !important;
-  vertical-align: top;
+  vertical-align: super;
   color: white;
   margin-left: 10px;
   margin-right:10px;
@@ -301,16 +324,51 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', e
 
 
 .logo-center{
-  background: url(../icons/logo.png) no-repeat center;
+  background: url(http://localhost/paraisotour/wp-content/themes/paraiso-theme/assets/icons/logo.png) no-repeat center;
   display: inline-block;
   height: 40%;
   width: 100%;
   /* background-color: #00000059; */
-  background-size:180px;
+  background-size:190px;
+}
+
+.item1{
+  background: url(http://localhost/paraisotour/wp-content/themes/paraiso-theme/assets/icons/3.png) no-repeat center;
+  background-size:130%;
+}
+
+.item2{
+  background: url(http://localhost/paraisotour/wp-content/themes/paraiso-theme/assets/icons/4.png) no-repeat center;
+  background-size:130%;
+}
+
+.item3{
+  background: url(http://localhost/paraisotour/wp-content/themes/paraiso-theme/assets/icons/5.png) no-repeat center;
+  background-size:130%;
+}
+
+.item4{
+  background: url(http://localhost/paraisotour/wp-content/themes/paraiso-theme/assets/icons/6.png) no-repeat center;
+  background-size:130%;
+}
+
+.item5{
+  background: url(http://localhost/paraisotour/wp-content/themes/paraiso-theme/assets/icons/7.png) no-repeat center;
+  background-size:130%;
+}
+
+.item6{
+  background: url(http://localhost/paraisotour/wp-content/themes/paraiso-theme/assets/icons/8.png) no-repeat center;
+  background-size:130%;
+}
+
+.item7{
+  background: url(http://localhost/paraisotour/wp-content/themes/paraiso-theme/assets/icons/9.png) no-repeat center;
+  background-size:130%;
 }
 
 .logo-left{
-  background: url(../icons/logo.png) no-repeat center;
+  background: url(http://localhost/paraisotour/wp-content/themes/paraiso-theme/assets/icons/logo.png) no-repeat center;
   height: 180px;
   width: 150px;
   position: absolute;
@@ -346,31 +404,39 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', e
 }
 
 
-.search{
-  position: relative;
-}
-
 .search-input {
-
-  border: 3px solid rgb(255, 255, 255);
-  height: 25px;
+  border: 3px solid rgba(255, 255, 255, 0);
   border-radius: 20px;
   outline: none;
-  color: #9DBFAF;
-  position: absolute;
-  width: 98%;
-  
+  color: rgb(75, 75, 75);
+  position: relative;
+  display: inline-block;
+  width: calc(100% - 60px);
+  height: -webkit-fill-available;
+  height: -moz-available;
+  background-color: #ffffff00;
+  padding-left: 10px;
+  font-size: 16px !important;
+}
+
+
+.search {
+position: relative;
+background-color: #ffffffb5;
+border-radius: 30px;
 }
 
 .search-input:focus{
   color: #476695;
 }
 
+
+
 .search-button {
-  position: absolute;
-  width:33px;
+  position: relative;
+  width: 33px;
   height: 33px;
-  border: 3px solid rgb(255, 255, 255);
+  border: 3px solid #476695;
   background: #476695;
   text-align: center;
   color: #fff;
@@ -378,10 +444,31 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', e
   cursor: pointer;
   font-size: 28px;
   font-weight: 700;
-  right: 0;
+  right: -2px;
   top: 0;
+  display: inline-block;
+  vertical-align: middle;
 }
-
+@supports (-moz-appearance:none) {
+  .search-button {
+    position: relative;
+    width: 33px;
+    height: 33px;
+    border: 0px solid #ffffff;
+    background: #476695;
+    text-align: center;
+    color: #fff;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 28px;
+    font-weight: 700;
+    right: -3px;
+    top: -1px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+}
 .search-center{
   width: 100%;
   position: absolute;
@@ -390,14 +477,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', e
   z-index: 15;
 }
 
-.center-menu-items{
+.center-menu-items {
 
   margin: 0 auto;
   height: 100%;
   width: fit-content;
+  background-color: rgba(0, 0, 0, 0);
+  text-align: center;
 
-
-  background-color: rgba(0, 0, 0, 0)
 }
 
 .menu-desk-item{
@@ -496,7 +583,29 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', e
   display: unset;
 }
 
+.items1{
+  display: none;
+}
+
+.drag-target{
+  display: none;
+}
+
+.items2{
+  display: block;
+}
+
 @media only screen and (max-width: 800px) {
+
+  .items2{
+    display: none;
+  }
+  
+
+.drag-target{
+  display: unset;
+}
+
 
   .desktop-hide{
     display: inline-block;
@@ -530,12 +639,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', e
     display: none;
   }
 
-  .logo-center{
-    height: 70%;
-
-    background-size: 250px;
- 
+  .items1{
+    display: unset;
   }
+
+  .logo-center {
+    height: 100%;
+    background-size: 240px;
+}
 
   .mobile-menu{
     position: fixed;
@@ -557,15 +668,71 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', e
   
 }
 
-.image-caption{
-  top: -10% !important; 
-  left: 30% !important;
+.cap-image1 {
+  width: 150% !important;
+  z-index: 10;
+
 }
 
-.cap-image{
-  width: 550px  !important;
-  z-index: 10;
+.image-caption1 {
+  bottom: 0% !important;
+  top: 20% !important;
+  left: 0% !important;
 }
+
+@media only screen and (max-width: 800px) {
+
+
+
+  .menu-container{
+
+    background: -moz-linear-gradient(top, rgba(0,0,0,0.74) 0%, rgba(0,0,0,0.33) 52%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(0,0,0,0.74) 0%,rgba(0,0,0,0.33) 52%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(0,0,0,0.74) 0%,rgba(0,0,0,0.33) 52%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bd000000', endColorstr='#00000000',GradientType=0 ); 
+  }
+
+  .cap-image {
+    width: 400px !important;
+    z-index: 10;
+    height: 400px !important;
+}
+
+.cap-image1 {
+  width: 150% !important;
+  z-index: 10;
+  height: 400px !important;
+}
+
+  .slider.fullscreen ul.indicators {
+    z-index: 10;
+    bottom: 10px;
+  }
+  
+
+  .image-caption {
+    bottom: 10% !important;
+    top: 20% !important;
+    left: 30% !important;
+}
+
+.image-caption1 {
+  bottom: 10% !important;
+  top: 20% !important;
+  left: 0% !important;
+}
+
+
+  .top-menu-left {
+
+    text-align: left;
+  
+  }
+}
+
+
+
+
 
 button:focus { outline: none; }
 
@@ -884,7 +1051,7 @@ button:focus { outline: none; }
 .secondary {
   height: 300px;
   width: 100%;
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   right: 0;
@@ -893,7 +1060,7 @@ button:focus { outline: none; }
 }
 .bg1{
 
-  background: url(./slides/3.png) no-repeat center;
+  background: url(http://localhost/paraisotour/wp-content/themes/paraiso-theme/assets/slides/1.jpg) no-repeat center;
   display: inline-block;
   height: 100%;
   width: 100%;
@@ -901,4 +1068,8 @@ button:focus { outline: none; }
   /* background-color: #00000059; */
   background-size: cover;
 
+}
+
+.tab-activator-container {
+  z-index: 100;
 }

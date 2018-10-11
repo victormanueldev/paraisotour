@@ -2,7 +2,7 @@
 .content-header{
 	width: 100%;
 	height: 25em;
-	background-image: url("http://localhost/paraisotour/wp-content/uploads/2018/09/rawpixel-472356-unsplash.jpg");
+	background-image: url("http://localhost/paraisotour/wp-content/uploads/2018/10/rawpixel-472356-unsplash.jpg");
 	background-size: cover;
 	position: relative;
 	background-position-y: 50%;
@@ -126,14 +126,15 @@
 }
 
 .info-total h2{
-	float: right;
+	width: 100%;
+	text-align: center;
 	color: #316698;
 	font-family: 'Roboto-Bold', Arial;
 }
 
 /*BANNER*/
 .banner-info-header{
-	background-image: url(http://localhost/paraisotour/wp-content/uploads/2018/09/rawpixel-676878-unsplash.jpg);
+	background-image: url(http://localhost/paraisotour/wp-content/uploads/2018/10/rawpixel-676878-unsplash.jpg);
 	background-size: cover;
 	padding: 20% 0 25% 5%;
 }
@@ -323,16 +324,18 @@
 
 /* tamaño del padre */
 .big-bus{
-    width: 100%;
+	width: 819.97px;
     height: 282px;
 
     /* -webkit-transform: rotate(-90deg); */
 }
 
 /*scroll para pantallas pequeñas*/
+
 .scroll{
     overflow-x: auto;
-    overflow-y: hidden
+	overflow-y: hidden;
+	width: 100%;
 }
 
 
@@ -528,4 +531,5 @@ box-shadow: 0px 4px 27px -2px rgba(0,0,0,0.66);
 
 
 
-/*END BUS
+/*END BUS}
+

@@ -111,3 +111,7 @@ footer .copyrigth{
 	padding: 35px;
 }
 /*END FOOTER*/
+
+.tab-activator-container {
+    z-index: 100;
+}

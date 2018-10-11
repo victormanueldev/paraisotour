@@ -1,0 +1,13 @@
+- Arreglar toda la parte de reservas, sumas de totales con descuentos 
+- Formulario de compra PayU con Vue y PHP
+- Pruebas de pagos con el formulario completo como va a quedar
+- CRUD para la confirmacion de la compra (guardar la reserva)
+- Validar al inicio de la pagina las sillas que ya están reservadas (SET de todas las variables)
+    hasta para el segundo bus
+- redireccionamientos con URLs de categorias
+- Cambiar los URLs por texto 
+- Ingresar informacion para el single.PHP
+- Hacer el Filtro para el autocomplete del index.php
+- Logica para el registro de usuarios
+- validar logica para el envio de correos y visualizacion de informacion de los clientes
+- Validaciones de Pruebas completas con PayuU y PHP
