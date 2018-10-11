@@ -168,6 +168,12 @@ height: 500px;">
 
 			</div>
 
+			<a class="menu-desk-item" style="width: 120px !important; position: relative;">Mis reservas</a>
+                <a class="menu-desk-item" style="width: 120px !important;position: relative;">
+                    <i class="material-icons" style="position: absolute; top: 8px; left: -2px;">account_circle</i>Hola
+                    User</a>
+                <br>
+
 			<a class="menu-mobile-item">Nosotros</a>
 			<a class="menu-mobile-item">Pasadías</a>
 			<a class="menu-mobile-item">Excursiónes</a>

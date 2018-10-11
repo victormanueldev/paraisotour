@@ -20,12 +20,14 @@
 	//Obtiene el campo personalizado 
 	$descMayor = get_post_meta(get_the_ID(), 'descuento-adultos', true);
 	//Nombre del POST
-	$name = get_the_title();
+	 $name = get_the_title();
 
 ?>
 
 <!-- CONTENT -->
 <section id="content" class="container">
+<br>
+	<br>
 	<div class="row justify-content-md-center" id="app">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-9 caja1">
 			<p>Por favor complete los datos solicitados a continuación, para facturación de compra e información de todas las personas
@@ -255,15 +257,19 @@
 					</div>
 					<br><br> -->
 
+				<h3 class="select-chair" style="margin: 0 0 10px 0">SELECCIÓN DE SILLAS</h3>
 				<div class="row chair">
-					<h3 class="select-chair">SELECCIÓN DE SILLAS</h3>
 					<div class="col-md-3 graychair">
-						<span>Sillas Vacías</span>
+						<span>Sillas Vacías </span>
 						<img src="http://localhost/paraisotour/wp-content/uploads/2018/09/gray-chair.png" alt="">
 					</div>
 					<div class="col-md-3 bluechair">
-						<span>Sillas Ocupadas</span>
+						<span>Sillas Seleccionadas</span>
 						<img src="http://localhost/paraisotour/wp-content/uploads/2018/09/blue-chair.png" alt="">
+					</div>
+					<div class="col-md-3 bluechair">
+						<span>Sillas Ocupadas </span>
+						<img src="http://localhost/paraisotour/wp-content/uploads/2018/09/red-chair.png" alt="">
 					</div>
 				</div>
 				<br>
@@ -348,7 +354,7 @@
 						<div class="col-md-12 destiny">
 							<h3>DESTINO</h3>
 							<br>
-							<p><?php echo $name; ?></p>
+							<p><?php echo "{{paymentForm.description='".$name."'}}"; ?></p>
 						</div>
 						<br>
 						<br>
@@ -373,7 +379,7 @@
 
 						<div class="col-md-12 info3">
 							<p>Descuento (Grupo Adultos)</p>
-							<h3><?php echo $descMayor != '' ? $descMayor: 0; ?>%</h3>
+							<h3><?php echo $descMayor != '' ? "{{descMayor=".$descMayor."}}" : 0; ?>%</h3>
 						</div>
 						<br>
 
@@ -385,67 +391,53 @@
 							<br>
 						</div>
 						<br>
-						<form action="https://sandbox.checkout.payulatam.com/ppp-web-gateway-payu" method="POST">
+						<form method="POST" action="https://checkout.payulatam.com/ppp-web-gateway-payu" >
 							<div style="display: none">
-								<label>Merchat</label>
-								<input type="number" name="merchantId" value="508029"/>
+								<input type="number" name="merchantId" v-model="paymentForm.merchantId"/>
 							</div>
 							<div style="display: none">
-								<label>API</label>
-								<input type="text" name="apiKey" value="4Vj8eK4rloUd272L48hsrarnUA"/>
+								<input type="text" name="apiKey" v-model="paymentForm.apiKey"/>
 							</div>
 							<div style="display: none">
-								<label>ref</label>
-								<input type="text" name="referenceCode" value="parqueDelCafe1"/>
+								<input type="text" name="referenceCode" v-model="paymentForm.referenceCode"/>
 							</div>
 							<div style="display: none">
-								<label>cuenta</label>
-								<input type="number" name="accountId" value="512321"/>
+								<input type="number" name="accountId" v-model="paymentForm.accountId"/>
 							</div>
 							<div style="display: none">
-								<labelDesc></label>
-								<input type="text" name="description" value="Test PAYU"/>
+								<input type="text" name="description" v-model="paymentForm.description"/>
 							</div>
 							<div style="display: none">
-								<label>monto total</label>
-								<input type="text" name="amount" value="30000"/>
+								<input type="text" name="amount" v-model="paymentForm.totalPayment"/>
 							</div>
 							<div style="display: none">
-								<label>IVA</label>
-								<input type="number" name="tax" value="0"/>
+								<input type="number" name="tax" v-model="paymentForm.tax"/>
 							</div>
 							<div style="display: none">
-								<label>taxReturnBase</label>
-								<input type="number" name="taxReturnBase" value="0"/>
+								<input type="number" name="taxReturnBase" v-model="paymentForm.taxReturnBase"/>
 							</div>
 							<div style="display: none">	
-								<label>currency</label>
-								<input type="text" name="currency" value="COP"/>
+								<input type="text" name="currency" v-model="paymentForm.currency"/>
 							</div>
 							<div style="display: none">
-								<label>signature</label>
-								<input type="text" name="signature" value="1a42d60ba7123675f5e5c3d922918000"/>
+								<input type="text" name="signature" v-model="paymentForm.signature"/>
 							</div>
 							<div style="display: none">
-								<label>test</label>
-								<input type="text" name="test" value="0"/>
+								<input type="text" name="test" v-model="paymentForm.test"/>
 							</div>
 							<div style="display: none">
-								<label>buyerEmail</label>
-								<input type="text" name="buyerEmail" value="victormalsx@gmail.com"/>
+								<input type="text" name="buyerEmail" v-model="paymentForm.buyerEmail"/>
 							</div>
 							<div style="display: none">
-								<label>buyerEmail</label>
-								<input type="text" name="responseUrl" value="http://www.facebook.com"/>
+								<input type="text" name="responseUrl" v-model="paymentForm.responseUrl"/>
 							</div>
 							<div style="display: none">
-								<label>buyerEmail</label>
-								<input type="text" name="confirmationUrl" value="http://www.google.com.co"/>
+								<input type="text" name="confirmationUrl" v-model="paymentForm.confirmationUrl"/>
 							</div>
 							<div style="width: 100%; text-align: center;">
 								<br>
 
-								<button id="button" type="submit" class="button"><span>COMPRAR</span></button>
+								<button id="button" type="submit" class="button"><span>PAGAR</span></button>
 
 							</div>
 					</form>

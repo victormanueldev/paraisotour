@@ -1,0 +1,189 @@
+span{
+	margin: 0.5em 1em;
+}
+/*END GENERAL*/
+
+/*HEADER*/
+.content-header{
+	width: 100%;
+	height: 25em;
+	background-image: url("../img/jonalyn-san-diego-717136-unsplash.jpg");
+	background-size: cover;
+	position: relative;
+	background-position-y: 50%;
+	opacity: 1;
+}
+
+#logotype{
+	position: relative;
+	width: 12%;
+    margin: 3% 4%;
+}
+/*END HEADER*/
+
+/*CONTENT*/
+#content{
+	width: 80%;
+	height: 50em;
+	margin: 4% 10%;
+	display: flex;
+    justify-content: center;
+}
+
+/*FORM*/
+.payment {
+	position: relative;
+	width: 60%;
+	height: 50em;
+	display: inline-block;
+}
+
+.payment  p{
+	margin: 0 1em;
+}
+
+.check{
+	display: flex;
+	justify-content: flex-start;
+}
+
+.check label, .form h3{
+	margin: 0.5em 1em;
+}
+
+.form input{
+	padding: 10px;
+	margin: 0.5em 1em;
+	background-color: #EDEEF0;
+	border: 1px solid #EDEEF0;
+	border-radius: 10px;
+	/*width: 40%;*/
+	display: inline-block;
+}
+
+.form-input-juridical{
+	width: 40%;
+}
+
+.form-input-person{
+	width: 32%;
+}
+
+.form-input-person2{
+	width: 40%;
+}
+
+.form-input-date{
+	width: 88%;
+}
+
+.form select{ 
+	padding: 10px;
+	margin: 0.5em 1em;
+	background-color: #EDEEF0;
+	border: 1px solid #EDEEF0;
+	border-radius: 10px;
+	/*width: 44%;*/
+	display: inline-block;
+}
+
+.form-select{
+	width: 12%;
+}
+
+.form-select-juridical{
+	width: 43%;
+}
+
+.form input:focus, .form select:focus{
+	outline: 0;
+}
+
+.label{
+	margin: 1.5em 1em;
+}
+/*END FORM*/
+
+/*INFO*/
+.content-info{
+	position: relative;
+	width: 100%;
+	height: 20%;
+}
+
+/*TOTAL*/
+.header-total{
+	height: 3em;
+	background-color: #316698;
+	color: white;
+	text-align: center;
+	padding: 20px 0px 0px 0px;
+}
+
+.body-total{
+	height: 60%;
+	background-color: #EDEEF0;
+	padding: 10%;
+}
+
+.destiny{
+	margin-bottom: 18%;
+}
+
+.date-tour p{
+	text-align: center;
+}
+
+.passangers1, .passangers2 {
+	width: 100%;
+	height: 5%;
+	margin-top: 30px;
+}
+
+.passangers-tour p{
+	float: left;
+	display: inline-block;
+	font-size: 10px;
+}
+
+.passangers-tour h5{
+	float: right;
+	display: inline-block;
+	color: #316698;
+	margin: 0;
+}
+
+.passangers-total{
+	margin-top: 10px;
+	width: 100%;
+    height: 2em;
+}
+
+.passangers-total h3{
+	float: left;
+	color: black;
+}
+
+.passangers-total h2{
+	text-align: center;
+	color: #316698;
+	font-family: 'Roboto-Bold', Arial;
+	font-size: 	20px;
+}
+
+.passangers-total span{
+	font-size: 	15px;
+	margin: 0;
+}
+
+#button{
+	margin: 16% 13%;
+}
+
+#button span{
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+
+/*END INFO*/

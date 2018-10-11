@@ -1,0 +1,472 @@
+/*GENERAL*/
+
+div.row {
+    margin-right: 0px;
+}
+
+div.container-fluid {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+div .col-md-12 {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+
+/*HEADER*/
+
+#header {
+    position: relative;
+    background: url("../Img/san-andres-colombia-min.jpg");
+    background-size: cover;
+    background-position-y: 30%;
+    /*background-attachment: fixed;*/
+    height: fit-content;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.sign {
+    width: 10%;
+    text-align: center;
+    padding: 10px 0;
+    float: right;
+    background-color: orange;
+}
+
+.sign .fa-user {
+    color: white;
+}
+
+.sign span {
+    margin-left: 10px;
+    font-size: 15px;
+    line-height: normal;
+}
+
+
+/*RECOMENDED*/
+
+#recomended {
+    width: 100%;
+    text-align: center;
+    border: solid 25px white;
+    display: block;
+    justify-content: space-around;
+    padding-left: 15px;
+}
+
+.destiny,
+.price,
+.quality,
+.attetion {
+    text-align: center;
+}
+
+.destiny img,
+.price img,
+.quality img,
+.attetion img {
+    text-align: center;
+    width: 30px;
+    height: 30px;
+}
+
+.destiny p,
+.price p,
+.quality p,
+.attetion p {
+    text-align: center;
+    font-size: 11px;
+}
+
+
+/*ABOUT US*/
+
+#about-us {
+    width: 100%;
+    height: fit-content;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+
+.info {
+    background-color: #316698;
+    color: white;
+    border: solid 25px #316698;
+}
+
+.info .title {
+    font-size: 15px;
+    text-align: left;
+}
+
+.info p {
+    font-size: 11px;
+    line-height: 1.8em;
+    text-align: justify;
+}
+
+.picture {
+    overflow: hidden;
+    padding: 0;
+}
+
+.picture-img {
+    width: 100%;
+    display: inline-block;
+    height: 357px;
+    background-image: url("http://localhost/paraisotour/wp-content/uploads/2018/09/VIAJERO-min.jpg");
+    background-size: cover;
+}
+
+
+/*PROMOTIONS*/
+
+#promotions {
+    width: 100%;
+    height: fit-content;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.promotions-title {
+    padding: 4%;
+}
+
+.promotions-title h3 {
+    text-align: center;
+    font-size: 18px;
+}
+
+.specials {
+    height: fit-content;
+    display: block;
+    position: relative;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+}
+
+
+.specials .box1, 
+.specials .box2,
+.specials .box3,
+.specials .box4,
+.specials .box5 {
+    width: 16em;
+    display: inline-block;
+    position: relative;
+    height: 280px;
+    text-align: center;
+    width: 200px;
+    margin-left: 5px;
+	margin-right: 5px;
+	margin-top: 30px;
+}
+
+.box1 h4,
+.box2 h4,
+.box3 h4,
+.box4 h4,
+.box5 h4 {
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 3%;
+}
+
+.header-box {
+    width: 100%;
+    height: 18em;
+    overflow: hidden;
+}
+
+.header-box .img-box {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url("http://localhost/paraisotour/wp-content/uploads/2018/09/VIAJERO-min.jpg");
+    background-size: 100% 100%;
+}
+
+.header-box .img-box:hover {
+    opacity: 0.5 black;
+    transition: all .5s ease-in-out;
+    filter: brightness(0.5);
+    -webkit-transform: scale(1.3);
+    -moz-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    -o-transform: scale(1.3);
+    transform: scale(1.3);
+    cursor: pointer;
+}
+
+.body-box {
+    width: 100%;
+    height: fit-content;
+    background-color: #EDEEF0;
+    padding: 5% 1%;
+    text-align: center;
+}
+
+.body-box h1 {
+    margin: 0;
+    color: #316698;
+    font-size: 20px;
+}
+
+.box-desc {
+    width: 40px;
+    height: 40px;
+    background-color: #316698;
+    color: white;
+    float: right;
+    font-size: 16px;
+    padding-top: 6%;
+    text-align: center;
+    position: relative;
+    z-index: 11;
+    top: 18px;
+}
+
+.through {
+    position: relative;
+}
+
+.through:before {
+    position: absolute;
+    content: "";
+    width: 20%;
+    top: 33%;
+    border-top: 1px solid;
+    -webkit-transform: rotate(-7deg);
+    -moz-transform: rotate(-7deg);
+    -ms-transform: rotate(-7deg);
+    -o-transform: rotate(-7deg);
+    transform: rotate(-7deg);
+}
+
+.details {
+    color: black !important;
+    font-size: 10px;
+    text-decoration: none;
+    text-decoration-line: none;
+}
+
+.details:hover {
+    color: #316698;
+    text-decoration-line: none;
+}
+
+.view-more {
+    text-align: center;
+    margin: 1% 0 2.5% 0;
+}
+
+.view-more a {
+    text-decoration: none;
+    font-size: 15px;
+    color: black;
+    /*text-decoration-line: none;*/
+}
+
+
+/*NEWSLETTER*/
+
+#newsletter {
+    width: 100%;
+    height: fit-content;
+    margin-left: 0px;
+    margin-right: 0px;
+    position: relative;
+}
+
+.newsletter-img {
+    width: 20%;
+    height: 80%;
+    position: absolute;
+    z-index: 2;
+    background-repeat: no-repeat;
+    background-image: url(http://localhost/paraisotour/wp-content/uploads/2018/09/REVISTA.png);
+    background-size: 100%;
+    top: 10%;
+}
+
+.magazine-sign-up {
+    width: 100%;
+    background-color: #316698;
+    padding: 2% 1% 5% 23%;
+    text-align: center;
+    display: inline-block;
+    height: 300px;
+}
+
+.magazine-sign-up p {
+    font-size: 15px;
+    text-align: right;
+    color: white;
+}
+
+.magazine-sign-up .input-customer {
+    font-size: 10px;
+    width: 80%;
+    height: 30px;
+    float: right;
+    border: 1px solid white;
+    border-radius: 7px;
+    margin: 3% 0;
+    padding: 0 2%;
+}
+
+.magazine-sign-up button {
+    background-color: #FF7583;
+    color: white;
+    padding: 2.5%;
+    margin: 5% 0;
+    display: inline-block;
+    font-size: 11px;
+}
+
+.magazine-sign-up .terms-condition {
+    font-size: 10px;
+    color: white;
+}
+
+.magazine-sign-up input {
+    width: 11px;
+    height: 11px;
+}
+
+.magazine-info {
+    padding: 0;
+    position: relative;
+    display: inline-block;
+    height: 300px;
+}
+
+.img-magazine {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url("http://localhost/paraisotour/wp-content/uploads/2018/09/annie-spratt-256172-unsplash-min.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    /*background-attachment: fixed;*/
+    background-position-y: 30%;
+    filter: brightness(0.5);
+}
+
+.text-top {
+    position: absolute;
+    font-size: 35px;
+    color: white;
+    top: 0;
+    margin: 7% 5%;
+}
+
+.text-bottom {
+    position: absolute;
+    color: white;
+    bottom: 0px;
+    margin: 7% 5%;
+    font-size: 20px;
+}
+
+
+/*FORM*/
+
+#form-customer {
+    width: 100%;
+    font-size: 11px;
+    text-align: center;
+    margin: 0 0;
+    padding: 0 10%;
+}
+
+.title-form {
+    text-align: center;
+    font-size: 18px;
+    margin: 3% 0;
+}
+
+.form-info .title {
+    font-size: 20px;
+}
+
+.form-info .title-body {
+    font-size: 16px;
+    line-height: 2em;
+}
+
+.form-info {
+    line-height: 2em;
+    margin-bottom: 2.5%;
+}
+
+.form-info>i {
+    font-size: 25px;
+}
+
+.form-info h3 {
+    font-size: 18px;
+}
+
+.form-info button {
+    background-color: #EDEEF0;
+    padding: 2%;
+    font-size: 18px;
+    border: 1px;
+    border-radius: 5px;
+}
+
+.form-info input {
+    width: 80%;
+    height: 30px;
+    background-color: #EDEEF0;
+    border: 1px solid #EDEEF0;
+    border-radius: 7px;
+    margin: 1.8% 0;
+    padding: 0 2%;
+}
+
+.form-info textarea {
+    width: 80%;
+    background-color: #EDEEF0;
+    border: 1px solid #EDEEF0;
+    border-radius: 7px;
+    margin: 3% 0;
+    padding: 2% 2%;
+}
+
+#button-customer {
+    margin: 0;
+    background-color: #316698;
+    border: 1px solid #316698;
+    width: 30%;
+}
+
+.mc-title {
+    position: absolute;
+    width: 102%;
+    height: 20px;
+    top: -2px;
+    left: -2px;
+    background-color: #ffffff;
+    z-index: 11;
+}
+
+.square {
+    width: 100px;
+    height: 60px;
+    display: inline-block;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+/* 
+.button-customer:hover {
+    opacity: 0.5;
+} */

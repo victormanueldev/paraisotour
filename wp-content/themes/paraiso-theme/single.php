@@ -20,7 +20,7 @@
 
     </div>
 
-    <div class="row justify-content-md-center">
+    <div style="padding-top: 20px;" class="row justify-content-md-center">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-9 caja1 ">
         <?php 
             if(have_posts()):
@@ -62,10 +62,9 @@
                             <br>
                         </div>
 
-                        <div style="width: 100%; text-align: center;">
+                        <div style="width: 100%; text-align: center; display:block;">
                             <br>
-                            <a style="margin-top: 15px" class="button" href="http://localhost/paraisotour/?page_id=17&p=<?php echo $id ?>">RESERVAR</a>
- 
+                            <a style="margin-top: 15px" class="button" href="http://localhost/paraisotour/?page_id=17&id=<?php echo $id ?>">RESERVAR</a>
                         </div>
                     </div>
                 </div>
