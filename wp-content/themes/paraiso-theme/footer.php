@@ -2,10 +2,10 @@
 	<footer>
 		<div class="terms-social">
 			<div class="terms">
-				<a href="#">Términos y condiciones</a>
+				<a href="http://localhost/paraisotour/?page_id=44">Términos y condiciones</a>
 				<a href="#">Políticas de privacidad</a>
 				<a href="#">Trabaja con nosotros</a>
-				<a href="#">Sugerencias y reclamos</a>
+				<a href="http://localhost/paraisotour/?page_id=46">Sugerencias y reclamos</a>
 				<a href="#">Métodos de pago</a>
 			</div>
 			<div class="social">

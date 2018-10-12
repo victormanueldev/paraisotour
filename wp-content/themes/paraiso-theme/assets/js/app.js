@@ -20,7 +20,7 @@ var app = new Vue({
         paymentForm: {
             merchantId: 751801, //ID de Mercader
             apiKey: 'S8Y0r36s1TdBNOvaSGaUVOo54w',
-            referenceCode: '1656577',   //Codigo de referencia de la compra (Numero de Factura)
+            referenceCode: '',   //Codigo de referencia de la compra (Numero de Factura)
             description: '',     //Desctipcion de la Compra (Nombre del destino)
             totalPayment: 0,    //Total a pagar
             tax: 0,   //IVA
@@ -59,43 +59,45 @@ var app = new Vue({
                 .then((res) => {
                    var chairsReserved = '';
                    var chairs = [];
-                   res.data.forEach((value) => {
-                       chairsReserved += value.sillas_reservadas.split(", ")
-                   })
-
-                   chairs = chairsReserved.split(',')
-
-                   chairs.forEach((valueChair, indexChair) => {
-                       this.busChairs.forEach(value => {
-                            if(value.id == valueChair){
-                                value.cssClass = 'red-chair';
-                                this.cont++;
-                            }
+                   if(res.data){
+                       res.data.forEach((value) => {
+                           chairsReserved += value.sillas_reservadas.split(", ")
                        })
-                   })
-
-                   if (this.cont === 41) {
-                        this.busChairs.forEach((value, index) => {
-                            this.bus2Chairs[index] = {
-                                id: (parseInt(value.id) + 42).toString(),
-                                label: value.label,
-                                state: 'available',
-                                cssClass: value.label != '' ? 'gray-chair' : ''
-                            }
-                        });
-
-                        chairs.forEach((valueChair, indexChair) => {
-                            this.bus2Chairs.forEach(value => {
-                                 if(value.id == valueChair){
-                                     value.cssClass = 'red-chair';
-                                     this.cont++;
-                                 }
+    
+                       chairs = chairsReserved.split(',')
+    
+                       chairs.forEach((valueChair, indexChair) => {
+                           this.busChairs.forEach(value => {
+                                if(value.id == valueChair){
+                                    value.cssClass = 'red-chair';
+                                    this.cont++;
+                                }
+                           })
+                       })
+    
+                       if (this.cont === 41) {
+                            this.busChairs.forEach((value, index) => {
+                                this.bus2Chairs[index] = {
+                                    id: (parseInt(value.id) + 42).toString(),
+                                    label: value.label,
+                                    state: 'available',
+                                    cssClass: value.label != '' ? 'gray-chair' : ''
+                                }
+                            });
+    
+                            chairs.forEach((valueChair, indexChair) => {
+                                this.bus2Chairs.forEach(value => {
+                                     if(value.id == valueChair){
+                                         value.cssClass = 'red-chair';
+                                         this.cont++;
+                                     }
+                                })
                             })
-                        })
-        
-                    } else {
-                        this.bus2Chairs = [];
-                    }
+            
+                        } else {
+                            this.bus2Chairs = [];
+                        }
+                   }
 
                 })
                 .catch((err) => {
@@ -123,6 +125,7 @@ var app = new Vue({
                     this.chairsSelected.forEach(value => {
                         this.paymentForm.extra2 += value+", ";
                     })
+                    this.paymentForm.referenceCode = this.makeid();
                     this.md5Encryption();
                     //Suma las sillas reservadas
                     this.reservedChairs++;
@@ -137,6 +140,7 @@ var app = new Vue({
                     this.chairsSelected.forEach(value => {
                         this.paymentForm.extra2 += value+", ";
                     })
+                    this.paymentForm.referenceCode = this.makeid();
                     this.md5Encryption();
                     this.reservedChairs--;
                     value.cssClass = 'gray-chair';
@@ -165,6 +169,7 @@ var app = new Vue({
                     if (e.target.tagName == 'LABEL') {
                         //Multiplica el precio por la cantidad de sillas
                         this.paymentForm.totalPayment +=this.rate - ((this.rate * this.descMayor)/100);
+                        this.paymentForm.referenceCode = this.makeid();
                         this.md5Encryption();
                         //Suma las sillas reservadas
                         this.reservedChairs++;
@@ -185,6 +190,7 @@ var app = new Vue({
                     if (e.target.tagName == 'LABEL') {
                         //Resta el precio por la cantidad de sillas
                         this.paymentForm.totalPayment -= this.rate;
+                        this.paymentForm.referenceCode = this.makeid();
                         this.md5Encryption();
                         this.reservedChairs--;
                         e.target.className = 'chair-label'
@@ -192,6 +198,7 @@ var app = new Vue({
                     } else {
                         //Resta el precio por la cantidad de sillas
                         this.paymentForm.totalPayment -= this.rate;
+                        this.paymentForm.referenceCode = this.makeid();
                         this.md5Encryption();
                         this.reservedChairs--;
                         e.target.className = "click-chair bus-chair-container gray-chair"
@@ -210,6 +217,16 @@ var app = new Vue({
         },
         submitForm(){
             console.log(this.paymentForm.extra2);
+        },
+        makeid() {
+            var text = "";
+            var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+          
+            for (var i = 0; i < 5; i++)
+              text += possible.charAt(Math.floor(Math.random() * possible.length));
+          
+              console.log(text)
+            return text;
         }
     },
     computed: {

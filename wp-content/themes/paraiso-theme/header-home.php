@@ -68,11 +68,11 @@ height: 500px;">
 
 						<div class="center-menu-items">
 
-							<a class="menu-desk-item">Nosotros</a>
-							<a class="menu-desk-item">Pasadías</a>
-							<a class="menu-desk-item">Excursiónes</a>
-							<a class="menu-desk-item">Promociones</a>
-							<a class="menu-desk-item">Contacto</a>
+							<a class="menu-desk-item dactive" href="http://localhost/paraisotour/">Inicio</a>
+							<a class="menu-desk-item" href="http://localhost/paraisotour/?cat=3">Pasadías</a>
+							<a class="menu-desk-item" href="http://localhost/paraisotour/?cat=4">Excursiónes</a>
+							<a class="menu-desk-item" href="http://localhost/paraisotour/?cat=2">Promociones</a>
+							<a class="menu-desk-item" href="http://localhost/paraisotour/?page_id=49">Contacto</a>
 
 						</div>
 
@@ -136,13 +136,13 @@ height: 500px;">
 			<li>
 				<img src="<?php echo bloginfo(template_url).'/assets/slides/2.jpg' ?>"> <!-- random image -->
 				<div class="caption right-align image-caption">
-					<img src="./icons/FAMILIA.png" class="cap-image">
+					<img src="<?php echo bloginfo(template_url).'/assets/icons/familia.png'; ?>" class="cap-image">
 				</div>
 			</li>
 			<li>
-				<img src="<?php echo bloginfo(template_url).'/assets/slides/3.png' ?>"> <!-- random image -->
+				<img src="<?php echo bloginfo(template_url).'/assets/slides/3.jpg' ?>"> <!-- random image -->
 				<div class="caption right-align image-caption1">
-					<img src="./slides/IMAGEN 2 SIN FONDO.png" class="cap-image1">
+					<img src="<?php echo bloginfo(template_url).'/assets/slides/imagen2sf.png' ?>" class="cap-image1">
 				</div>
 			</li>
 			<li>
@@ -174,11 +174,11 @@ height: 500px;">
                     User</a>
                 <br>
 
-			<a class="menu-mobile-item">Nosotros</a>
-			<a class="menu-mobile-item">Pasadías</a>
-			<a class="menu-mobile-item">Excursiónes</a>
-			<a class="menu-mobile-item">Promociones</a>
-			<a class="menu-mobile-item">Contacto</a>
+                <a class="menu-mobile-item mactive" href="http://localhost/paraisotour/">Inicio</a>
+                <a class="menu-mobile-item" href="http://localhost/paraisotour/?cat=3">Pasadías</a>
+                <a class="menu-mobile-item" href="http://localhost/paraisotour/?cat=4">Excursiónes</a>
+                <a class="menu-mobile-item" href="http://localhost/paraisotour/?cat=2">Promociones</a>
+                <a class="menu-mobile-item" href="http://localhost/paraisotour/?page_id=49">Contacto</a>
 		</div>
 
 	</div>

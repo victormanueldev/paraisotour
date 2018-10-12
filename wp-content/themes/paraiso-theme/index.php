@@ -1,6 +1,16 @@
 <!-- HEADER -->
 <?php get_header("home")?>
 
+<?php 
+    include_once('src/EnviarEmail.php');
+    $envemail = new Email();
+	if (isset($_POST['guardar'])) {
+		$cuerpo = $_POST['mensaje'];
+		$asunto = $_POST['asunto'];
+		$enviar = $envemail->enviarEmail($_POST['correo'], $_POST['nombre'], $asunto, $cuerpo);
+	}
+?>
+
 <!-- RECOMMENDED -->
 <div class="row">
     <div class="col-md-12">
@@ -124,7 +134,7 @@
                 ?>
     </div>
     <div class="col-md-12 view-more">
-        <a href="#"><b>Ver más</b></a>
+        <a href="http://localhost/paraisotour/?cat=2"><b>Ver más</b></a>
     </div>
 </div>
 <!-- END PROMOTIONS -->
@@ -216,15 +226,17 @@
         <p class="title">DEJÁNOS TU INFORMACIÓN</p>
         <p class="title-body">y nos pondremos en contacto contigo.</p>
         <br>
-        <input type="text" placeholder="Nombre">
+        <form action="" method="POST">
+        <input type="text" name="nombre" placeholder="Nombre">
         <br>
-        <input type="text" placeholder="Correo">
+        <input type="text" name="correo" placeholder="Correo">
         <br>
-        <input type="text" placeholder="Asunto">
+        <input type="text" name="asunto" placeholder="Asunto">
         <br>
-        <textarea cols="30" rows="10" placeholder="Mensaje"></textarea>
+        <textarea cols="30" name="mensaje" rows="10" placeholder="Mensaje"></textarea>
         <br>
-        <input type="button" id="button-customer" class="btn btn-primary" value="Enviar">
+        <input type="submit" id="button-customer" name="guardar" class="btn btn-primary" value="Enviar">
+        </form>
     </div>
 </div>
 <!-- END FORM -->
