@@ -136,7 +136,7 @@
 
 				<div class="row">
 					<div class="col-md-12">
-						<textarea rows="10" placeholder="Pepito Perez - 1000000 - 16/08/1998" v-model="paymentForm.extra3"></textarea>
+						<textarea rows="10" placeholder="Pepito Perez - 1000000 - 16/08/1998"></textarea>
 					</div>
 				</div>
 				<br>
@@ -288,7 +288,7 @@
 				</div>
 				<!-- END BUS 2-->
 				<!-- BUS 2-->
-				<div v-if="cont === 41" class="scroll">
+				<div v-if="chairsComputed" class="scroll">
 					<div class="big-bus">
 						<div class="bus-container">
 							<div class="bus-enabled">
@@ -447,11 +447,9 @@
 							</div>
 							<div style="width: 100%; text-align: center;">
 								<br>
-
 								<button :disabled="paymentForm.totalPayment == 0" id="button" type="submit" class="button">
 									<span>PAGAR</span>
 								</button>
-
 							</div>
 						</form>
 					</div>

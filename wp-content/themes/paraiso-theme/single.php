@@ -58,7 +58,9 @@
                             <h3 class="bold t-center">DESDE</h3>
                             <br>
                             <br>
-                            <h2>COP $<?php echo $price ?></h2>
+                            <h2>COP $
+                                <?php echo $price ?>
+                            </h2>
                             <br>
                         </div>
 

@@ -13,10 +13,24 @@
         <div class="box1 small">
             <h4><?php the_title(); ?></h4>
             <div class="header-box">
+                <div class="box-desc">
+                    <b> %   <?php 
+                                /*
+                                * Recorre todos los tags que contiene cada entrada
+                                * IMPORTANTE: Debe ser un solo tag por entrada
+                                */ 
+                                foreach($tags as $tag ):
+                                    //Imprime solo el valor del tag  
+                                    echo $tag->name; 
+                            ?>
+                    </b>
+                </div>
                 <div class="img-box" style="background-image: url('<?php the_post_thumbnail_url(); ?>');"></div>
             </div>
             <div class="body-box">
-                <h1>COP $<?php echo $price; ?>  </h1>
+                <p class="through">$<?php echo $price?></p>
+                <h1>COP $<?php echo $price - (($price * $tag->name)/100); ?>  </h1>
+                                <?php endforeach; ?>
                 <p>POR PERSONA</p>
                 <br>
                 <b class="details">

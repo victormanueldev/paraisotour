@@ -21,7 +21,7 @@ class Conexion
     $this-> host = "localhost";
     $this-> user = "root";
     $this-> pass = "saxo";
-    $this-> bd = "bd_sofit";
+    $this-> bd = "paraiso_tour";
 
     //Envia los 4 Parametros en la funcion mysqli_connect
     $this-> conexion = new mysqli($this-> host, $this-> user, $this-> pass, $this-> bd);

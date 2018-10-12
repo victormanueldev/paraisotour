@@ -91,7 +91,7 @@
                                 ?>
                     </b>
                 </div>
-                <div class="img-box"></div>
+                <div class="img-box" style="background-image: url('<?php the_post_thumbnail_url(); ?>');"></div>
             </div>
             <div class="body-box">
                 <p class="through">

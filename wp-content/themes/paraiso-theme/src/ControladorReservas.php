@@ -27,9 +27,9 @@
     * @param $id (ID de la Reserva a Visualizar)
     * @return $datos (Array Asociativo con la informacion del registro)
     */
-    public function verR($id_Reservas)
+    public function verR($id_Destino)
     {
-      $this-> reservas-> setReservas('id_Reservas', $id_Reservas);
+      $this-> reservas-> setReservas('id_Destino', $id_Destino);
       $datos = $this-> reservas-> verReservas();
       return $datos;
     }

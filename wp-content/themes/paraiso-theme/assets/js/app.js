@@ -20,7 +20,7 @@ var app = new Vue({
         paymentForm: {
             merchantId: 751801, //ID de Mercader
             apiKey: 'S8Y0r36s1TdBNOvaSGaUVOo54w',
-            referenceCode: '165650',   //Codigo de referencia de la compra (Numero de Factura)
+            referenceCode: '1656577',   //Codigo de referencia de la compra (Numero de Factura)
             description: '',     //Desctipcion de la Compra (Nombre del destino)
             totalPayment: 0,    //Total a pagar
             tax: 0,   //IVA
@@ -28,12 +28,12 @@ var app = new Vue({
             signature: '',   //Firma digital creada para cada transaccion
             accountId: 757624,   //Numero de la cuenta del Mercader
             currency: 'COP',        //Moneda local
-            test: 0,     //Variable para tests
+            test: 1,     //Variable para tests
             payerDocument: '', //Documento del comprador
             buyerFullName: '',  //Nombre completo del comprador
             buyerEmail: '',  //Email del comprador
             mobilePhone: '',    //Telefono del 
-            responseUrl: 'http://localhost/paraisotour/wp-content/themes/paraiso-theme/src/InsertarReservas.php',    //URL de la pagían de respuesta
+            responseUrl: 'http://localhost/paraisotour/respuesta.php',    //URL de la pagían de respuesta
             confirmationUrl: 'http://localhost/paraisotour/wp-content/themes/paraiso-theme/src/InsertarReservas.php',    //URL de confirmación de la compra
             shippingAddress: '', //Direccion de entrega de la mercancia
             algorithmSignature: 'MD5',  //Algoritmo de cifrado de la firma
@@ -51,13 +51,63 @@ var app = new Vue({
     },
     mounted() {
         this.getChairs();
+        
     },
     methods: {
+        getReserves(){
+            axios.get('http://localhost/paraisotour/wp-content/themes/paraiso-theme/src/VerReservas.php?id=22')
+                .then((res) => {
+                   var chairsReserved = '';
+                   var chairs = [];
+                   res.data.forEach((value) => {
+                       chairsReserved += value.sillas_reservadas.split(", ")
+                   })
+
+                   chairs = chairsReserved.split(',')
+
+                   chairs.forEach((valueChair, indexChair) => {
+                       this.busChairs.forEach(value => {
+                            if(value.id == valueChair){
+                                value.cssClass = 'red-chair';
+                                this.cont++;
+                            }
+                       })
+                   })
+
+                   if (this.cont === 41) {
+                        this.busChairs.forEach((value, index) => {
+                            this.bus2Chairs[index] = {
+                                id: (parseInt(value.id) + 42).toString(),
+                                label: value.label,
+                                state: 'available',
+                                cssClass: value.label != '' ? 'gray-chair' : ''
+                            }
+                        });
+
+                        chairs.forEach((valueChair, indexChair) => {
+                            this.bus2Chairs.forEach(value => {
+                                 if(value.id == valueChair){
+                                     value.cssClass = 'red-chair';
+                                     this.cont++;
+                                 }
+                            })
+                        })
+        
+                    } else {
+                        this.bus2Chairs = [];
+                    }
+
+                })
+                .catch((err) => {
+                    console.log(err);
+                })
+        },
         getChairs() {
             // const obj = 'name='+JSON.stringify({name: 'Victor', tel: 123456, sataus: false});
             axios.get('http://localhost/paraisotour/wp-content/themes/paraiso-theme/bus-chairs.json')
                 .then((res) => {
                     this.busChairs = res.data;
+                    this.getReserves();
                 })
                 .catch((err) => {
                     console.log(err);
@@ -105,7 +155,7 @@ var app = new Vue({
                 });
 
             } else {
-                this.bus2Chairs = []
+                this.bus2Chairs = [];
             }
         },
         clickChair2(idChair2, e) {
@@ -166,6 +216,15 @@ var app = new Vue({
         cantPassengers() {
             this.totalPassengers =  parseInt(this.cantPassengersMajor) + parseInt(this.cantPassengersMinor);
             return this.totalPassengers;
+        },
+        chairsComputed(){
+            if(this.cont >= 41){
+                console.log(true);
+                return true;
+            }else{
+                console.log(false);
+                return false;
+            }
         }
     }
 })

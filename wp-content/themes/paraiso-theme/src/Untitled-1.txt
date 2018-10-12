@@ -19,7 +19,8 @@
 &signature=4fbb7fe0a5a989d4a2e0ab0fe96b4005
 &polResponseCode=25
 &lapResponseCode=PENDING_TRANSACTION_CONFIRMATION
-&risk=&polPaymentMethod=37
+&risk=
+&polPaymentMethod=37
 &lapPaymentMethod=EFECTY
 &polPaymentMethodType=7
 &lapPaymentMethodType=CASH

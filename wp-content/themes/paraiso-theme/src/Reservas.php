@@ -89,32 +89,20 @@
    */
    public function verReservas()
    {
-     $sql = "SELECT * FROM reservas WHERE id_Reservas = '{$this-> id_Reservas}'";
-     $resultado = $this-> conex-> consultaRetorno($sql);//Guarda el Resultado de la Consulta
-     //Guarda una fila del Resulset(Tabla Virtual) en un array asociativo
-     $fila = mysqli_fetch_assoc($resultado);
+      $sql = "SELECT * FROM reservas WHERE id_Destino = {$this-> id_Destino}";
+      $resultado = $this-> conex-> consultaRetorno($sql);//Guarda el Resultado de la Consulta
+      //Guarda una fila del Resulset(Tabla Virtual) en un array asociativo
+      $fila = mysqli_fetch_all($resultado, MYSQLI_ASSOC);
 
-     //Asignacion de Atributos de la Tabla Reservas
+    //  //Asignacion de Atributos de la Tabla Reservas
 
-    $this-> id_Reservas =           $fila['id_Reservas'];
-    $this-> sr_sra =                $fila['sr_sra'];
-    $this-> nombre_empresa =        $fila['nombre'];
-    $this-> cel_tel =               $fila['cel_tel'];
-    $this-> email =                 $fila['email'];
-    $this-> tipo_Documento =        $fila['tipo_Documento'];
-    $this-> cc_nit =                $fila['cc_nit'];
-    $this-> provincia =             $fila['provincia'];
-    $this-> ciudad =                $fila['ciudad'];
-    $this-> direccion =             $fila['direccion'];
-    $this-> fecha_Nacimiento =      $fila['fecha_Nacimiento'];
-    $this-> fecha_Viaje =           $fila['fecha_Viaje'];
-    $this-> cantidad_may_cuatro =   $fila['cantidad_may_cuatro'];
-    $this-> cantidad_men_cuatro =   $fila['cantidad_men_cuatro'];
-    $this-> info_pasajeros =        $fila['info_pasajeros'];
-    $this-> total_a_pagar =         $fila['total_a_pagar'];
-    $this-> cantidad_sillas =       $fila['cantidad_sillas'];
-    $this-> total_a_pagar =         $fila['total_a_pagar'];
-    //$this-> id_Destino =            $fila['id_Destino'];
+    // $this-> id_Reservas =           $fila['id_Reservas'];
+    // $this-> email =                 $fila['email'];
+    // $this-> fecha_Viaje =           $fila['fecha_Viaje'];
+    // $this-> total_a_pagar =         $fila['total_a_pagar'];
+    // $this-> cantidad_sillas =       $fila['codigo_Referencia'];
+    // $this-> id_Destino =            $fila['id_Destino'];
+    // $this-> total_a_pagar =         $fila['sillas_reservadas'];
     
 
     return $fila;
