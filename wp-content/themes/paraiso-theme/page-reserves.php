@@ -6,6 +6,8 @@
 <?php get_header(); ?>
 
 <?php 
+    // error_reporting(E_ALL);
+    // ini_set("display_errors", 1);
 	//Obtiene el valor del Parametro del URL (id)
 	$idPost = $_GET['id'];
 
@@ -19,10 +21,14 @@
 	$normalPrice = get_post_meta(get_the_ID(), 'precio-normal', true);
 	//Obtiene el campo personalizado 
 	$descMayor = get_post_meta(get_the_ID(), 'descuento-adultos', true);
+	$desc4To6 = get_post_meta(get_the_ID(), 'descuento-4a6', true);
+	$desc0To3 = get_post_meta(get_the_ID(), 'descuento-0a3', true);
+	$doubleOccupancy = get_post_meta(get_the_ID(), 'acomodacion-doble', true);
 	//Obtiene el campo personalizado 
 	$dateTravel = get_post_meta(get_the_ID(), 'fecha-salida', true);
 	//Nombre del POST
-	 $name = get_the_title();
+	$name = get_the_title();
+	$tags = get_the_tags();
 
 ?>
 
@@ -112,16 +118,40 @@
 
 				<h3>CANTIDAD DE PASAJEROS</h3>
 
+				<!-- Set del descuento para niños de 4 a 6 años -->
+				<div style="display: none">
+					<label ><?php echo $desc4To6 == '' ? "{{descMin4To6=0}}" : "{{descMin4To6=".$desc4To6."}}"; ?><label>
+				</div>
+
+				<!-- Set del descuento para niños de  0 a 3 años-->
+				<div style="display: none">
+					<label ><?php echo $desc0To3 == '' ? "{{descMin0To3=0}}" : "{{descMin0To3=".$desc0To3."}}"; ?><label>
+				</div>
+
+				<!-- SET de la tarifa para acomodaciones dobles-->
+				<div style="display: none">
+					<label ><?php echo $doubleOccupancy == '' ? "{{doubleOccupancyPrice=0}}" :  "{{doubleOccupancyPrice=".$doubleOccupancy."}}"; ?><label>
+				</div>
+
 				<div class="row justify-content-md-center">
-					<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
-						<span>Mayores de 4 años</span>
-						<input type="number" id="cant1" min="0" max="99" value="0" v-model="cantPassengersMajor">
+					<div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
+						<span>Mayores de 7 años {{calculateDescMajors}}</span>
+						<input type="number" min="0" max="99" value="0" v-model="cantPassengersMajor">
 					</div>
-					<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
-						<span>De 0 a 3 años</span>
-						<input type="number" id="cant2" min="0" max="99" value="0" v-model="cantPassengersMinor">
+					<div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
+						<span>Niños de 4 a 6 años {{calculateDescMin4To6}}</span>
+						<input type="number" min="0" max="99" value="0" v-model="cantPassengersMinor4To6">
+					</div>
+					<div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
+						<span>Niños de 0 a 3 años {{calculateDescMin0To3}}</span>
+						<input type="number" min="0" max="99" value="0" v-model="cantPassengersMinor0To3">
+					</div>
+					<div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
+						<span>Cant. de acomodaciones dobles {{calculateDoubleOccupancy}}</span>
+						<input type="number" min="0" max="99" value="0" v-model="doubleOccupancy">
 					</div>
 				</div>
+
 				<br>
 				<br>
 
@@ -195,7 +225,7 @@
 					
 					<div class="row justify-content-md-center">
 						<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
-							<span>Mayores de 4 años</span><input type="number" id="cant1" min="0" max="99" value="0">
+							<span>Mayores de 4 años</span><input type="number" id="" min="0" max="99" value="0">
 						</div>
 						<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
 							<span>De 0 a 3 años</span><input type="number" id="cant2" min="0" max="99" value="0">	
@@ -254,7 +284,7 @@
 				</div>
 				<br>
 				<div class="row">
-					<div class="col-md-12 stock">
+					<div class="col-md-6 stock">
 						<label for="stock">
 							Deseo reservar las sillas a mi nombre
 							<input type="checkbox" id="stock" name="person" value="stock">
@@ -354,7 +384,7 @@
 							<!-- <br> -->
 							<h3 class="price1">COP</h3>&nbsp;&nbsp;
 							<h1 class="price2">$
-								<?php echo "{{rate =".$normalPrice."}}"?>
+								<?php echo  $tags[0]->name == '' ? "{{rate =".$normalPrice."}}" : "{{rate =".($normalPrice - (($normalPrice * $tags[0]->name)/100))."}}" ;?>
 							</h1>
 							<p>POR PERSONA</p>
 						</div>
@@ -380,7 +410,7 @@
 							<h3>TOTAL A PAGAR</h3>
 							<br>
 							<br>
-							<h2>COP ${{paymentForm.totalPayment}}</h2>
+							<h2>COP ${{paymentForm.totalPayment.toFixed(0)}}</h2>
 							<br>
 						</div>
 						<br>
@@ -445,9 +475,9 @@
 							<div style="display: none">
 								<input type="text" name="confirmationUrl" v-model="paymentForm.confirmationUrl" />
 							</div>
-							<div style="width: 100%; text-align: center;">
+							<div style="width: 100%; text-align: center;" >
 								<br>
-								<button :disabled="paymentForm.totalPayment == 0" id="button" type="submit" class="button">
+								<button :disabled="disableSubmit" id="btn-submit" type="submit" class="button">
 									<span>PAGAR</span>
 								</button>
 							</div>

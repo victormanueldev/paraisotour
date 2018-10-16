@@ -17,6 +17,7 @@
                 <div class="img-box" style="background-image: url('<?php the_post_thumbnail_url(); ?>');"></div>
             </div>
             <div class="body-box">
+            <p>&nbsp;</p>
                 <h1>COP $<?php echo $price; ?>  </h1>
                 <p>POR PERSONA</p>
                 <br>
@@ -46,7 +47,8 @@
                 <div class="img-box" style="background-image: url('<?php the_post_thumbnail_url(); ?>');"></div>
             </div>
             <div class="body-box">
-                <p class="through">$<?php echo $price?></p>
+               
+                <p class="through">&nbsp; $<?php echo $price?></p>
                 <h1>COP $<?php echo $price - (($price * $tag->name)/100); ?>  </h1>
                                 <?php endforeach; ?>
                 <p>POR PERSONA</p>
