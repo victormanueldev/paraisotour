@@ -1,7 +1,6 @@
-- redireccionamientos con URLs de categorias
-- Cambiar los URLs por texto 
-- Ingresar informacion para el single.PHP
+
+
 - Hacer el Filtro para el autocomplete del index.php
-- Logica para el registro de usuarios
+
 - validar logica para el envio de correos y visualizacion de informacion de los clientes
 - Validaciones de Pruebas completas con PayU y PHP

@@ -1,65 +1,32 @@
 <?php 
     /*
-    Template Name: Page Suggestions
+    Template Name: Page Response
     */
 ?>
 <?php get_header(); ?>
+
 <!-- CONTENT -->
-<section id="content" class="container" style="position: relative;padding-top: 40px;">
+<section id="content" class="container" style="position: relative;margin-top: 40px;">
 
 
 <div class="row justify-content-md-center">
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-9 caja1 ">
+    <div style=" height: 358px;" class="col-xs-12 col-sm-12 col-md-12 col-lg-9 caja1 ">
 
-        <form action="#" class="form">
-            <!-- NATURE PERSON -->
-            <div class="row">
+        <div style=" height: 30%; position: relative; text-align: center;">
 
-                <div class="col-md-2 "></div>
-
-                <div class="col-md-8 ">
-
-                    <h2>SUGERENCIAS Y RECLAMOS</h2>
-                    <br>
-                    <span class="terms-and-c">
-                        La solicitud llegará al mail registrado al completar el formulario.
-                    </span>
-                    <br>
-                    <br>
-
-                    <input type="text" placeholder="Nombres">
-                    <br>
-                    <br>
-                    <br>
-                    <input type="mail" placeholder="Correo">
-                    <br>
-                    <br>
-                    <br>
-                    <select name="Motivo">
-                        <option value="1">Motivo 1</option>
-                        <option value="2">Motivo 2</option>
-                        <option value="3">Motivo 3</option>
-                    </select>
-                    <br>
-                    <br>
-                    <br>
-                    <textarea style="height: 150px;" type="text" placeholder="Mensaje"></textarea>
-
-                </div>
-                <br> <br>
-
-                <button id="button" class="button" style="background-color: #FE7481 !important; border: 0px solid white; width: 30% !important; "><span style="font-weight: bold  !important">ENVIAR</span></button>
-            </div>
-
-
-
-            <br> <br> <br>
-
-
-
-
-        </form>
-
+            <h1 style="position: absolute; top: 45%; width: 100%; color: #316698">
+                ¡GRACIAS POR ADQUIRIR NUESTROS SERVICIOS!
+            </h1>
+            
+        </div>
+        <h3  style="margin-bottom: 40px;position: relative; text-align: center;">Disfruta de tu viaje con Paraiso Tour.</h3>
+                                <div style="width: 100%; text-align: center;">
+                                    <br>
+                                    <a href="http://localhost/paraisotour" class="button">
+                                        <span>Regresar al Inicio</span>
+                                    </a>
+                                </div>
+        
     </div>
 
     <!-- INFO -->
@@ -128,8 +95,8 @@
         <!-- END BANNER -->
     </div>
     <!-- END INFO -->
+
 </div>
 </section>
-
 
 <?php get_footer(); ?>

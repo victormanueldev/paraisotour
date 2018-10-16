@@ -22,7 +22,7 @@ define('DB_NAME', 'paraiso_tour');
 define('DB_USER', 'root');
 
 /** Tu contraseña de MySQL */
-define('DB_PASSWORD', 'practy');
+define('DB_PASSWORD', 'saxo');
 
 /** Host de MySQL (es muy probable que no necesites cambiarlo) */
 define('DB_HOST', 'localhost');

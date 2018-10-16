@@ -31,6 +31,8 @@
                     $price = get_post_meta(get_the_ID(), 'precio-normal', true);
                     //Obtiene el ID 
                     $id = get_the_ID();
+                    //Obtiene las etiquetas de la entrada
+                    $tags = get_the_tags();
                     //Muestra el Contenido
                     the_content();
         ?>
@@ -59,7 +61,7 @@
                             <br>
                             <br>
                             <h2>COP $
-                                <?php echo $price ?>
+                                <?php echo $tags[0]->name == '' ? $price : $price - (($price * $tags[0]->name)/100);  ?>
                             </h2>
                             <br>
                         </div>

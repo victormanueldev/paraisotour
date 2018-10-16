@@ -28,12 +28,12 @@ var app = new Vue({
             signature: '',   //Firma digital creada para cada transaccion
             accountId: 757624,   //Numero de la cuenta del Mercader
             currency: 'COP',        //Moneda local
-            test: 1,     //Variable para tests
+            test: 0,     //Variable para tests
             payerDocument: '', //Documento del comprador
             buyerFullName: '',  //Nombre completo del comprador
             buyerEmail: '',  //Email del comprador
             mobilePhone: '',    //Telefono del 
-            responseUrl: 'http://localhost/paraisotour/respuesta.php',    //URL de la pagían de respuesta
+            responseUrl: 'http://localhost/paraisotour/?page_id=239',    //URL de la pagían de respuesta
             confirmationUrl: 'http://localhost/paraisotour/wp-content/themes/paraiso-theme/src/InsertarReservas.php',    //URL de confirmación de la compra
             shippingAddress: '', //Direccion de entrega de la mercancia
             algorithmSignature: 'MD5',  //Algoritmo de cifrado de la firma
