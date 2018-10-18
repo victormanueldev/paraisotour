@@ -21,6 +21,8 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	<!-- VueJS Version 2.5.17 -->
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
 
 </head>
 
@@ -30,7 +32,7 @@
 width: 100%;
 height: 500px;">
 
-<div class="slider fullscreen">
+<div class="slider fullscreen" id="app">
 		<div class="menu-container">
 			<div class="menu-container-children">
 				<div class="top-menu">
@@ -50,7 +52,17 @@ height: 500px;">
 					</div>
 
 
-
+				<p style="display: none" class="text-bottom" >
+					<?php 
+						$index = 0;
+						//Recorre el Array de posts
+						foreach($posts as $post):
+							echo "{{posts_title[".$index."]='".$post->post_title."'}}"; //Asigna los titulos de los posts a la varible JS
+							echo "{{posts_id[".$index."]='".$post->ID."'}}";//Asigna los ID de los posts a la varible JS
+							$index++;
+						endforeach;
+						?>
+				</p>
 				</div>
 
 
@@ -84,7 +96,7 @@ height: 500px;">
 						<div class="center-search-items">
 
 							<div class="search" style="z-index: 15;">
-								<input id="idsearch" type="text" class="search-input" placeholder="  Destino,pasadía, excursión">
+								<input id="idsearch" type="text" class="search-input" placeholder="  Destino,pasadía, excursión" v-model="searchInput">
 								<button type="submit" class="search-button">
 									<i class="material-icons" style="position: absolute;left: 4px;top: 1px;">search</i>
 								</button>
@@ -93,11 +105,8 @@ height: 500px;">
 										<i class="material-icons" style="position: absolute;left: 4px;top: 1px;">close</i>
 									</a>
 
-									<div class="res-item">
-										resultado
-									</div>
-									<div class="res-item">
-										resultado
+									<div v-for="post in filteredPosts" class="res-item">
+										<a v-bind:href="post.url">{{post.title}}</a>
 									</div>
 								</div>
 							</div>

@@ -3,7 +3,10 @@ var app = new Vue({
     el: "#app",
     data: {
         /* Variables de la vista */
-
+        posts_id: [],
+        posts_title: [],
+        posts: [],
+        searchInput: '',
         busChairs: [],  //Bus #1
         bus2Chairs: [], //BUS #2
         cont: 0,    //Contador de sillas ocupadas
@@ -64,12 +67,19 @@ var app = new Vue({
     },
     mounted() {
         this.getChairs();
-        console.log(this.descMayor);
-        console.log(this.descMin4To6);
-        console.log(this.descMin0To3);
-        console.log(this.doubleOccupancyPrice);
+        this.posts = this.createPostsObject(); 
     },
     methods: {
+        createPostsObject(){
+            var posts = [];
+            this.posts_title.map((title, index) => {
+                posts[index] = {
+                    title: title,
+                    url: 'http://localhost/paraisotour/?p='+this.posts_id[index]
+                }
+             });
+             return posts;
+        },
         getReserves(){
             axios.get('http://localhost/paraisotour/wp-content/themes/paraiso-theme/src/VerReservas.php?id=22')
                 .then((res) => {
@@ -278,6 +288,12 @@ var app = new Vue({
                 return false;
             }
             return true;
+        },
+        filteredPosts(){
+            var self = this;
+            return this.posts.filter((post) => {
+                return _.includes(post.title.toLowerCase(), self.searchInput.toLowerCase());
+            })
         }
         
 

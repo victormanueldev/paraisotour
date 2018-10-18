@@ -67,7 +67,7 @@
     <div class="col-md-12 specials">
         <?php
                     //Parametros de Consulta 
-                    $args = array( 'posts_per_page' => 5 );
+                    $args = array( 'posts_per_page' => 5, 'cat' => 2 );
                     $query = new WP_Query( $args );
                     //Valida que existan entradas
                     if($query->have_posts()):
@@ -76,6 +76,7 @@
                                 //Obtiene el campo personalizado 
                                 $price = get_post_meta(get_the_ID(), 'precio-normal', true);
                                 $tags = get_the_tags();
+                                $posts = get_posts();
                 ?>
 
         <div class="box1">
