@@ -4,3 +4,17 @@
 
 - validar logica para el envio de correos y visualizacion de informacion de los clientes
 - Validaciones de Pruebas completas con PayU y PHP
+
+Cambios Andres 20/OCT/2018
+
+-Agregar Tooltip Al iconos heder parte superior izquierda.
+-Agregar el CDN de Sweet Alert. (JS en el footer)
+-Se cambio "Excursiónes" por "Excursiones" en el menú
+-Borre esta linea de codigo de el header.php: 
+
+<div class="top-menu-left" style="position: absolute; right: 0px; top: 50px; width: 25% !important;">
+    <a class="menu-desk-item" style="width: 120px !important; position: relative;">Mis reservas</a>
+    <a class="menu-desk-item" style="width: 120px !important;position: relative;">
+        <i class="material-icons" style="position: absolute; top: 8px; left: -2px;">account_circle</i>Hola
+    User</a>
+</div>

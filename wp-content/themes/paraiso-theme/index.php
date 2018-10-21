@@ -66,40 +66,38 @@
     </div>
     <div class="col-md-12 specials">
         <?php
-                    //Parametros de Consulta 
-                    $args = array( 'posts_per_page' => 5, 'cat' => 2 );
-                    $query = new WP_Query( $args );
-                    //Valida que existan entradas
-                    if($query->have_posts()):
-                        while($query->have_posts()):
-                            $query->the_post();
-                                //Obtiene el campo personalizado 
-                                $price = get_post_meta(get_the_ID(), 'precio-normal', true);
-                                $tags = get_the_tags();
-                                $posts = get_posts();
-                ?>
+            //Parametros de Consulta 
+            $args = array( 'posts_per_page' => 5, 'cat' => 2 );
+            $query = new WP_Query( $args );
+            //Valida que existan entradas
+            if($query->have_posts()):
+                while($query->have_posts()):
+                    $query->the_post();
+                        //Obtiene el campo personalizado 
+                        $price = get_post_meta(get_the_ID(), 'precio-normal', true);
+                        $tags = get_the_tags();
+                        $posts = get_posts();
+        ?>
 
         <div class="box1">
-
             <div class="mc-title">
                 <p>
                     <a style="color: black !important;">
                         <?php the_title(); ?></a>
                 </p>
-
             </div>
             <div class="header-box">
                 <div class="box-desc">
                     <b>%
                         <?php 
-                                    /*
-                                    * Recorre todos los tags que contiene cada entrada
-                                    * IMPORTANTE: Debe ser un solo tag por entrada
-                                    */ 
-                                    foreach($tags as $tag ):
-                                        //Imprime solo el valor del tag  
-                                        echo $tag->name; 
-                                ?>
+                            /*
+                            * Recorre todos los tags que contiene cada entrada
+                            * IMPORTANTE: Debe ser un solo tag por entrada
+                            */ 
+                            foreach($tags as $tag ):
+                                //Imprime solo el valor del tag  
+                                echo $tag->name; 
+                        ?>
                     </b>
                 </div>
                 <div class="img-box" style="background-image: url('<?php the_post_thumbnail_url(); ?>');"></div>
@@ -108,17 +106,17 @@
                 <p class="through">
                     $
                     <?php 
-                                        //Campo personalizado
-                                        echo $price 
-                            ?>
+                        //Campo personalizado
+                        echo $price 
+                    ?>
                 </p>
                 <h1>COP
                     $
                     <?php  
-                                        //Calcula el descuento de la entrada
-                                        echo $price - (($price * $tag->name)/100);  
-                                    endforeach;
-                            ?>
+                        //Calcula el descuento de la entrada
+                        echo $price - (($price * $tag->name)/100);  
+                        endforeach;
+                    ?>
                 </h1>
                 <p>POR PERSONA</p>
                 <br>
@@ -129,10 +127,9 @@
         </div>
 
         <?php
-                        endwhile;
-                    endif;
-
-                ?>
+                endwhile;
+            endif;
+        ?>
     </div>
     <div class="col-md-12 view-more">
         <a href="http://localhost/paraisotour/?cat=2"><b>Ver más</b></a>
