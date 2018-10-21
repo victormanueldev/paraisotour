@@ -17,12 +17,10 @@ var app = new Vue({
         descMayor: 0,
         descMin4To6: 0,
         descMin0To3: 0,
-        doubleOccupancyPrice: 0,
 
         totalPaymentMajor: 0,
         totalPayment4to6: 0,
         totalPayment0to3: 0,
-        totalPaymentDoubleOccupancy: 0,
 
         chairsSelected: [],
 
@@ -167,8 +165,9 @@ var app = new Vue({
                     this.chairsSelected.forEach(value => {
                         this.paymentForm.extra2 += value+", ";
                     })
-                    // this.paymentForm.referenceCode = this.makeid();
-                    // this.md5Encryption();
+                    //Generar datos para la firma
+                    this.paymentForm.referenceCode = this.makeid();
+                    this.md5Encryption();
                     this.reservedChairs--;
                     value.cssClass = 'gray-chair';
                     value.state = 'available';
@@ -219,12 +218,18 @@ var app = new Vue({
                     if (e.target.tagName == 'LABEL') {
                         //Resta el precio por la cantidad de sillas
                         // this.paymentForm.totalPayment -= this.rate;
+                        //Generar datos para la firma
+                        this.paymentForm.referenceCode = this.makeid();
+                        this.md5Encryption();
                         this.reservedChairs--;
                         e.target.className = 'chair-label'
                         e.target.parentNode.className = "click-chair bus-chair-container gray-chair"
                     } else {
                         //Resta el precio por la cantidad de sillas
                         // this.paymentForm.totalPayment -= this.rate;
+                        //Generar datos para la firma
+                        this.paymentForm.referenceCode = this.makeid();
+                        this.md5Encryption();
                         this.reservedChairs--;
                         e.target.className = "click-chair bus-chair-container gray-chair"
 
@@ -268,7 +273,7 @@ var app = new Vue({
         },
         calculateDescMajors(){
             this.totalPaymentMajor = (this.rate - ((this.rate * this.descMayor)/100)) * this.cantPassengersMajor; 
-            this.paymentForm.totalPayment = this.totalPaymentMajor + this.totalPayment4to6 + this.totalPayment0to3 + this.totalPaymentDoubleOccupancy;
+            this.paymentForm.totalPayment = this.totalPaymentMajor + this.totalPayment4to6 + this.totalPayment0to3
         },
         calculateDescMin4To6(){
             this.totalPayment4to6 = (this.rate - ((this.rate * this.descMin4To6)/100)) * this.cantPassengersMinor4To6;
@@ -278,10 +283,6 @@ var app = new Vue({
         calculateDescMin0To3(){
             this.totalPayment0to3 = (this.rate - ((this.rate * this.descMin0To3)/100)) * this.cantPassengersMinor0To3;
             this.paymentForm.totalPayment = this.totalPayment0to3 * this.cantPassengersMinor0To3;
-        },
-        calculateDoubleOccupancy(){
-            this.totalPaymentDoubleOccupancy = this.doubleOccupancyPrice * this.doubleOccupancy;
-            // return this.paymentForm.totalPayment;
         },
         disableSubmit(){
             if(this.cont == this.totalPassengers){

@@ -7,7 +7,25 @@
 	if (isset($_POST['guardar'])) {
 		$cuerpo = $_POST['mensaje'];
 		$asunto = $_POST['asunto'];
-		$enviar = $envemail->enviarEmail($_POST['correo'], $_POST['nombre'], $asunto, $cuerpo);
+        $enviar = $envemail->enviarEmail($_POST['correo'], $_POST['nombre'], $asunto, $cuerpo);
+        echo '
+        <script>
+            toastr.options = {
+                "closeButton": true,
+                "progressBar": true,
+                "positionClass": "toast-bottom-right",
+                "onclick": null,
+                "showDuration": "300",
+                "hideDuration": "1000",
+                "timeOut": "5000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+            };
+            toastr.success("Nos pondremos en contacto con usted en el menor tiempo posible", "¡E-mail enviado exitosamente!");
+        </script>';
 	}
 ?>
 
@@ -227,7 +245,7 @@
         <p class="title">DEJÁNOS TU INFORMACIÓN</p>
         <p class="title-body">y nos pondremos en contacto contigo.</p>
         <br>
-        <form action="" method="POST">
+        <form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
         <input type="text" name="nombre" placeholder="Nombre">
         <br>
         <input type="text" name="correo" placeholder="Correo">

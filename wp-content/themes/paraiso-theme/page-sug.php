@@ -4,6 +4,34 @@
     */
 ?>
 <?php get_header(); ?>
+
+<?php 
+    include_once('src/EnviarEmail.php');
+    $envemail = new Email();
+	if (isset($_POST['guardar'])) {
+		$cuerpo = $_POST['mensaje'];
+		$asunto = $_POST['asunto'];
+        $enviar = $envemail->enviarSugerencia($_POST['correo'], $_POST['nombre'], $asunto, $cuerpo);
+        echo '
+        <script>
+            toastr.options = {
+                "closeButton": true,
+                "progressBar": true,
+                "positionClass": "toast-bottom-left",
+                "onclick": null,
+                "showDuration": "300",
+                "hideDuration": "1000",
+                "timeOut": "5000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+            };
+            toastr.success("Nos pondremos en contacto con usted en el menor tiempo posible", "¡E-mail enviado exitosamente!");
+        </script>';
+        }
+?>
 <!-- CONTENT -->
 <section id="content" class="container" style="position: relative;padding-top: 40px;">
 
@@ -11,7 +39,7 @@
 <div class="row justify-content-md-center">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-9 caja1 ">
 
-        <form action="#" class="form">
+        <form action="<?php $_SERVER["PHP_SELF"]; ?>" method='POST' class="form">
             <!-- NATURE PERSON -->
             <div class="row">
 
@@ -27,28 +55,29 @@
                     <br>
                     <br>
 
-                    <input type="text" placeholder="Nombres">
+                    <input type="text" placeholder="Nombres" name="nombre">
                     <br>
                     <br>
                     <br>
-                    <input type="mail" placeholder="Correo">
+                    <input type="mail" placeholder="Correo" name="correo">
                     <br>
                     <br>
                     <br>
-                    <select name="Motivo">
+                    <!-- <select name="Motivo">
                         <option value="1">Motivo 1</option>
                         <option value="2">Motivo 2</option>
                         <option value="3">Motivo 3</option>
-                    </select>
+                    </select> -->
+                    <input type="text" placeholder="Motivo" name="asunto">
                     <br>
                     <br>
                     <br>
-                    <textarea style="height: 150px;" type="text" placeholder="Mensaje"></textarea>
+                    <textarea style="height: 150px;" type="text" placeholder="Mensaje" name="mensaje"></textarea>
 
                 </div>
                 <br> <br>
 
-                <button id="button" class="button" style="background-color: #FE7481 !important; border: 0px solid white; width: 30% !important; "><span style="font-weight: bold  !important">ENVIAR</span></button>
+                <button  type="submit" id="submit" name="guardar" class="button" style="background-color: #FE7481 !important; border: 0px solid white; width: 30% !important; "><span style="font-weight: bold  !important">ENVIAR</span></button>
             </div>
 
 

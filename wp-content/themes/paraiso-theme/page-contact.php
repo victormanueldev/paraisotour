@@ -11,62 +11,74 @@
 	if (isset($_POST['guardar'])) {
 		$cuerpo = $_POST['mensaje'];
 		$asunto = $_POST['asunto'];
-		$enviar = $envemail->enviarEmail($_POST['correo'], $_POST['nombre'], $asunto, $cuerpo);
-	}
+        $enviar = $envemail->enviarEmail($_POST['correo'], $_POST['nombre'], $asunto, $cuerpo);
+        echo '
+        <script>
+            toastr.options = {
+                "closeButton": true,
+                "progressBar": true,
+                "positionClass": "toast-bottom-left",
+                "onclick": null,
+                "showDuration": "300",
+                "hideDuration": "1000",
+                "timeOut": "5000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+            };
+            toastr.success("Nos pondremos en contacto con usted en el menor tiempo posible", "¡E-mail enviado exitosamente!");
+        </script>';
+        }
 ?>
 
 <!-- CONTENT -->
 <section id="content" class="container" style="position: relative;padding-top: 40px;">
 
 
-<div class="row justify-content-md-center">
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-9 caja1 ">
+    <div class="row justify-content-md-center">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-9 caja1 ">
+                <!-- NATURE PERSON -->
+                <div class="row">
 
-        <form action="#" class="form">
-            <!-- NATURE PERSON -->
-            <div class="row">
+                    <div class="col-md-2 "></div>
 
-                <div class="col-md-2 "></div>
+                    <div class="col-md-8 ">
 
-                <div class="col-md-8 ">
+                        <form action="<?php $_SERVER["PHP_SELF"]; ?>" method="POST" class="form">
+                            <h2>Contáctenos</h2>
+                            <br>
+                            <span class="terms-and-c">
+                                La solicitud llegará al mail registrado al completar el formulario.
+                            </span>
+                            <br>
+                            <br>
+                            <input type="text" name="nombre" placeholder="Nombres">
+                            <br>
+                            <br>
+                            <br>
+                            <input type="mail" name="correo" placeholder="Correo">
+                            <br>
+                            <br>
+                            <br>
+                            <input type="text" name="asunto" placeholder="Asunto">
+                            <br>
+                            <br>
+                            <br>
+                            <textarea style="height: 150px;" name="mensaje" type="text" placeholder="Mensaje"></textarea>
 
-                    <form action="http://localhost/paraisotour/?page_id=49" method="POST">
-                    <h2>Contáctenos</h2>
-                    <br>
-                    <span class="terms-and-c">
-                        La solicitud llegará al mail registrado al completar el formulario.
-                    </span>
-                    <br>
-                    <br>
-                    <input type="text" name="nombre" placeholder="Nombres">
-                    <br>
-                    <br>
-                    <br>
-                    <input type="mail" name="correo"  placeholder="Correo">
-                    <br>
-                    <br>
-                    <br>
-                    <input type="text" name="asunto" placeholder="Asunto">
-                    <br>
-                    <br>
-                    <br>
-                    <textarea style="height: 150px;" name="mensaje"  type="text" placeholder="Mensaje"></textarea>
+                    </div>
+                    <br> <br>
 
-                </div>
-                <br> <br>
-
-                <button type="submit" id="submit" class="button" name="guardar" style="background-color: #FE7481 !important; border: 0px solid white; width: 30% !important; "><span style="font-weight: bold  !important">ENVIAR</span></button>
-                </form>
-            </div>
-
-
-
-            <br> <br> <br>
+                    <button type="submit" id="submit" class="button" name="guardar" style="background-color: #FE7481 !important; border: 0px solid white; width: 30% !important; "><span
+                            style="font-weight: bold  !important">ENVIAR</span></button>
+            </form>
+        </div>
 
 
 
-
-        </form>
+        <br> <br> <br>
 
     </div>
 
@@ -136,7 +148,7 @@
         <!-- END BANNER -->
     </div>
     <!-- END INFO -->
-</div>
+    </div>
 </section>
 
 

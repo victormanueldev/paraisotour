@@ -16,13 +16,15 @@
     <link rel="stylesheet" href="<?php echo bloginfo(template_url).'/assets/css/fuentes.css' ?>">
     <!-- <link rel="stylesheet" href="<?php echo bloginfo(template_url).'/assets/css/animations.css' ?>"> -->
     <link rel="stylesheet" href="<?php echo bloginfo(template_url).'/assets/css/style-index.css' ?>">
-    <link rel="stylesheet" href="<?php echo bloginfo(template_url).'/assets/css/style-general.css' ?>">
+	<link rel="stylesheet" href="<?php echo bloginfo(template_url).'/assets/css/style-general.css' ?>">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
     
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 	<!-- VueJS Version 2.5.17 -->
 	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
 </head>
 

@@ -23,6 +23,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.5.2/qs.js"></script>
+
 	<!-- Scripts-->
 	<script src="<?php echo bloginfo(url).'/wp-content/themes/paraiso-theme/assets/js/app.js'; ?>"></script>
 	<script src="<?php echo bloginfo(url).'/wp-content/themes/paraiso-theme/assets/js/footer.js'; ?>"></script>
