@@ -27,5 +27,28 @@
 	<!-- Scripts-->
 	<script src="<?php echo bloginfo(url).'/wp-content/themes/paraiso-theme/assets/js/app.js'; ?>"></script>
 	<script src="<?php echo bloginfo(url).'/wp-content/themes/paraiso-theme/assets/js/footer.js'; ?>"></script>
+	<!-- Sweet Alert -->
+	<script type="text/javascript">
+		document.getElementById('AlertSingUp').addEventListener('click', function(e){
+			e.preventDefault();
+			const { value: email } = swal.mixin({
+			  input: 'email',
+			  confirmButtonText: 'Aceptar',
+			  showCancelButton: true,
+			}).queue([
+			  {
+			    title: 'Ingrese Correo',
+			  }
+			]).then((result) => {
+			  if (result.value) {
+			    swal({
+			      title: '¡Enhorabuena!',
+			      text: 'Muchas gracias, pronto te estaremos enviado nuestras mejor ofertas y novedades.',
+			      confirmButtonText: '¡Entendido!'
+			    })
+			  }
+			})
+		});
+	</script>
 </body>
 </html>
