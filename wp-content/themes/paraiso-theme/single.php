@@ -22,7 +22,7 @@
 
     <div style="padding-top: 20px;" class="row justify-content-md-center">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-9 caja1 ">
-        <?php 
+            <?php 
             if(have_posts()):
                 while(have_posts()) :
                     //Muestra los POSTS
@@ -33,9 +33,135 @@
                     $id = get_the_ID();
                     //Obtiene las etiquetas de la entrada
                     $tags = get_the_tags();
-                    //Muestra el Contenido
-                    the_content();
-        ?>
+                    //Contenidod del post
+                    $includes = get_post_meta(get_the_ID(), 'incluye', true);
+                    $notIncludes =  get_post_meta(get_the_ID(), 'no-incluye', true);
+                    $infoPrice =  get_post_meta(get_the_ID(), 'informacion-precio', true);
+                    $infoDates = get_post_meta(get_the_ID(), 'informacion-fechas', true);
+                    $placeHourTravel = get_post_meta(get_the_ID(), 'lugar-hora-salida', true);
+                    $notes = get_post_meta(get_the_ID(), 'notas', true);
+                    //Obtiene el numero de imagenes a ingresar
+                    $cantImages = get_post_meta(get_the_ID(), 'cantidad-imagenes', true);
+                    $images = [];
+                    //Este ciclo se repetirá el numero de veces que tenga la variable $cantImages
+                    for ($i=0; $i <= $cantImages; $i++) { 
+                        //Asigna a una pocision del array la consulta a la BD
+                        // Esta concatenacion permite seleccionar el nombre exacto del campo personalizado 
+                        $images[$i] = get_post_meta(get_the_ID(), 'imagen-'.$i, true); 
+                    }
+            ?>
+             <div id="tab1" class="tab hidden">
+                <div class="pasadia-row">
+                    <h3>INCLUYE</h3>
+                </div>
+                <div class="pasadia-row">
+                    <?php
+                        //Crea un array del  string (INCLUYE) mediante la expresion regular 
+                        $items = preg_split("/[-]+/", $includes);
+                        //Quita la primera pocision del array (siempre está vacia)
+                        unset($items[0]);
+                        //Recorre todos los items del array
+                        foreach ($items as $item) {
+                            //Muestra los items del array con su estructura HTML
+                            echo "<h4 class='list-item'>".$item."<h4>";
+                        }
+                    ?>
+                </div>
+                <div class="pasadia-row">
+                    <h3>NO INCLUYE</h3>
+                </div> 
+                <div class="pasadia-row">
+                    <?php
+                    
+                        $items2 = preg_split("/[-]+/", $notIncludes);
+                        unset($items2[0]);
+                        foreach ($items2 as $item2) {
+                            echo "<h4 class='list-item'>".$item2."<h4>";
+                        }
+                    
+                    ?>
+                </div>
+                <div class="pasadia-row">
+                    <h3>PRECIO</h3>
+                </div> 
+                <div class="pasadia-row">
+                    <?php
+                        $items3 = preg_split("/[-]+/", $infoPrice);
+                        unset($items3[0]);
+                        foreach ($items3 as $item3) {
+                            //Busca en el string si hay alguna aparicion de la expresion
+                            $bold = strpos($item3, "*");
+                            if($bold > 0){
+                                //Quita la expresion del string
+                                $itemBold = strstr($item3, "*", true);
+                                //Muestra el texto con si formato de HTML
+                                echo "<h3 ><b class='bold'>".$itemBold."</b><h3>";
+                            }else{
+                                echo "<h4 class='list-item'>".$item3."<h4>";
+                            }
+                        }
+                    
+                    ?>
+                </div>
+                <div class="pasadia-row">
+                    <h3>FECHAS</h3>
+                </div> 
+                <div class="pasadia-row">
+                    <?php
+                        $items4 = preg_split("/[-]+/", $infoDates);
+                        unset($items4[0]);
+                        foreach ($items4 as $item4) {
+                            echo "<h3>".$item4."<h3>";   
+                        }
+                    ?>
+                </div>
+                <div class="pasadia-row">
+                    <h3>LUGAR Y HORA DE SALIDA</h3>
+                </div> 
+                <div class="pasadia-row">
+                    <?php
+                        $items5 = preg_split("/[-]+/", $placeHourTravel);
+                        unset($items5[0]);
+                        foreach ($items5 as $item5) {
+                            $bold = strpos($item5, "*");
+                            if($bold > 0){
+                                $itemBold = strstr($item5, "*", true);
+                                echo "<h3 ><b class='bold'>".$itemBold."</b><h3>";
+                            }else{
+                                echo "<h4 class='list-item'>".$item5."<h4>";
+                            }
+                        }
+                    ?>
+                </div>
+                <div class="pasadia-row">
+                    <h3>A TENER EN CUENTA</h3>
+                </div> 
+                <div class="pasadia-row">
+                    <?php
+                        $items6 = preg_split("/[-]+/", $notes);
+                        unset($items6[0]);
+                        foreach ($items6 as $item6) {
+                            echo "<h4 class='list-item'>".$item6."<h4>";
+                        }
+                    ?>
+                </div>
+            </div>
+            <div id="tab2" class="tab t-center">
+                <?php
+                    //Quita la primera pocision del array (siempre esta vacia)
+                    unset($images[0]);
+                    //Recorre el array de imagenes
+                    foreach ($images as $image):
+                ?>
+                <div class="card mc-img-card mc-card mc-lg">
+                    <div class="card-image" style="width: 100%;">
+                        <img class="materialboxed" src="<?php echo $image; //Muestra el URL?> " /> 
+                    </div>
+                </div>
+                <?php
+                    endforeach;
+                ?>
+            </div>
         </div>
 
         <!-- INFO -->
