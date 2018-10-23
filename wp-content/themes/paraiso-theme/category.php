@@ -14,7 +14,9 @@
         <div class="box1 small">
             <h4><?php the_title(); ?></h4>
             <div class="header-box">
-                <div class="img-box" style="background-image: url('<?php the_post_thumbnail_url(); ?>');"></div>
+                <a href="<?php the_permalink(); ?>">
+                    <div class="img-box" style="background-image: url('<?php the_post_thumbnail_url(); ?>');"></div>            
+                </a>
             </div>
             <div class="body-box">
             <p>&nbsp;</p>
@@ -44,7 +46,9 @@
                             ?>
                     </b>
                 </div>
-                <div class="img-box" style="background-image: url('<?php the_post_thumbnail_url(); ?>');"></div>
+                <a href="<?php the_permalink(); ?>">
+                    <div class="img-box" style="background-image: url('<?php the_post_thumbnail_url(); ?>');"></div>            
+                </a>
             </div>
             <div class="body-box">
                

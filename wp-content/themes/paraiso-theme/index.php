@@ -33,22 +33,22 @@
 <div class="row">
     <div class="col-md-12">
         <section id="recomended">
-            <div class="destiny square">
+            <div class="destiny square animate fadeIn">
                 <img src="http://localhost/paraisotour/wp-content/uploads/2018/09/Mejores-destinos.png" alt="">
                 <br><br>
                 <p>Los mejores<br> destinos</p>
             </div>
-            <div class="price square">
+            <div class="price square animate fadeIn">
                 <img src="http://localhost/paraisotour/wp-content/uploads/2018/09/Mejores-precios.png" alt="">
                 <br><br>
                 <p>Precios<br> increíbles</p>
             </div>
-            <div class="quality square">
+            <div class="quality square fadeIn">
                 <img src="http://localhost/paraisotour/wp-content/uploads/2018/09/Calidad.png" alt="">
                 <br><br>
                 <p>La máxima<br> calidad</p>
             </div>
-            <div class="attetion square">
+            <div class="attetion square fadeIn">
                 <img src="http://localhost/paraisotour/wp-content/uploads/2018/09/Atención-personalizada.png" alt="">
                 <br><br>
                 <p>La mejor ateción<br> personalizada</p>
@@ -61,6 +61,8 @@
 <!-- ABOUT US -->
 <div class="row" id="about-us">
     <div class="col-md-6 info">
+    <div style="position: relative;top: 10%;">
+
         <p class="title">NOSOTROS</p>
         <br>
         <p>Paríso Tour, Agencia de Viajes & Turismo, tu nueva opción de disfrutar un momento agradable de descanso y
@@ -70,6 +72,8 @@
         <br>
         <p>Paríso Tour, ofrece la mejor atención personalizada, tarifa sujetos a cambios y disponibilidad, los mejores
             destinos a precios increíbles y asistencia médica en todos los planes.</p>
+
+    </div>
     </div>
     <div class="col-md-6 picture">
         <div class="picture-img"></div>
@@ -118,7 +122,9 @@
                         ?>
                     </b>
                 </div>
-                <div class="img-box" style="background-image: url('<?php the_post_thumbnail_url(); ?>');"></div>
+                <a href="<?php the_permalink(); ?>">
+                    <div class="img-box" style="background-image: url('<?php the_post_thumbnail_url(); ?>');"></div>
+                </a>
             </div>
             <div class="body-box">
                 <p class="through">
@@ -165,17 +171,18 @@
             <br>
             ofertas exclusivas.
         </p>
-        <br><br>
-        <input type="text" class="input-customer" placeholder="Nombre">
-        <input type="text" class="input-customer" placeholder="Email">
+        <!-- <input type="text" class="input-customer" placeholder="Nombre">
+        <input type="text" class="input-customer" placeholder="Email"> -->
         <br>
-        <button class="btn btn-dager" >REGÍSTRARME</button>
-        <div class="col-md-12 terms-condition">
+        <a href="http://localhost/paraisotour/downloads/newsletter.pdf">
+            <button class="btn btn-dager" >DESCARGAR</button>
+        </a>
+        <!-- <div class="col-md-12 terms-condition">
             <label for="terms-condition">
                 <input type="checkbox" name="terms-condition">&nbsp;&nbsp;Acepto términos y condiciones y autorizo el
                 tratamiento de datos personales.
             </label>
-        </div>
+        </div> -->
     </div>
     <div class="col-md-6 col-sm-12 magazine-info">
         <div class="img-magazine"></div>

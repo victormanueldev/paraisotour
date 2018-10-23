@@ -39,7 +39,7 @@
 	margin-right: 5%;
 }
 
-.form input, .form select {
+.form input, .form select, .form textarea {
 	padding: 10px;
 	margin: 1% 0;
 	background-color: #EDEEF0;
@@ -113,10 +113,10 @@
 	margin-top: 30px;
 }
 
-.info-total{
-	margin-top: 10px;
-	width: 100%;
-    height: 2em;
+.info-total {
+    margin-top: 10px;
+    width: 100%;
+    height: fit-content;
 }
 
 .info-total h3{
@@ -212,19 +212,20 @@
 	.fare .price2{
 		margin-top: 0;
 		font-size: 18px;
+		width: 100%;
+	}
+
+	.info1 p, .info2 p, .info3 p {
+		float: left;
+		display: block;
+		text-align: center;
 	}
 
 	.fare p{
 		text-align: center;
 		font-size: 12px;
 	}
-
-	.info1 p, .info2 p, .info3 p{
-		float: none;
-		display: block;
-		text-align: center;
-	}
-
+	
 	.info1 h3, .info2 h3, .info3 h3{
 		float: none;
 		display: block;
@@ -429,13 +430,13 @@
 	}
 }
 
-.chair-label{
+.chair-label {
     position: absolute;
     color: white;
     -webkit-transform: rotate(-90deg);
     text-align: center;
     top: 6px;
-    left: 8px;
+    left: 13px;
     font-family: 'Quicksand';
     font-weight: 700;
 }
@@ -445,7 +446,12 @@ background-image: url("http://localhost/paraisotour/wp-content/uploads/2018/09/b
 }
 
 .gray-chair{
+	
     background-image: url("http://localhost/paraisotour/wp-content/uploads/2018/09/gray-chair.png");
+}
+
+.red-chair{
+	background-image: url("http://localhost/paraisotour/wp-content/uploads/2018/09/red-chair.png");
 }
 
 

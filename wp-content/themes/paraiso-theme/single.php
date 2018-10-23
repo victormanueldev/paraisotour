@@ -111,7 +111,14 @@
                         $items4 = preg_split("/[-]+/", $infoDates);
                         unset($items4[0]);
                         foreach ($items4 as $item4) {
-                            echo "<h3>".$item4."<h3>";   
+                            $bold = strpos($item4, "*");
+                            if($bold > 0 ){
+                                $itemBold = strstr($item4, "*", true);
+                                echo "<h3 class='list-item'><b class='bold'>".$itemBold."</b><h3>";
+                            }else{
+                                echo "<h4>".$item4."<h4>";       
+                            }
+                            
                         }
                     ?>
                 </div>
@@ -194,7 +201,7 @@
 
                         <div style="width: 100%; text-align: center; display:block;">
                             <br>
-                            <a style="margin-top: 15px" class="button" href="http://localhost/paraisotour/?page_id=17&id=<?php echo $id ?>">RESERVAR</a>
+                            <a style="margin-top: 15px" class="button" href="http://mundomascotascali.com/paraisotour/?page_id=17&id=<?php echo $id ?>">RESERVAR</a>
                         </div>
                     </div>
                 </div>

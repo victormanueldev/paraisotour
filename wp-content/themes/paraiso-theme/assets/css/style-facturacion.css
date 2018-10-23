@@ -325,8 +325,8 @@
 
 /* tamaño del padre */
 .big-bus{
-	width: 819.97px;
-    height: 282px;
+	width: 686px;
+    height: 236px;
 
     /* -webkit-transform: rotate(-90deg); */
 }
@@ -334,12 +334,10 @@
 /*scroll para pantallas pequeñas*/
 
 .scroll{
-    overflow-x: auto;
+	overflow-x: auto;
 	overflow-y: hidden;
 	width: 100%;
 }
-
-
 
 .bus-container{
     width: 100%;
@@ -431,14 +429,14 @@
 }
 
 .chair-label {
-    position: absolute;
+	position: absolute;
     color: white;
-    -webkit-transform: rotate(-90deg);
     text-align: center;
     top: 6px;
     left: 13px;
     font-family: 'Quicksand';
     font-weight: 700;
+    transform: translateX(-4px);
 }
 
 .blue-chair{
@@ -505,8 +503,43 @@ box-shadow: 0px 4px 27px -2px rgba(0,0,0,0.66);
     position: absolute;
     bottom: -5px;
     z-index: -2;
-    left: 15px;
+	left: 15px;
+	display: none;
 }
+
+
+@media screen and (max-width: 800px ){
+	.big-bus {
+		width: 686px;
+		height: 236px;
+		-webkit-transform: translateX(-31%) rotate(-90deg);
+		transform: translateX(-31%) rotate(-90deg);
+		margin-top: 239px;
+		position: relative;
+	}
+
+	.scroll {
+		overflow-x: hidden;
+		overflow-y: hidden;
+		width: 243px;
+		height: 711px;
+		display: inline-block;
+	}
+
+	.chair-label {
+		position: absolute;
+		color: white;
+		-webkit-transform: rotate(90deg);
+		transform: rotate(90deg);
+		text-align: center;
+		top: 6px;
+		left: 13px;
+		font-family: 'Quicksand';
+		font-weight: 700;
+	}
+	
+}
+
 
 
 /* vietnamese */

@@ -92,11 +92,11 @@ div .col-md-12 {
     margin-right: 0px;
 }
 
-
 .info {
     background-color: #316698;
     color: white;
     border: solid 25px #316698;
+    height: 357px;
 }
 
 .info .title {
@@ -119,8 +119,9 @@ div .col-md-12 {
     width: 100%;
     display: inline-block;
     height: 357px;
-    background-image: url("http://localhost/paraisotour/wp-content/uploads/2018/09/VIAJERO-min.jpg");
+    background-image: url(http://localhost/paraisotour/wp-content/uploads/2018/09/VIAJERO-min.jpg);
     background-size: cover;
+    background-position: top;
 }
 
 
@@ -151,8 +152,7 @@ div .col-md-12 {
     text-align: center;
 }
 
-
-.specials .box1, 
+.specials .box1,
 .specials .box2,
 .specials .box3,
 .specials .box4,
@@ -164,8 +164,8 @@ div .col-md-12 {
     text-align: center;
     width: 200px;
     margin-left: 5px;
-	margin-right: 5px;
-	margin-top: 30px;
+    margin-right: 5px;
+    margin-top: 30px;
 }
 
 .box1 h4,
@@ -284,8 +284,8 @@ div .col-md-12 {
 }
 
 .newsletter-img {
-    width: 20%;
-    height: 80%;
+    width: 24%;
+    height: 90%;
     position: absolute;
     z-index: 2;
     background-repeat: no-repeat;
@@ -297,19 +297,19 @@ div .col-md-12 {
 .magazine-sign-up {
     width: 100%;
     background-color: #316698;
-    padding: 2% 1% 5% 23%;
+    padding: 4% 1% 5% 23%;
     text-align: center;
     display: inline-block;
     height: 300px;
 }
 
 .magazine-sign-up p {
-    font-size: 15px;
-    text-align: right;
+    font-size: 18px;
     color: white;
 }
 
-.magazine-sign-up .input-customer {
+
+/* .magazine-sign-up .input-customer {
     font-size: 10px;
     width: 80%;
     height: 30px;
@@ -318,7 +318,7 @@ div .col-md-12 {
     border-radius: 7px;
     margin: 3% 0;
     padding: 0 2%;
-}
+} */
 
 .magazine-sign-up button {
     background-color: #FF7583;
@@ -326,7 +326,7 @@ div .col-md-12 {
     padding: 2.5%;
     margin: 5% 0;
     display: inline-block;
-    font-size: 11px;
+    font-size: 15px;
 }
 
 .magazine-sign-up .terms-condition {
@@ -464,6 +464,7 @@ div .col-md-12 {
     margin-bottom: 15px;
     margin-top: 15px;
 }
+
 
 /* 
 .button-customer:hover {

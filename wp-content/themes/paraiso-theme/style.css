@@ -1,6 +1,6 @@
 /*
 Theme Name: Paraiso Tour
-Theme URI: http://localhost/paraisotour
+Theme URI: http://mundomascotascali.com/paraisotour
 Author: VAYKE Soft
 Version: 1.0
 */
@@ -23,7 +23,7 @@ div.row{
  /*HEADER*/
  #header{
      position: relative;
-     background: url("http://localhost/paraisotour/wp-content/uploads/2018/09/san-andres-colombia.jpg");
+     background: url("http://mundomascotascali.com/paraisotour/wp-content/uploads/2018/09/san-andres-colombia.jpg");
      background-size: cover;
      background-position-y: 30%;
      /*background-attachment: fixed;*/
@@ -134,7 +134,7 @@ div.row{
  .picture{
      width: 100%;
      height: 100%;
-     background-image: url("http://localhost/paraisotour/wp-content/uploads/2018/09/jonalyn-san-diego-717136-unsplash.jpg");
+     background-image: url("http://mundomascotascali.com/paraisotour/wp-content/uploads/2018/09/jonalyn-san-diego-717136-unsplash.jpg");
      background-attachment: fixed;
      /*background-size: cover;*/
      background-size: 50% 80%;
@@ -178,7 +178,7 @@ div.row{
  .header-box {
      width: 100%;
      height: 25em;
-     background-image: url("http://localhost/paraisotour/wp-content/uploads/2018/09/rawpixel-676878-unsplash.jpg");
+     background-image: url("http://mundomascotascali.com/paraisotour/wp-content/uploads/2018/09/rawpixel-676878-unsplash.jpg");
      background-size: cover;
  }
  
@@ -275,7 +275,7 @@ div.row{
  
  .magazine-info{
      position: relative;
-     background-image: url("http://localhost/paraisotour/wp-content/uploads/2018/09/annie-spratt-256172-unsplash.jpg");
+     background-image: url("http://mundomascotascali.com/paraisotour/wp-content/uploads/2018/09/annie-spratt-256172-unsplash.jpg");
      background-size: cover;
      background-repeat: no-repeat;
      /*background-attachment: fixed;*/
