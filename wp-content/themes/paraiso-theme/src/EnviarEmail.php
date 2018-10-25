@@ -744,7 +744,7 @@
 		
 		}
 
-		public function notificarNuevoRegistro($email, $nombre){
+		public function notificarNuevoRegistro($email){
 			require_once 'PHPMailer/PHPMailerAutoload.php';//Libreria para enviar Emails por PHP
 
 			$mail = new PHPMailer();
@@ -765,9 +765,9 @@
 			$mail->Password = '3103195394sax';
 
 			$mail->setFrom('info@paraisotourweb.com', 'Paraiso Tour');
-			$mail->addAddress($email, $nombre); //Aqui va el email del cliente al que vamos a enviar correos (Gerente Paraiso tour)
+			$mail->addAddress($email, 'Paraiso Tour'); //Aqui va el email del cliente al que vamos a enviar correos (Gerente Paraiso tour)
 
-			$mail->Subject = "Notificación de Nuevo Registro";
+			$mail->Subject = "Notificacion de Nuevo Registro";
 			$mail->Body = 
 			'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 			<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
@@ -955,7 +955,7 @@
 											<!-- /// Hero subheader -->
 
 											<!-- / Title -->
-											<table class="container title-block" border="0" cellpadding="0" cellspacing="0" width="100%">
+												<!-- <table class="container title-block" border="0" cellpadding="0" cellspacing="0" width="100%">
 													<tr>
 														<td align="center" valign="top">
 															<table class="container" border="0" cellpadding="0" cellspacing="0" width="620" style="width: 620px;">
@@ -965,20 +965,20 @@
 															</table>
 														</td>
 													</tr>
-												</table>
+												</table> -->
 												<!-- /// Title -->
 												<!-- / Paragraph -->
-												<table class="container paragraph-block" border="0" cellpadding="0" cellspacing="0" width="100%">
+												<!-- <table class="container paragraph-block" border="0" cellpadding="0" cellspacing="0" width="100%">
 														<tr>
 															<td align="center" valign="top">
 																<table class="container" border="0" cellpadding="0" cellspacing="0" width="620" style="width: 620px;">
 																	<tr>
-																		<td class="paragraph-block__content" style="padding: 25px 0 18px 0; font-size: 16px; line-height: 27px; color: #969696;" align="left">'.$nombre.'</td>
+																		<td class="paragraph-block__content" style="padding: 25px 0 18px 0; font-size: 16px; line-height: 27px; color: #969696;" align="left"></td>
 																	</tr>
 																</table>
 															</td>
 														</tr>
-													</table>
+													</table> -->
 													<!-- /// Paragraph -->
 
 											<!-- / Title -->

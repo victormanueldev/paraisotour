@@ -201,7 +201,7 @@
 
                         <div style="width: 100%; text-align: center; display:block;">
                             <br>
-                            <a style="margin-top: 15px" class="button" href="http://mundomascotascali.com/paraisotour/?page_id=17&id=<?php echo $id ?>">RESERVAR</a>
+                            <a style="margin-top: 15px" class="button" href="http://localhost/paraisotour/?page_id=17&id=<?php echo $id ?>">RESERVAR</a>
                         </div>
                     </div>
                 </div>

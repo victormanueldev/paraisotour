@@ -422,7 +422,7 @@
 								<input type="text" name="description" v-model="paymentForm.description" />
 							</div>
 							<div style="display: none">
-								<input type="text" name="amount" v-model="paymentForm.totalPayment" />
+								<input type="text" name="amount" v-bind:value="paymentForm.totalPayment.toFixed(2)"/>
 							</div>
 							<div style="display: none">
 								<input type="number" name="tax" v-model="paymentForm.tax" />
