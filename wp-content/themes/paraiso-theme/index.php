@@ -65,9 +65,22 @@
 
         <p class="title">NOSOTROS</p>
         <br>
+            <?php 
+                $nosotros = '';
+                $bus = '';
+                $revista = '';
+                foreach ($posts as $post):
+                    if($post->ID == '247'){
+                        $nosotros = get_post_meta($post->ID, 'imagen-nosotros', true);
+                        $bus = get_post_meta($post->ID, 'imagen-bus', true);
+                        $revista = get_post_meta($post->ID, 'imagen-revista', true);
+                    }
+                endforeach;
+            ?>
         <p>Paríso Tour, Agencia de Viajes & Turismo, tu nueva opción de disfrutar un momento agradable de descanso y
             diversión en los lugares más facinantes y completamente distintos de nuestro país.</p>
-        <br><br>
+        <br>
+        <br>
         <p class="title">¿POR QUÉ RESERVAR CON NOSOTROS?</p>
         <br>
         <p>Paríso Tour, ofrece la mejor atención personalizada, tarifa sujetos a cambios y disponibilidad, los mejores
@@ -76,7 +89,7 @@
     </div>
     </div>
     <div class="col-md-6 picture">
-        <div class="picture-img"></div>
+        <div class="picture-img" style="background-image: url(<?php echo $nosotros; ?>"></div>
     </div>
 </div>
 <!-- END ABOUT US -->
@@ -163,7 +176,7 @@
 
 <!-- NEWSLETTER -->
 <div class="row" id="newsletter">
-    <div class="newsletter-img"></div>
+    <div class="newsletter-img" style="background-image: url(<?php echo $revista; ?>)"></div>
     <div class="col-md-6 col-sm-12 magazine-sign-up">
         <p> DESCARGA NUESTRO CATÁLOGO Y
             <br>
@@ -185,7 +198,7 @@
         </div> -->
     </div>
     <div class="col-md-6 col-sm-12 magazine-info">
-        <div class="img-magazine"></div>
+        <div class="img-magazine" style="background-image: url(<?php echo $bus; ?>"></div>
         <p class="text-top">TÚ DECIDES <br> donde te sientas.</p>
         <p class="text-bottom">Reserva tus asientos al momento <br> de comprar tu viaje.</p>
     </div>

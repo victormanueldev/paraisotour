@@ -29,7 +29,6 @@
 	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7/dist/sweetalert2.all.min.js"></script>
-		 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7/dist/sweetalert2.all.min.js"></script>
 
 </head>
 
@@ -54,7 +53,7 @@
 						<i class="material-icons" style="position: absolute;left: 4px;top: 1px;">search</i>
 					</button>
 					
-					<div class="results res-active">
+					<div class="results ">
 						<a id="close-res" style="margin-left: 90%;">
 							<i class="material-icons" style="position: absolute;left: 4px;top: 1px;">close</i>
 						</a>
@@ -122,7 +121,7 @@ height: 500px;">
 
 									<a class="menu-desk-item dactive" href="http://localhost/paraisotour/">Inicio</a>
 									<a class="menu-desk-item" href="http://localhost/paraisotour/?cat=3">Pasadías</a>
-									<a class="menu-desk-item" href="http://localhost/paraisotour/?cat=4">Excursiónes</a>
+									<a class="menu-desk-item" href="http://localhost/paraisotour/?cat=4">Excursiones</a>
 									<a class="menu-desk-item" href="http://localhost/paraisotour/?cat=2">Promociones</a>
 									<a class="menu-desk-item" href="http://localhost/paraisotour/?page_id=49">Contacto</a>
 
@@ -141,7 +140,7 @@ height: 500px;">
 										<button type="submit" class="search-button">
 											<i class="material-icons" style="position: absolute;left: 4px;top: 1px;">search</i>
 										</button>
-										<div class="results res-active res2">
+										<div class="results res2">
 											<a id="close-res2" style="margin-left: 90%;">
 												<i class="material-icons" style="position: absolute;left: 4px;top: 1px;">close</i>
 											</a>
@@ -226,7 +225,7 @@ height: 500px;">
 
 					<a class="menu-mobile-item mactive" href="http://localhost/paraisotour/">Inicio</a>
 					<a class="menu-mobile-item" href="http://localhost/paraisotour/?cat=3">Pasadías</a>
-					<a class="menu-mobile-item" href="http://localhost/paraisotour/?cat=4">Excursiónes</a>
+					<a class="menu-mobile-item" href="http://localhost/paraisotour/?cat=4">Excursiones</a>
 					<a class="menu-mobile-item" href="http://localhost/paraisotour/?cat=2">Promociones</a>
 					<a class="menu-mobile-item" href="http://localhost/paraisotour/?page_id=49">Contacto</a>
 				</div>

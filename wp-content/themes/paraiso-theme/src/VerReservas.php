@@ -8,7 +8,7 @@
     header("Access-Control-Allow-Origin: *");
     //header("Access-Control-Allow-Origin: {$_SERVER['HTTP_ORIGIN']}");  
     $controladorReservas = new ControladorReservas();
-    $datosReservas = $controladorReservas->verR($_REQUEST['id']);
+    $datosReservas = $controladorReservas->verR($_REQUEST['id'], $_REQUEST['fecha']);
 
     echo json_encode($datosReservas);
 

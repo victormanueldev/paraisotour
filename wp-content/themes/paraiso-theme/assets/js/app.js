@@ -13,6 +13,7 @@ var app = new Vue({
         rate: 0,    //Tarifa
         totalPassengers: 0,
         reservedChairs: 0,   //Cantidad de sillas reservadas
+        idTravel: '',
 
         descMayor: 0,
         descMin4To6: 0,
@@ -29,7 +30,7 @@ var app = new Vue({
         cantPassengersMinor0To3: 0,     //Cantidad de pasajeros mayres de 0 a 3 años
         doubleOccupancy: 0,             //Cantidad de acomodaciones dobles
 
-        /* Variables del Formulario */
+        /* Variables del Formulario PayU */
 
         paymentForm: {
             merchantId: 751801, //ID de Mercader
@@ -48,7 +49,7 @@ var app = new Vue({
             buyerEmail: '',  //Email del comprador
             mobilePhone: '',    //Telefono del 
             responseUrl: 'http://localhost/paraisotour/?page_id=239',    //URL de la pagían de respuesta
-            confirmationUrl: 'http://localhost/paraisotour/wp-content/themes/paraiso-theme/src/InsertarReservas.php',    //URL de confirmación de la compra
+            confirmationUrl: 'http://mundomascotascali.com/paraisotour/wp-content/themes/paraiso-theme/src/InsertarReservas.php',    //URL de confirmación de la compra
             shippingAddress: '', //Direccion de entrega de la mercancia
             algorithmSignature: 'MD5',  //Algoritmo de cifrado de la firma
             shippingCity: '',   //Ciudad de entrega de la mercancia
@@ -56,9 +57,19 @@ var app = new Vue({
             extra1: '', //Info adicional de la compra (ID de las  sillas separados por comas)
             extra2: '',  //Info adicional de la compra (Numero de las  sillas separados por comas)
             extra3: ''
+        },
 
-
-        }
+        /* Variables del Formulario de Pasajeros */
+        passengersForm: {
+            gender: 'sr',
+            idType: 'cc',
+            address: '',
+            city: '',
+            birthDay: '',
+            passengers: '',
+            nationality: ''
+        },
+        hiddenButton: true
 
 
         
@@ -79,7 +90,7 @@ var app = new Vue({
              return posts;
         },
         getReserves(){
-            axios.get('http://localhost/paraisotour/wp-content/themes/paraiso-theme/src/VerReservas.php?id=22')
+            axios.get(`http://localhost/paraisotour/wp-content/themes/paraiso-theme/src/VerReservas.php?id=${this.idTravel}&fecha=${this.paymentForm.extra3}`)
                 .then((res) => {
                    var chairsReserved = '';
                    var chairs = [];
@@ -213,7 +224,6 @@ var app = new Vue({
                     }
                     value.cssClass = 'blue-chair';
                     value.state = 'purchased';
-                    console.log(value)
                 } else if (idChair2 == value.id && value.cssClass === 'blue-chair') {
                     if (e.target.tagName == 'LABEL') {
                         //Resta el precio por la cantidad de sillas
@@ -236,7 +246,6 @@ var app = new Vue({
                     }
                     value.cssClass = 'gray-chair';
                     value.state = 'available';
-                    console.log(value)
                 }
             });
         },
@@ -255,6 +264,58 @@ var app = new Vue({
             for (var i = 0; i < 5; i++)
               text += possible.charAt(Math.floor(Math.random() * possible.length));     
               return text;
+        },
+        disableSubmitMethod(){
+            toastr.options = {
+                "closeButton": true,
+                "progressBar": true,
+                "positionClass": "toast-bottom-left",
+                "onclick": null,
+                "showDuration": "300",
+                "hideDuration": "1000",
+                "timeOut": "5000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+            }
+            if(
+                this.paymentForm.buyerFullName != '' &&
+                this.paymentForm.mobilePhone != '' &&
+                this.paymentForm.buyerEmail != '' &&
+                this.paymentForm.payerDocument != '' &&
+
+                this.cantPassengersMajor > 0  &&
+
+                this.passengersForm.nationality != '' &&
+                this.passengersForm.address != '' &&
+                this.passengersForm.city != '' &&
+                this.passengersForm.birthDay != '' &&
+                this.passengersForm.passengers  != ''
+            ){
+                if(this.reservedChairs != this.totalPassengers ){
+                    toastr.info("Por favor, el numero de sillas seleccionadas debe ser igual a la cantidad reservada.", "¡Informacióm!")
+                }else{
+                    swal({
+                        title: '¡Advertencia!',
+                        text: "¿Estás segur@ de realizar tu pago ahora?",
+                        type: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#3085d6',
+                        cancelButtonColor: '#d33',
+                        cancelButtonText: 'No, aún no',
+                        confirmButtonText: 'Si, ir a pagar'
+                      }).then((result) => {
+                        if (result.value) {
+                          document.getElementById("btn-submit").click();
+                        }
+                      })
+                }
+            }else{
+
+                toastr.info("Por favor, llena todos los campos vacíos.", "¡Informacióm!")
+            }
         }
     },
     computed: {
@@ -273,21 +334,34 @@ var app = new Vue({
         },
         calculateDescMajors(){
             this.totalPaymentMajor = (this.rate - ((this.rate * this.descMayor)/100)) * this.cantPassengersMajor; 
-            this.paymentForm.totalPayment = this.totalPaymentMajor + this.totalPayment4to6 + this.totalPayment0to3
+            this.paymentForm.totalPayment = this.totalPaymentMajor + this.totalPayment4to6
         },
         calculateDescMin4To6(){
             this.totalPayment4to6 = (this.rate - ((this.rate * this.descMin4To6)/100)) * this.cantPassengersMinor4To6;
             this.paymentForm.totalPayment = this.totalPayment4to6 * this.cantPassengersMinor4To6;
         },
-        calculateDescMin0To3(){
-            this.totalPayment0to3 = (this.rate - ((this.rate * this.descMin0To3)/100)) * this.cantPassengersMinor0To3;
-            this.paymentForm.totalPayment = this.totalPayment0to3 * this.cantPassengersMinor0To3;
-        },
         disableSubmit(){
-            if(this.cont == this.totalPassengers){
-                return false;
+            if(
+                this.reservedChairs != this.totalPassengers &&
+
+                !this.paymentForm.buyerFullName  &&
+                !this.paymentForm.mobilePhone  &&
+                !this.paymentForm.buyerEmail  &&
+                !this.paymentForm.payerDocument  &&
+
+                this.cantPassengersMajor > 0  &&
+
+                !this.passengersForm.nationality  &&
+                !this.passengersForm.address &&
+                !this.passengersForm.city  &&
+                !this.passengersForm.birthDay  &&
+                !this.passengersForm.passengers  
+            ){
+                console.log("true");
+                return true;
             }
-            return true;
+            console.log("false")
+            return false;
         },
         filteredPosts(){
             var self = this;

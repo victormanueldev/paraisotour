@@ -89,7 +89,7 @@
    */
    public function verReservas()
    {
-      $sql = "SELECT * FROM reservas WHERE id_Destino = {$this-> id_Destino}";
+      $sql = "SELECT * FROM reservas WHERE id_Destino = '{$this-> id_Destino}' AND fecha_Viaje = '{$this-> fecha_Viaje}'";
       $resultado = $this-> conex-> consultaRetorno($sql);//Guarda el Resultado de la Consulta
       //Guarda una fila del Resulset(Tabla Virtual) en un array asociativo
       $fila = mysqli_fetch_all($resultado, MYSQLI_ASSOC);

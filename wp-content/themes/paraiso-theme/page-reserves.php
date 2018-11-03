@@ -41,18 +41,18 @@
 				que vayan a participar en este viaje.</p>
 			<div class="check">
 				<label for="natural_person">
-					<input type="checkbox" id="natural_person" name="person" value="natural_person">&nbsp;&nbsp;Persona Natural
+					<input type="radio" id="natural_person" name="person" value="natural_person" checked="checked">&nbsp;&nbsp;Persona Natural
 				</label>
 				<label for="juridical_person">
-					<input type="checkbox" id="juridical_person" name="person" value="juridical_person">&nbsp;&nbsp;Persona Juridica
+					<input type="radio" id="juridical_person" name="person" value="juridical_person">&nbsp;&nbsp;Persona Juridica
 				</label>
 			</div>
 			<form action="#" class="form">
 				<!-- NATURE PERSON -->
 				<div class="row">
 					<div class="col-md-2">
-						<select name="Gentlemen" id="">
-							<option value="sr">Sr.</option>
+						<select name="Gentlemen" v-model="passengersForm.gender" placeholder="Seleccione el tipo">
+							<option value="sr" selected="selected">Sr.</option>
 							<option value="sra">Sra.</option>
 						</select>
 					</div>
@@ -72,7 +72,7 @@
 
 				<div class="row">
 					<div class="col-md-2">
-						<select name="Identification" id="">
+						<select name="Identification" v-model="passengersForm.idType">
 							<option value="cc">C.C.</option>
 							<option value="pst">Pasaporte</option>
 							<option value="cce">C.E.</option>
@@ -82,16 +82,16 @@
 						<input type="number" min="0" placeholder="C.C o Nit" v-model="paymentForm.payerDocument">
 					</div>
 					<div class="col-md-5">
-						<input type="text" placeholder="Nacionalidad">
+						<input type="text" placeholder="Nacionalidad" v-model="passengersForm.nationality">
 					</div>
 				</div>
 
 				<div class="row">
 					<div class="col-md-6">
-						<input type="text" placeholder="Dirección">
+						<input type="text" placeholder="Dirección" v-model="passengersForm.address">
 					</div>
 					<div class="col-md-6">
-						<input type="text" placeholder="Ciudad">
+						<input type="text" placeholder="Ciudad" v-model="passengersForm.city">
 					</div>
 				</div>
 				<br>
@@ -100,7 +100,7 @@
 				<div class="row">
 					<div class="col-md-12">
 						<h3>FECHA NACIMIENTO</h3>
-						<input class="form-input-date" type="date" id="date">
+						<input class="form-input-date" type="date" id="date" v-model="passengersForm.birthDay">
 					</div>
 				</div>
 				<br>
@@ -138,8 +138,8 @@
 						<input type="number" min="0" max="99" value="0" v-model="cantPassengersMinor4To6">
 					</div>
 					<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
-						<span>Niños de 0 a 3 años {{calculateDescMin0To3}}</span>
-						<input type="number" min="0" max="99" value="0" v-model="cantPassengersMinor0To3">
+						<span>Niños de 0 a 3 años </span>
+						<input type="number" min="0" max="99" value="0" >
 					</div>
 				</div>
 
@@ -157,7 +157,7 @@
 
 				<div class="row">
 					<div class="col-md-12">
-						<textarea rows="10" placeholder="Pepito Perez - 1000000 - 16/08/1998"></textarea>
+						<textarea rows="10" placeholder="Pepito Perez - 1000000 - 16/08/1998" v-model="passengersForm.passengers"></textarea>
 					</div>
 				</div>
 				<br>
@@ -216,7 +216,7 @@
 					
 					<div class="row justify-content-md-center">
 						<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
-							<span>Mayores de 4 años</span><input type="number" id="" min="0" max="99" value="0">
+							<span>Mayores de 4 años</span><input type="number" min="0" max="99" value="0">
 						</div>
 						<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
 							<span>De 0 a 3 años</span><input type="number" id="cant2" min="0" max="99" value="0">	
@@ -364,9 +364,9 @@
 						<div class="col-md-12 destiny">
 								<h3>FECHA DE SALIDA</h3>
 								<br>
-								<p>
-									<?php echo "{{paymentForm.extra3='".$dateTravel."'}}"; ?>
-								</p>
+								<p><?php echo "{{paymentForm.extra3='".$dateTravel."'}}"; ?> </p>
+								<p style="display: none;"><?php echo "{{idTravel='".$idPost."'}}"; ?></p>
+								
 							</div>
 							<br>
 
@@ -468,7 +468,13 @@
 							</div>
 							<div style="width: 100%; text-align: center;" >
 								<br>
-								<button :disabled="disableSubmit" id="btn-submit" type="submit" class="button">
+								<button id="btnn" type="button" class="button" @click="disableSubmitMethod()">
+									<span>PAGAR</span>
+								</button>
+							</div>
+							<div  style="width: 100%; text-align: center;display:none" >
+								<br>
+								<button id="btn-submit" type="submit" class="button">
 									<span>PAGAR</span>
 								</button>
 							</div>

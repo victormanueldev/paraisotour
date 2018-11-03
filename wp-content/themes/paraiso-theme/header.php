@@ -36,6 +36,8 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7/dist/sweetalert2.all.min.js"></script>
+
     <script>
         $(document).ready(function () {
             $('.materialboxed').materialbox();
@@ -89,7 +91,7 @@ if(isset($_GET['p'])):
 
                                 <a class="menu-desk-item" href="http://localhost/paraisotour/">Inicio</a>
                                 <a class="menu-desk-item <?php echo $_GET['cat'] == '3' ? 'dactive': ''?>" href="http://localhost/paraisotour/?cat=3">Pasadías</a>
-                                <a class="menu-desk-item <?php echo $_GET['cat'] == '4' ? 'dactive': ''?>" href="http://localhost/paraisotour/?cat=4">Excursiónes</a>
+                                <a class="menu-desk-item <?php echo $_GET['cat'] == '4' ? 'dactive': ''?>" href="http://localhost/paraisotour/?cat=4">Excursiones</a>
                                 <a class="menu-desk-item <?php echo $_GET['cat'] == '2' ? 'dactive': ''?>" href="http://localhost/paraisotour/?cat=2">Promociones</a>
                                 <a class="menu-desk-item <?php echo $_GET['page_id'] == '49' ? 'dactive': ''?>" href="http://localhost/paraisotour/?page_id=49">Contacto</a>
 
@@ -110,10 +112,10 @@ if(isset($_GET['p'])):
                                     </h2>
                                 </div>
                                 <?php
-                                    endwhile;
-                                endif;
-                            elseif($_GET['page_id'] == '17'):
-                        ?>
+                                            endwhile;
+                                        endif;
+                                    elseif($_GET['page_id'] == '17'):
+                                ?>
                                 <div style="position: relative;width: 100%;height: 400px;">
                                     <div id="headermb" class="desktop-hide navbarmb">
 
@@ -147,7 +149,7 @@ if(isset($_GET['p'])):
                                                             <a class="menu-desk-item <?php echo $_GET['cat'] == '3' ? 'dactive': ''?>"
                                                                 href="http://localhost/paraisotour/?cat=3">Pasadías</a>
                                                             <a class="menu-desk-item <?php echo $_GET['cat'] == '4' ? 'dactive': ''?>"
-                                                                href="http://localhost/paraisotour/?cat=4">Excursiónes</a>
+                                                                href="http://localhost/paraisotour/?cat=4">Excursiones</a>
                                                             <a class="menu-desk-item <?php echo $_GET['cat'] == '2' ? 'dactive': ''?>"
                                                                 href="http://localhost/paraisotour/?cat=2">Promociones</a>
                                                             <a class="menu-desk-item <?php echo $_GET['page_id'] == '49' ? 'dactive': ''?>"
@@ -171,13 +173,13 @@ if(isset($_GET['p'])):
 
                                                             </div>
                                                             <?php
-                            elseif(isset($_GET['cat'])):
-                        ?>
+                                                                elseif(isset($_GET['cat'])):
+                                                            ?>
                                                             <div style="position: relative;width: 100%;height: 400px;">
                                                                 <div id="headermb" class="desktop-hide navbarmb">
 
                                                                     <h1 style="color: white !important; font-weight: bold; ">
-                                                                        <?php if($_GET['cat'] == '4'): echo 'Excursiónes'; elseif($_GET['cat'] == '3'): echo 'Pasadías'; else: echo 'Promociones'; endif;?>
+                                                                        <?php if($_GET['cat'] == '4'): echo 'Excursiones'; elseif($_GET['cat'] == '3'): echo 'Pasadías'; else: echo 'Promociones'; endif;?>
                                                                     </h1>
 
 
@@ -188,7 +190,22 @@ if(isset($_GET['p'])):
                                                                     <i class="material-icons" style="font-size: 40px;">menu</i>
                                                                 </a>
                                                                 <div class="secondary ">
-                                                                    <div class="menu-container bg1" style="background: url(<?php  echo 'http://localhost/paraisotour/wp-content/uploads/2018/10/annie-spratt-256172-unsplash-min.jpg'; ?>) no-repeat center;">
+                                                                    <div class="menu-container bg1" 
+                                                                        style="background: url(
+                                                                            <?php 
+                                                                                if($_GET['cat'] == '4'):
+                                                                                    //URL DE IMAGEN DE EXCURSIONES 
+                                                                                    echo 'http://localhost/paraisotour/wp-content/uploads/2018/10/annie-spratt-256172-unsplash-min.jpg'; 
+                                                                                elseif($_GET['cat'] == '3'):
+                                                                                    //URL DE IMAGEN DE PASADIAS
+                                                                                    echo 'http://localhost/paraisotour/wp-content/uploads/2018/10/5-min-1.jpg'; 
+                                                                                else:
+                                                                                    //URL DE IMAGEN DE PROMOCIONES
+                                                                                    echo 'http://localhost/paraisotour/wp-content/uploads/2018/10/8-min.jpeg'; 
+                                                                                endif;
+                                                                            ?>
+                                                                        ) no-repeat center;"
+                                                                    >
                                                                         <div class="menu-container-children secondary">
                                                                             <div class="top-menu">
 
@@ -208,7 +225,7 @@ if(isset($_GET['p'])):
                                                                                         <a class="menu-desk-item <?php echo $_GET['cat'] == '3' ? 'dactive': ''?>"
                                                                                             href="http://localhost/paraisotour/?cat=3">Pasadías</a>
                                                                                         <a class="menu-desk-item <?php echo $_GET['cat'] == '4' ? 'dactive': ''?>"
-                                                                                            href="http://localhost/paraisotour/?cat=4">Excursiónes</a>
+                                                                                            href="http://localhost/paraisotour/?cat=4">Excursiones</a>
                                                                                         <a class="menu-desk-item <?php echo $_GET['cat'] == '2' ? 'dactive': ''?>"
                                                                                             href="http://localhost/paraisotour/?cat=2">Promociones</a>
                                                                                         <a class="menu-desk-item <?php echo $_GET['page_id'] == '49' ? 'dactive': ''?>"
@@ -223,7 +240,7 @@ if(isset($_GET['p'])):
                                                                                     <div class="center-search-items">
                                                                                         <div class="search" style="text-align: center; color: white; background-color: transparent !important;">
                                                                                             <h1 style="color: white !important; font-weight: bold; font-size: xx-large">
-                                                                                                <?php if($_GET['cat'] == '4'): echo 'Excursiónes'; elseif($_GET['cat'] == '3'): echo 'Pasadías'; else: echo 'Promociones'; endif;?>
+                                                                                                <?php if($_GET['cat'] == '4'): echo 'Excursiones'; elseif($_GET['cat'] == '3'): echo 'Pasadías'; else: echo 'Promociones'; endif;?>
                                                                                             </h1>
                                                                                         </div>
                                                                                         <?php 
@@ -273,7 +290,7 @@ if(isset($_GET['p'])):
                                                                                                                         href="http://localhost/paraisotour/?cat=3">Pasadías</a>
                                                                                                                     <a
                                                                                                                         class="menu-desk-item <?php echo $_GET['cat'] == '4' ? 'dactive': ''?>"
-                                                                                                                        href="http://localhost/paraisotour/?cat=4">Excursiónes</a>
+                                                                                                                        href="http://localhost/paraisotour/?cat=4">Excursiones</a>
                                                                                                                     <a
                                                                                                                         class="menu-desk-item <?php echo $_GET['cat'] == '2' ? 'dactive': ''?>"
                                                                                                                         href="http://localhost/paraisotour/?cat=2">Promociones</a>
@@ -360,7 +377,7 @@ if(isset($_GET['p'])):
                                                                                                     <a class="menu-mobile-item <?php echo $_GET['cat'] == '3' ? 'mactive': ''?>"
                                                                                                         href="http://localhost/paraisotour/?cat=3">Pasadías</a>
                                                                                                     <a class="menu-mobile-item  <?php echo $_GET['cat'] == '4' ? 'mactive': ''?>"
-                                                                                                        href="http://localhost/paraisotour/?cat=4">Excursiónes</a>
+                                                                                                        href="http://localhost/paraisotour/?cat=4">Excursiones</a>
                                                                                                     <a class="menu-mobile-item <?php echo $_GET['cat'] == '2' ? 'mactive': ''?>"
                                                                                                         href="http://localhost/paraisotour/?cat=2">Promociones</a>
                                                                                                     <a class="menu-mobile-item <?php echo $_GET['page_id'] == '49' ? 'mactive': ''?>"

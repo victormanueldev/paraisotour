@@ -2,7 +2,7 @@ $(document).ready(function () {
     $('.slider').slider();
     $('.sidenav').sidenav();
     $('.materialboxed').materialbox();
-    $('.results').removeClass("res-active")
+    // $('.results').removeClass("res-active")
     $('.slider').slider();
     
     $("#idsearch").keyup(() => {

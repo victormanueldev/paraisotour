@@ -119,7 +119,7 @@ div .col-md-12 {
     width: 100%;
     display: inline-block;
     height: 357px;
-    background-image: url(http://localhost/paraisotour/wp-content/uploads/2018/09/VIAJERO-min.jpg);
+    
     background-size: cover;
     background-position: top;
 }
@@ -289,7 +289,6 @@ div .col-md-12 {
     position: absolute;
     z-index: 2;
     background-repeat: no-repeat;
-    background-image: url(http://localhost/paraisotour/wp-content/uploads/2018/09/REVISTA.png);
     background-size: 100%;
     top: 10%;
 }
@@ -350,7 +349,6 @@ div .col-md-12 {
     position: relative;
     width: 100%;
     height: 100%;
-    background-image: url("http://localhost/paraisotour/wp-content/uploads/2018/09/annie-spratt-256172-unsplash-min.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     /*background-attachment: fixed;*/
