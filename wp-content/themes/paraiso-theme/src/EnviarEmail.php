@@ -25,8 +25,8 @@
 				)
 			);
 
-			$mail->Username = 'victormalsx@gmail.com';
-			$mail->Password = '3103195394sax';
+			$mail->Username = '';
+			$mail->Password = '';
 
 			$mail->setFrom('info@paraisotourweb.com', 'Paraiso Tour');
 			$mail->addAddress($email, $nombre); //Aqui va el email del cliente al que vamos a enviar correos (Gerente Paraiso tour)
